@@ -1,0 +1,98 @@
+//
+//  PJDetailSetVc.m
+//  ZHD1.0
+//
+//  Created by Anne Pan on 14-7-6.
+//  Copyright (c) 2014年 com.pjj. All rights reserved.
+//
+
+#import "PJDetailSetVc.h"
+
+@interface PJDetailSetVc () <UITableViewDataSource, UITableViewDelegate>
+{
+    NSArray *_sourceArr;
+    UITableView *_sourceTable;
+}
+
+@end
+
+@implementation PJDetailSetVc
+
+- (id)init
+{
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationController.navigationBarHidden = NO;
+    
+    if (self.settingType == ZHSettingTypePrivacy) {
+        self.title = @"隐私";
+        _sourceArr = @[@{@"head": @"",
+                         @"item": @[@{@"title":@"黑名单",@"class":@""},@{@"title":@"加我为好友时需要验证",@"switch":@""}]}];
+    } else {
+        self.title = @"消息设置";
+    }
+    
+    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+    _sourceTable.dataSource = self;
+    _sourceTable.delegate = self;
+    _sourceTable.tableFooterView = [UIView new];
+    [self.view addSubview:_sourceTable];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [_sourceArr[section][@"item"] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(self.class)];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setAccessoryView:nil];
+    cell.accessoryType= UITableViewCellAccessoryNone;
+    cell.textLabel.text = _sourceArr[indexPath.section][@"item"][indexPath.row][@"title"];
+    if (_sourceArr[indexPath.section][@"item"][indexPath.row][@"class"]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    if (_sourceArr[indexPath.section][@"item"][indexPath.row][@"switch"]) {
+        UISwitch *switctV = [[UISwitch alloc] init];
+        [cell setAccessoryView:switctV];
+    }
+    return cell;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    //    return _sourceArr[section][@"head"];
+    if (section == 0) {
+        return nil;
+    }
+    return @" ";
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return _sourceArr.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *item = _sourceArr[indexPath.section][@"item"][indexPath.row];
+    if (item[@"class"]) {
+        UIViewController *nextVc = [[NSClassFromString(item[@"class"]) alloc] init];
+        [self.navigationController pushViewController:nextVc animated:YES];
+    }
+}
+
+@end
