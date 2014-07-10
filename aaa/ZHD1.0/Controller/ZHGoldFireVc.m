@@ -11,6 +11,8 @@
 #import "ZHGoldFireView.h"
 #import "PJUserModel.h"
 
+#import "ZHRequestAPI.h"
+
 @interface ZHGoldFireVc ()
 {
     UIScrollView *_sourceScrollV;
@@ -35,13 +37,7 @@
     if (!_rightArr) {
         _rightArr = [[NSMutableArray alloc] init];
     }
-    for (int i = 0 ; i < 10; i++) {
-        PJUserModel *user = [[PJUserModel alloc] init];
-        user.uPicPath = @"all_group";
-        user.uName = [NSString stringWithFormat:@"戴云峰%d",i];
-        user.uFires = @[@"",@"",@""];
-        [_rightArr addObject:user];
-    }
+    [_rightArr addObjectsFromArray:[ZHRequestAPI requestContacts]];
 }
 
 - (void)viewDidLoad
@@ -83,7 +79,6 @@
 
 - (void) changeContentWithIndex:(int)index
 {
-//    _sourceScrollV.contentOffset.x = index * _sourceScrollV.width;
     [_sourceScrollV setContentOffset:CGPointMake(_sourceScrollV.width * index, 0)];
 }
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "ZHGoldFireView.h"
+#import "PJUserModel.h"
 #import "PJAllFireCell.h"
 #import "ZHGoldFireCell.h"
+
+#import "NSString+Additions.h"
 
 @interface ZHGoldFireView () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -55,7 +58,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return _fireType == ZHFireTypeAll ? 70 : 90;
+    if (_fireType == ZHFireTypeAll) {
+        return 70;
+    } else if (_fireType == ZHFireTypeGold) {
+        PJUserModel *user = _sourceArr[indexPath.row];
+        return  90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
+    }
+    return 0;
 }
 
 - (void)setSourceArray:(NSArray *)sourceArray fireType:(ZHFireType)fireType

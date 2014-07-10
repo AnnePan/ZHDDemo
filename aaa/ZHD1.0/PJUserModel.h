@@ -25,15 +25,20 @@
 @property (nonatomic, assign)BOOL uIsVIP;           //是否是VIP
 
 
+
 @property (nonatomic, assign)long long uTelphone;   //电话号码
 
 @property (nonatomic, copy)NSString *uWeChatNum;    //微信号码
 
 @property (nonatomic, copy)NSString *uEmail;        //电子邮箱
 
-@property (nonatomic, copy)NSString *uRecommender;  //推荐人
 
-@property (nonatomic, copy)NSArray *uFires;         //全部火种
+
+@property (nonatomic, copy)NSString *uRecommender;      //推荐人
+
+@property (nonatomic, copy)NSArray *uFires;             //全部火种
+
+@property (nonatomic, copy)NSString *uFireDirections;   //推荐描述
 
 
 @end
