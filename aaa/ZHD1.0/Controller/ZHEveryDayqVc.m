@@ -14,7 +14,8 @@
 @interface ZHEveryDayqVc ()
 {
     UIScrollView *_sourceScrollV;
-    NSMutableArray *_dataArr;
+    NSMutableArray *_questionArr;
+    NSMutableArray *_dearAnswerArr;
 }
 
 @end
@@ -31,10 +32,14 @@
 
 - (void)requestData
 {
-    if (!_dataArr) {
-        _dataArr = [[NSMutableArray alloc] init];
+    if (!_questionArr) {
+        _questionArr = [[NSMutableArray alloc] init];
     }
-    [_dataArr addObjectsFromArray:[ZHRequestAPI requestEveryDayq]];
+    [_questionArr addObjectsFromArray:[ZHRequestAPI requestEveryDayq]];
+    if (!_dearAnswerArr) {
+        _dearAnswerArr = [[NSMutableArray alloc] init];
+    }
+    [_dearAnswerArr addObjectsFromArray:[ZHRequestAPI requestContacts]];
 }
 
 - (void)viewDidLoad
@@ -60,17 +65,23 @@
     [self.view addSubview:scView];
     
     _sourceScrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 35, self.view.width, self.view.height - 150)];
-    _sourceScrollV.contentSize = CGSizeMake(self.view.width *2, self.view.height - 200);
+    _sourceScrollV.contentSize = CGSizeMake(self.view.width *3, self.view.height - 200);
     _sourceScrollV.pagingEnabled = YES;
     [self.view addSubview:_sourceScrollV];
     
+    //按时间排序
     ZHGoldFireView *leftView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(0, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [leftView setSourceArray:_dataArr fireType:ZHCellTypeQuestion];
+    [leftView setSourceArray:_questionArr fireType:ZHCellTypeQuestion];
     [_sourceScrollV addSubview:leftView];
     
-    ZHGoldFireView *rightView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    rightView.backgroundColor = [UIColor blueColor];
-    [rightView setSourceArray:_dataArr fireType:ZHCellTypeQuestion];
+    //按热门排序
+    ZHGoldFireView *middleView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
+    [middleView setSourceArray:_questionArr fireType:ZHCellTypeQuestion];
+    [_sourceScrollV addSubview:middleView];
+    
+    //热心岛邻
+    ZHGoldFireView *rightView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width * 2, 0, _sourceScrollV.width, _sourceScrollV.height)];
+    [rightView setSourceArray:_dearAnswerArr fireType:ZHCellTypeDearAnswer];
     [_sourceScrollV addSubview:rightView];
 }
 

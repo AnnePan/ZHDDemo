@@ -12,6 +12,7 @@ typedef NS_ENUM(NSInteger, ZHCellType) {
     ZHCellTypeAllFire,      //所有火种
     ZHCellTypeGoldFire,     //金火种
     ZHCellTypeQuestion,     //每日一问
+    ZHCellTypeDearAnswer,   //热心岛邻
     
     ZHFireTypeMax
 };

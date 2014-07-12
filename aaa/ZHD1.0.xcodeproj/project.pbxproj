@@ -52,11 +52,19 @@
 		246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 246133EB19646FE200C4E122 /* ZHMyVisitorVc.m */; };
 		246133F01964718200C4E122 /* ZHMyVisitorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 246133EF1964718200C4E122 /* ZHMyVisitorCell.m */; };
 		24A377E1196B4F150000F905 /* PACycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A377E0196B4F150000F905 /* PACycleScrollView.m */; };
-		24A5019E1970CE2E002AA97C /* ZHPhoneNewsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A5019D1970CE2E002AA97C /* ZHPhoneNewsVc.m */; };
-		24A501A11970D035002AA97C /* ZHEveryDayqVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501A01970D035002AA97C /* ZHEveryDayqVc.m */; };
 		24A501A61970D0D9002AA97C /* ZHCentreShareVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501A51970D0D9002AA97C /* ZHCentreShareVc.m */; };
 		24A501A91970D514002AA97C /* PJQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501A81970D514002AA97C /* PJQuestionModel.m */; };
-		24A501AC1970DAB9002AA97C /* ZHQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501AB1970DAB9002AA97C /* ZHQuestionCell.m */; };
+		24A501BF19713937002AA97C /* PJWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BA19713937002AA97C /* PJWebView.m */; };
+		24A501C019713937002AA97C /* PJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BC19713937002AA97C /* PJWebViewController.m */; };
+		24A501C119713937002AA97C /* ZHGoldFireView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BE19713937002AA97C /* ZHGoldFireView.m */; };
+		24A501C81971396D002AA97C /* ZHEveryDayqVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501C31971396D002AA97C /* ZHEveryDayqVc.m */; };
+		24A501C91971396D002AA97C /* ZHQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501C51971396D002AA97C /* ZHQuestionCell.m */; };
+		24A501CA1971396D002AA97C /* PJDearNeighbourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501C71971396D002AA97C /* PJDearNeighbourCell.m */; };
+		24A501CF1971398B002AA97C /* ZHPhoneNewsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501CC1971398B002AA97C /* ZHPhoneNewsVc.m */; };
+		24A501D01971398B002AA97C /* PJOldNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501CE1971398B002AA97C /* PJOldNewsCell.m */; };
+		24A501D7197139A0002AA97C /* ZHGoldFireVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501D2197139A0002AA97C /* ZHGoldFireVc.m */; };
+		24A501D8197139A0002AA97C /* PJAllFireCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501D4197139A0002AA97C /* PJAllFireCell.m */; };
+		24A501D9197139A0002AA97C /* ZHGoldFireCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501D6197139A0002AA97C /* ZHGoldFireCell.m */; };
 		24B29FFB196978A3003287D8 /* PJCardUpdataVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B29FFA196978A3003287D8 /* PJCardUpdataVc.m */; };
 		24B29FFE19699765003287D8 /* PJDetailSetVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B29FFD19699765003287D8 /* PJDetailSetVc.m */; };
 		24B2A00119699CD8003287D8 /* PJDetailUpdataVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2A00019699CD8003287D8 /* PJDetailUpdataVc.m */; };
@@ -749,10 +757,6 @@
 		7B126E80196E54BF00B4E6E0 /* picv4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B126E72196E54BF00B4E6E0 /* picv4.png */; };
 		7B126E81196E54BF00B4E6E0 /* picv3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B126E73196E54BF00B4E6E0 /* picv3.png */; };
 		7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E83196E54E700B4E6E0 /* ZHRequestAPI.m */; };
-		7B126E8D196E551800B4E6E0 /* ZHGoldFireVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E86196E551800B4E6E0 /* ZHGoldFireVc.m */; };
-		7B126E8E196E551800B4E6E0 /* ZHGoldFireView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E88196E551800B4E6E0 /* ZHGoldFireView.m */; };
-		7B126E8F196E551800B4E6E0 /* PJAllFireCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E8A196E551800B4E6E0 /* PJAllFireCell.m */; };
-		7B126E90196E551800B4E6E0 /* ZHGoldFireCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E8C196E551800B4E6E0 /* ZHGoldFireCell.m */; };
 		7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E92196E553400B4E6E0 /* PJUserModel.m */; };
 		7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E95196E554E00B4E6E0 /* NSString+Additions.m */; };
 /* End PBXBuildFile section */
@@ -820,16 +824,32 @@
 		246133EF1964718200C4E122 /* ZHMyVisitorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHMyVisitorCell.m; sourceTree = "<group>"; };
 		24A377DF196B4F150000F905 /* PACycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PACycleScrollView.h; sourceTree = "<group>"; };
 		24A377E0196B4F150000F905 /* PACycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PACycleScrollView.m; sourceTree = "<group>"; };
-		24A5019C1970CE2E002AA97C /* ZHPhoneNewsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPhoneNewsVc.h; sourceTree = "<group>"; };
-		24A5019D1970CE2E002AA97C /* ZHPhoneNewsVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPhoneNewsVc.m; sourceTree = "<group>"; };
-		24A5019F1970D035002AA97C /* ZHEveryDayqVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHEveryDayqVc.h; sourceTree = "<group>"; };
-		24A501A01970D035002AA97C /* ZHEveryDayqVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHEveryDayqVc.m; sourceTree = "<group>"; };
 		24A501A41970D0D9002AA97C /* ZHCentreShareVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCentreShareVc.h; sourceTree = "<group>"; };
 		24A501A51970D0D9002AA97C /* ZHCentreShareVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCentreShareVc.m; sourceTree = "<group>"; };
 		24A501A71970D514002AA97C /* PJQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJQuestionModel.h; sourceTree = "<group>"; };
 		24A501A81970D514002AA97C /* PJQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJQuestionModel.m; sourceTree = "<group>"; };
-		24A501AA1970DAB9002AA97C /* ZHQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHQuestionCell.h; sourceTree = "<group>"; };
-		24A501AB1970DAB9002AA97C /* ZHQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHQuestionCell.m; sourceTree = "<group>"; };
+		24A501B919713937002AA97C /* PJWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJWebView.h; sourceTree = "<group>"; };
+		24A501BA19713937002AA97C /* PJWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJWebView.m; sourceTree = "<group>"; };
+		24A501BB19713937002AA97C /* PJWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJWebViewController.h; sourceTree = "<group>"; };
+		24A501BC19713937002AA97C /* PJWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJWebViewController.m; sourceTree = "<group>"; };
+		24A501BD19713937002AA97C /* ZHGoldFireView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGoldFireView.h; sourceTree = "<group>"; };
+		24A501BE19713937002AA97C /* ZHGoldFireView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGoldFireView.m; sourceTree = "<group>"; };
+		24A501C21971396D002AA97C /* ZHEveryDayqVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHEveryDayqVc.h; sourceTree = "<group>"; };
+		24A501C31971396D002AA97C /* ZHEveryDayqVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHEveryDayqVc.m; sourceTree = "<group>"; };
+		24A501C41971396D002AA97C /* ZHQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHQuestionCell.h; sourceTree = "<group>"; };
+		24A501C51971396D002AA97C /* ZHQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHQuestionCell.m; sourceTree = "<group>"; };
+		24A501C61971396D002AA97C /* PJDearNeighbourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJDearNeighbourCell.h; sourceTree = "<group>"; };
+		24A501C71971396D002AA97C /* PJDearNeighbourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJDearNeighbourCell.m; sourceTree = "<group>"; };
+		24A501CB1971398B002AA97C /* ZHPhoneNewsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPhoneNewsVc.h; sourceTree = "<group>"; };
+		24A501CC1971398B002AA97C /* ZHPhoneNewsVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPhoneNewsVc.m; sourceTree = "<group>"; };
+		24A501CD1971398B002AA97C /* PJOldNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJOldNewsCell.h; sourceTree = "<group>"; };
+		24A501CE1971398B002AA97C /* PJOldNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJOldNewsCell.m; sourceTree = "<group>"; };
+		24A501D1197139A0002AA97C /* ZHGoldFireVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGoldFireVc.h; sourceTree = "<group>"; };
+		24A501D2197139A0002AA97C /* ZHGoldFireVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGoldFireVc.m; sourceTree = "<group>"; };
+		24A501D3197139A0002AA97C /* PJAllFireCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAllFireCell.h; sourceTree = "<group>"; };
+		24A501D4197139A0002AA97C /* PJAllFireCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAllFireCell.m; sourceTree = "<group>"; };
+		24A501D5197139A0002AA97C /* ZHGoldFireCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGoldFireCell.h; sourceTree = "<group>"; };
+		24A501D6197139A0002AA97C /* ZHGoldFireCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGoldFireCell.m; sourceTree = "<group>"; };
 		24B29FF9196978A3003287D8 /* PJCardUpdataVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJCardUpdataVc.h; sourceTree = "<group>"; };
 		24B29FFA196978A3003287D8 /* PJCardUpdataVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJCardUpdataVc.m; sourceTree = "<group>"; };
 		24B29FFC19699765003287D8 /* PJDetailSetVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJDetailSetVc.h; sourceTree = "<group>"; };
@@ -1560,14 +1580,6 @@
 		7B126E73196E54BF00B4E6E0 /* picv3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picv3.png; sourceTree = "<group>"; };
 		7B126E82196E54E700B4E6E0 /* ZHRequestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHRequestAPI.h; sourceTree = "<group>"; };
 		7B126E83196E54E700B4E6E0 /* ZHRequestAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHRequestAPI.m; sourceTree = "<group>"; };
-		7B126E85196E551800B4E6E0 /* ZHGoldFireVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGoldFireVc.h; sourceTree = "<group>"; };
-		7B126E86196E551800B4E6E0 /* ZHGoldFireVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGoldFireVc.m; sourceTree = "<group>"; };
-		7B126E87196E551800B4E6E0 /* ZHGoldFireView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGoldFireView.h; sourceTree = "<group>"; };
-		7B126E88196E551800B4E6E0 /* ZHGoldFireView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGoldFireView.m; sourceTree = "<group>"; };
-		7B126E89196E551800B4E6E0 /* PJAllFireCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAllFireCell.h; sourceTree = "<group>"; };
-		7B126E8A196E551800B4E6E0 /* PJAllFireCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAllFireCell.m; sourceTree = "<group>"; };
-		7B126E8B196E551800B4E6E0 /* ZHGoldFireCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHGoldFireCell.h; sourceTree = "<group>"; };
-		7B126E8C196E551800B4E6E0 /* ZHGoldFireCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGoldFireCell.m; sourceTree = "<group>"; };
 		7B126E91196E553400B4E6E0 /* PJUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUserModel.h; sourceTree = "<group>"; };
 		7B126E92196E553400B4E6E0 /* PJUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserModel.m; sourceTree = "<group>"; };
 		7B126E94196E554E00B4E6E0 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
@@ -1601,14 +1613,12 @@
 		242A77DA196ACA4F00FE1757 /* 金火种 */ = {
 			isa = PBXGroup;
 			children = (
-				7B126E85196E551800B4E6E0 /* ZHGoldFireVc.h */,
-				7B126E86196E551800B4E6E0 /* ZHGoldFireVc.m */,
-				7B126E87196E551800B4E6E0 /* ZHGoldFireView.h */,
-				7B126E88196E551800B4E6E0 /* ZHGoldFireView.m */,
-				7B126E89196E551800B4E6E0 /* PJAllFireCell.h */,
-				7B126E8A196E551800B4E6E0 /* PJAllFireCell.m */,
-				7B126E8B196E551800B4E6E0 /* ZHGoldFireCell.h */,
-				7B126E8C196E551800B4E6E0 /* ZHGoldFireCell.m */,
+				24A501D1197139A0002AA97C /* ZHGoldFireVc.h */,
+				24A501D2197139A0002AA97C /* ZHGoldFireVc.m */,
+				24A501D3197139A0002AA97C /* PJAllFireCell.h */,
+				24A501D4197139A0002AA97C /* PJAllFireCell.m */,
+				24A501D5197139A0002AA97C /* ZHGoldFireCell.h */,
+				24A501D6197139A0002AA97C /* ZHGoldFireCell.m */,
 			);
 			name = "金火种";
 			sourceTree = "<group>";
@@ -1627,8 +1637,10 @@
 		24A5019B1970CDE9002AA97C /* 手机报 */ = {
 			isa = PBXGroup;
 			children = (
-				24A5019C1970CE2E002AA97C /* ZHPhoneNewsVc.h */,
-				24A5019D1970CE2E002AA97C /* ZHPhoneNewsVc.m */,
+				24A501CB1971398B002AA97C /* ZHPhoneNewsVc.h */,
+				24A501CC1971398B002AA97C /* ZHPhoneNewsVc.m */,
+				24A501CD1971398B002AA97C /* PJOldNewsCell.h */,
+				24A501CE1971398B002AA97C /* PJOldNewsCell.m */,
 			);
 			name = "手机报";
 			sourceTree = "<group>";
@@ -1636,10 +1648,12 @@
 		24A501A21970D044002AA97C /* 每日一问 */ = {
 			isa = PBXGroup;
 			children = (
-				24A5019F1970D035002AA97C /* ZHEveryDayqVc.h */,
-				24A501A01970D035002AA97C /* ZHEveryDayqVc.m */,
-				24A501AA1970DAB9002AA97C /* ZHQuestionCell.h */,
-				24A501AB1970DAB9002AA97C /* ZHQuestionCell.m */,
+				24A501C21971396D002AA97C /* ZHEveryDayqVc.h */,
+				24A501C31971396D002AA97C /* ZHEveryDayqVc.m */,
+				24A501C41971396D002AA97C /* ZHQuestionCell.h */,
+				24A501C51971396D002AA97C /* ZHQuestionCell.m */,
+				24A501C61971396D002AA97C /* PJDearNeighbourCell.h */,
+				24A501C71971396D002AA97C /* PJDearNeighbourCell.m */,
 			);
 			name = "每日一问";
 			sourceTree = "<group>";
@@ -2613,6 +2627,12 @@
 		24F30B98196022BB0089F97E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24A501B919713937002AA97C /* PJWebView.h */,
+				24A501BA19713937002AA97C /* PJWebView.m */,
+				24A501BB19713937002AA97C /* PJWebViewController.h */,
+				24A501BC19713937002AA97C /* PJWebViewController.m */,
+				24A501BD19713937002AA97C /* ZHGoldFireView.h */,
+				24A501BE19713937002AA97C /* ZHGoldFireView.m */,
 				7B126E91196E553400B4E6E0 /* PJUserModel.h */,
 				7B126E92196E553400B4E6E0 /* PJUserModel.m */,
 				24A501A71970D514002AA97C /* PJQuestionModel.h */,
@@ -3426,32 +3446,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F30B37195FD8970089F97E /* UILabel+Additions.m in Sources */,
-				24A501A11970D035002AA97C /* ZHEveryDayqVc.m in Sources */,
 				24F30B97196022950089F97E /* ZHBaseVc.m in Sources */,
 				24B29FFE19699765003287D8 /* PJDetailSetVc.m in Sources */,
 				246133E919646CD700C4E122 /* ZHPersonSettingVc.m in Sources */,
 				24F30B9E196023140089F97E /* ZHPersonCardVc.m in Sources */,
+				24A501D9197139A0002AA97C /* ZHGoldFireCell.m in Sources */,
 				246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,
-				7B126E8F196E551800B4E6E0 /* PJAllFireCell.m in Sources */,
 				24F30B6D195FDD8A0089F97E /* ZHGlobal.m in Sources */,
 				7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */,
 				24F30B8219601FB00089F97E /* ZHSysStyle.m in Sources */,
 				7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */,
 				24F30B8E196021680089F97E /* ZHReuseView.m in Sources */,
+				24A501C91971396D002AA97C /* ZHQuestionCell.m in Sources */,
 				24F30B18195FD8860089F97E /* UIView+Extension.m in Sources */,
-				24A501AC1970DAB9002AA97C /* ZHQuestionCell.m in Sources */,
 				24F30B15195FD8860089F97E /* MJRefreshHeaderView.m in Sources */,
 				246133D31961BBBC00C4E122 /* NSTimer+Addition.m in Sources */,
 				24F30BAB19602F790089F97E /* PJUser1Cell.m in Sources */,
 				7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */,
 				24A501A61970D0D9002AA97C /* ZHCentreShareVc.m in Sources */,
+				24A501CF1971398B002AA97C /* ZHPhoneNewsVc.m in Sources */,
 				24F30BA819602EF80089F97E /* ZHContactsVc.m in Sources */,
 				24F30B88196020DE0089F97E /* ZHAboutSelfVc.m in Sources */,
+				24A501BF19713937002AA97C /* PJWebView.m in Sources */,
 				24F30B36195FD8970089F97E /* UIImage+Additions.m in Sources */,
 				24F30B33195FD8970089F97E /* NSDictionary+Additions.m in Sources */,
 				24F30B39195FD8970089F97E /* UIButton+ZHDsytle.m in Sources */,
-				7B126E90196E551800B4E6E0 /* ZHGoldFireCell.m in Sources */,
+				24A501C81971396D002AA97C /* ZHEveryDayqVc.m in Sources */,
 				24F30B32195FD8970089F97E /* NSDate+Addition.m in Sources */,
 				24F30BA1196024850089F97E /* ZHLoginVc.m in Sources */,
 				24F30B38195FD8970089F97E /* UIView+Additions.m in Sources */,
@@ -3461,14 +3482,16 @@
 				24B29FFB196978A3003287D8 /* PJCardUpdataVc.m in Sources */,
 				24F30B8519601FCE0089F97E /* ZHRefreshLoadView.m in Sources */,
 				24F30B7E195FDE0F0089F97E /* PJAppDelegate.m in Sources */,
+				24A501CA1971396D002AA97C /* PJDearNeighbourCell.m in Sources */,
 				24A377E1196B4F150000F905 /* PACycleScrollView.m in Sources */,
 				246133F01964718200C4E122 /* ZHMyVisitorCell.m in Sources */,
 				24F30B16195FD8860089F97E /* UIScrollView+Extension.m in Sources */,
-				7B126E8D196E551800B4E6E0 /* ZHGoldFireVc.m in Sources */,
-				24A5019E1970CE2E002AA97C /* ZHPhoneNewsVc.m in Sources */,
+				24A501C019713937002AA97C /* PJWebViewController.m in Sources */,
 				24B2A00119699CD8003287D8 /* PJDetailUpdataVc.m in Sources */,
+				24A501C119713937002AA97C /* ZHGoldFireView.m in Sources */,
+				24A501D8197139A0002AA97C /* PJAllFireCell.m in Sources */,
+				24A501D01971398B002AA97C /* PJOldNewsCell.m in Sources */,
 				24F30B13195FD8860089F97E /* MJRefreshConst.m in Sources */,
-				7B126E8E196E551800B4E6E0 /* ZHGoldFireView.m in Sources */,
 				24F30B12195FD8860089F97E /* MJRefreshBaseView.m in Sources */,
 				24F30B17195FD8860089F97E /* UIScrollView+MJRefresh.m in Sources */,
 				24F30B2F195FD8970089F97E /* UIColor+Custom.m in Sources */,
@@ -3478,6 +3501,7 @@
 				24F30B7F195FDE0F0089F97E /* ZHDRootViewController.m in Sources */,
 				24F30B30195FD8970089F97E /* UIViewController+Custom.m in Sources */,
 				24F30604195FD5A10089F97E /* main.m in Sources */,
+				24A501D7197139A0002AA97C /* ZHGoldFireVc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
