@@ -63,11 +63,11 @@
     _optionsNameArray = @[@{@"text":@"部落圈子",@"class":@"ZHPersonCardVc",@"title":@"健康体检",@"image":@"home_tab_rouund"},
                           @{@"text":@"最新资讯",@"class":@"ZHPersonCardVc",@"title":@"全部健康通卡",@"image":@"home_tab_news"},
                           @{@"text":@"岛上活动",@"class":@"ZHPersonCardVc",@"title":@"在线购卡",@"image":@"home_tab_games"},
-                          @{@"text":@"广场活动",@"class":@"ZHPersonCardVc",@"title":@"输入卡片充值码",@"image":@"home_tab_share"},
-                          @{@"text":@"每日一问",@"class":@"ZHPersonCardVc",@"title":@"我的消费明细",@"image":@"home_tab_ask"},
-                          @{@"text":@"手机报",@"class":@"ZHPersonCardVc",@"title":@"健康通卡使用说明",@"image":@"home_mobile_news"},
-                          @{@"text":@"金火种",@"class":@"ZHGoldFireVc",@"title":@"健康通卡使用说明",@"image":@"home_tab_fire"},
-                          @{@"text":@"岛上找人",@"class":@"ZHPersonCardVc",@"title":@"健康通卡使用说明",@"image":@"home_tab_search"}];
+                          @{@"text":@"广场活动",@"class":@"ZHCentreShareVc",@"title":@"广场活动",@"image":@"home_tab_share"},
+                          @{@"text":@"每日一问",@"class":@"ZHEveryDayqVc",@"title":@"每日一问",@"image":@"home_tab_ask"},
+                          @{@"text":@"手机报",@"class":@"ZHPhoneNewsVc",@"title":@"手机报",@"image":@"home_mobile_news"},
+                          @{@"text":@"金火种",@"class":@"ZHGoldFireVc",@"title":@"金火种",@"image":@"home_tab_fire"},
+                          @{@"text":@"岛上找人",@"class":@"ZHPersonCardVc",@"title":@"岛上找人",@"image":@"home_tab_search"}];
     CGFloat subViewW = 107.;
     CGFloat subViewH = 95.;
     _backView = [[UIScrollView alloc]initWithFrame:self.view.bounds];

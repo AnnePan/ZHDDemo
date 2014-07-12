@@ -13,4 +13,7 @@
 ///请求通讯录数据
 + (NSArray *)requestContacts;
 
+///请求每日一问
++ (NSArray *)requestEveryDayq;
+
 @end

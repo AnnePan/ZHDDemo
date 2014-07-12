@@ -8,15 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, ZHFireType) {
-    ZHFireTypeAll,      //所有火种
-    ZHFireTypeGold,     //金火种
+typedef NS_ENUM(NSInteger, ZHCellType) {
+    ZHCellTypeAllFire,      //所有火种
+    ZHCellTypeGoldFire,     //金火种
+    ZHCellTypeQuestion,     //每日一问
     
     ZHFireTypeMax
 };
 
 @interface ZHGoldFireView : UIView
 
-- (void)setSourceArray:(NSArray *)sourceArray fireType:(ZHFireType)fireType;
+- (void)setSourceArray:(NSArray *)sourceArray fireType:(ZHCellType)fireType;
 
 @end

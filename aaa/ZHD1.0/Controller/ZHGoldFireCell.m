@@ -78,6 +78,7 @@
     self.contentView.height = 90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
     [self setLayout];
 }
+
 - (void)setLayout
 {
     [_nameLab sizeToFit];

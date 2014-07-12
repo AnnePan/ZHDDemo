@@ -10,6 +10,7 @@
 #import "PJUserModel.h"
 #import "PJAllFireCell.h"
 #import "ZHGoldFireCell.h"
+#import "ZHQuestionCell.h"
 
 #import "NSString+Additions.h"
 
@@ -18,7 +19,7 @@
     UITableView *_sourceTable;
     NSArray *_sourceArr;
     
-    ZHFireType _fireType;
+    ZHCellType _cellType;
 }
 
 @end
@@ -44,36 +45,83 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_fireType == ZHFireTypeAll) {
-        PJAllFireCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
-        [cell setItem:_sourceArr[indexPath.row]];
-        return cell;
-    } else if (_fireType == ZHFireTypeGold) {
-        ZHGoldFireCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
-        [cell setItem:_sourceArr[indexPath.row]];
-        return cell;
+    switch (_cellType) {
+        case ZHCellTypeAllFire:
+        {
+            PJAllFireCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
+        case ZHCellTypeGoldFire:
+        {
+            ZHGoldFireCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
+        case ZHCellTypeQuestion:
+        {
+            ZHQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
+            
+        default:
+            break;
     }
     return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_fireType == ZHFireTypeAll) {
-        return 70;
-    } else if (_fireType == ZHFireTypeGold) {
-        PJUserModel *user = _sourceArr[indexPath.row];
-        return  90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
+    switch (_cellType) {
+        case ZHCellTypeAllFire:
+        {
+            return 70;
+            break;
+        }
+        case ZHCellTypeGoldFire:
+        {
+            PJUserModel *user = _sourceArr[indexPath.row];
+            return  90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
+            break;
+        }
+        case ZHCellTypeQuestion:
+        {
+            return 90;
+            break;
+        }
+            
+        default:
+            break;
     }
     return 0;
 }
 
-- (void)setSourceArray:(NSArray *)sourceArray fireType:(ZHFireType)fireType
+- (void)setSourceArray:(NSArray *)sourceArray fireType:(ZHCellType)cellType
 {
-    _fireType = fireType;
-    if (_fireType == ZHFireTypeGold) {
-        [_sourceTable registerClass:[ZHGoldFireCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
-    } else {
-        [_sourceTable registerClass:[PJAllFireCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
+    _cellType = cellType;
+    switch (_cellType) {
+        case ZHCellTypeAllFire:
+        {
+            [_sourceTable registerClass:[PJAllFireCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
+            break;
+        }
+        case ZHCellTypeGoldFire:
+        {
+            [_sourceTable registerClass:[ZHGoldFireCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
+            break;
+        }
+        case ZHCellTypeQuestion:
+        {
+            [_sourceTable registerClass:[ZHQuestionCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
+            break;
+        }
+            
+        default:
+            break;
     }
     _sourceArr = sourceArray;
     [_sourceTable reloadData];

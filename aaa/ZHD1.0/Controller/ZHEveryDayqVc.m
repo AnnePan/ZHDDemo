@@ -1,28 +1,25 @@
 //
-//  ZHGoldFireVc.m
+//  ZHEveryDayqVc.m
 //  ZHD1.0
 //
-//  Created by Anne Pan on 14-7-7.
+//  Created by Anne Pan on 14-7-12.
 //  Copyright (c) 2014年 com.pjj. All rights reserved.
 //
 
-#import "ZHGoldFireVc.h"
+#import "ZHEveryDayqVc.h"
+#import "ZHRequestAPI.h"
 #import "PJSegmentControl.h"
 #import "ZHGoldFireView.h"
-#import "PJUserModel.h"
 
-#import "ZHRequestAPI.h"
-
-@interface ZHGoldFireVc ()
+@interface ZHEveryDayqVc ()
 {
     UIScrollView *_sourceScrollV;
-    
-    NSMutableArray *_rightArr;
+    NSMutableArray *_dataArr;
 }
 
 @end
 
-@implementation ZHGoldFireVc
+@implementation ZHEveryDayqVc
 
 - (id)init
 {
@@ -34,10 +31,10 @@
 
 - (void)requestData
 {
-    if (!_rightArr) {
-        _rightArr = [[NSMutableArray alloc] init];
+    if (!_dataArr) {
+        _dataArr = [[NSMutableArray alloc] init];
     }
-    [_rightArr addObjectsFromArray:[ZHRequestAPI requestContacts]];
+    [_dataArr addObjectsFromArray:[ZHRequestAPI requestEveryDayq]];
 }
 
 - (void)viewDidLoad
@@ -46,10 +43,10 @@
     [self useiOS7BeforeStyle];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.navigationController.navigationBarHidden = NO;
-    self.title = @"金火种";
+    self.title = @"每日一问";
     
     PJSegmentControl *scView = [[PJSegmentControl alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 35)];
-    scView.sectionTitles = @[@"金火种", @"全部火种"];
+    scView.sectionTitles = @[@"按时间排序", @"按热门排序", @"热心岛邻"];
     [scView setSelectionIndicatorHeight:3.0f];
     [scView setFont:[UIFont fontWithName:@"STHeitiSC-Light" size:15]];
     [scView setTextColor:[UIColor greenColor]];
@@ -68,17 +65,18 @@
     [self.view addSubview:_sourceScrollV];
     
     ZHGoldFireView *leftView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(0, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [leftView setSourceArray:_rightArr fireType:ZHCellTypeGoldFire];
+    [leftView setSourceArray:_dataArr fireType:ZHCellTypeQuestion];
     [_sourceScrollV addSubview:leftView];
     
     ZHGoldFireView *rightView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [rightView setSourceArray:_rightArr fireType:ZHCellTypeAllFire];
+    rightView.backgroundColor = [UIColor blueColor];
+    [rightView setSourceArray:_dataArr fireType:ZHCellTypeQuestion];
     [_sourceScrollV addSubview:rightView];
-    
 }
 
 - (void) changeContentWithIndex:(int)index
 {
     [_sourceScrollV setContentOffset:CGPointMake(_sourceScrollV.width * index, 0)];
 }
+
 @end

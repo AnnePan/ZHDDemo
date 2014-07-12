@@ -8,6 +8,7 @@
 
 #import "ZHRequestAPI.h"
 #import "PJUserModel.h"
+#import "PJQuestionModel.h"
 
 @implementation ZHRequestAPI
 
@@ -45,5 +46,27 @@
     user.uFireDirections = dir;
     user.uFires = fires;
     return user;
+}
+
++ (NSArray *)requestEveryDayq
+{
+    NSMutableArray *quesArr = [[NSMutableArray alloc] init];
+    NSArray *arr = [self requestContacts];
+    for (PJUserModel *user in arr) {
+        [quesArr addObject:[self setQestUserName:user.uName photoPagh:user.uPicPath qTitle:@"转型期引入空降兵需要注意什么？" transfers:nil addtions:nil time:@"2014-04-07 07:30"]];
+    }
+    return quesArr;
+}
+
++ (PJQuestionModel *)setQestUserName:(NSString *)name photoPagh:(NSString *)path qTitle:(NSString *)title transfers:(NSArray *)transArr addtions:(NSArray *)addArr time:(NSString *)timeStr
+{
+    PJQuestionModel *question = [[PJQuestionModel alloc] init];
+    question.uName = name;
+    question.uPicPath = path;
+    question.qTitle = title;
+    question.qTransfers = @[@{},@{},@{}];
+    question.qAddtions = @[@{},@{}];
+    question.qTimeStr = timeStr;
+    return question;
 }
 @end
