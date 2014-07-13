@@ -16,7 +16,10 @@
 ///请求每日一问
 + (NSArray *)requestEveryDayq;
 
-///请求每日一问
+///请求所有手机报
 + (NSArray *)requestNews;
+
+///请求所有部落
++ (NSArray *)requestClans;
 
 @end

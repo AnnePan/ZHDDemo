@@ -11,7 +11,7 @@
 @interface ZHClanCell ()
 {
     UIImageView *_imgView;  //头像
-    UILabel *_clanNameLab;      //名字
+    UILabel *_clanNameLab;  //名字
     UILabel *_numLab;       //回答问题数量
     UILabel *_companyLab;   //公司及职务
 }

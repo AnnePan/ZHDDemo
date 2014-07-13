@@ -68,6 +68,7 @@
 		24A501DF19715836002AA97C /* ZHGoldFireView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501DE19715836002AA97C /* ZHGoldFireView.m */; };
 		24A7D98419720CDB00A0E87F /* ZHClanVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A7D98319720CDB00A0E87F /* ZHClanVc.m */; };
 		24A7D9871972104000A0E87F /* ZHClanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A7D9861972104000A0E87F /* ZHClanCell.m */; };
+		24A7D98A19721A7200A0E87F /* ZHClanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A7D98919721A7200A0E87F /* ZHClanModel.m */; };
 		24B29FFB196978A3003287D8 /* PJCardUpdataVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B29FFA196978A3003287D8 /* PJCardUpdataVc.m */; };
 		24B29FFE19699765003287D8 /* PJDetailSetVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B29FFD19699765003287D8 /* PJDetailSetVc.m */; };
 		24B2A00119699CD8003287D8 /* PJDetailUpdataVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2A00019699CD8003287D8 /* PJDetailUpdataVc.m */; };
@@ -860,6 +861,8 @@
 		24A7D98319720CDB00A0E87F /* ZHClanVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHClanVc.m; sourceTree = "<group>"; };
 		24A7D9851972104000A0E87F /* ZHClanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHClanCell.h; sourceTree = "<group>"; };
 		24A7D9861972104000A0E87F /* ZHClanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHClanCell.m; sourceTree = "<group>"; };
+		24A7D98819721A7200A0E87F /* ZHClanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHClanModel.h; sourceTree = "<group>"; };
+		24A7D98919721A7200A0E87F /* ZHClanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHClanModel.m; sourceTree = "<group>"; };
 		24B29FF9196978A3003287D8 /* PJCardUpdataVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJCardUpdataVc.h; sourceTree = "<group>"; };
 		24B29FFA196978A3003287D8 /* PJCardUpdataVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJCardUpdataVc.m; sourceTree = "<group>"; };
 		24B29FFC19699765003287D8 /* PJDetailSetVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJDetailSetVc.h; sourceTree = "<group>"; };
@@ -2662,6 +2665,8 @@
 				24A501A81970D514002AA97C /* PJQuestionModel.m */,
 				24A501DA1971534D002AA97C /* PJNewsModle.h */,
 				24A501DB1971534D002AA97C /* PJNewsModle.m */,
+				24A7D98819721A7200A0E87F /* ZHClanModel.h */,
+				24A7D98919721A7200A0E87F /* ZHClanModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3500,6 +3505,7 @@
 				24F30B39195FD8970089F97E /* UIButton+ZHDsytle.m in Sources */,
 				24A501C81971396D002AA97C /* ZHEveryDayqVc.m in Sources */,
 				24F30B32195FD8970089F97E /* NSDate+Addition.m in Sources */,
+				24A7D98A19721A7200A0E87F /* ZHClanModel.m in Sources */,
 				24F30BA1196024850089F97E /* ZHLoginVc.m in Sources */,
 				24F30B38195FD8970089F97E /* UIView+Additions.m in Sources */,
 				2461338A19619FFE00C4E122 /* ZHHomePageVc.m in Sources */,
