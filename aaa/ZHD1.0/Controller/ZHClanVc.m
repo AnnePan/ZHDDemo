@@ -9,6 +9,8 @@
 #import "ZHClanVc.h"
 #import "ZHRequestAPI.h"
 #import "ZHClanCell.h"
+#import "ZHClanDeatilVc.h"
+#import "ZHClanModel.h"
 
 @interface ZHClanVc () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -75,6 +77,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"indexpath == %d",indexPath.row);
+    ZHClanModel *item = _sourceArr[indexPath.row];
+    ZHClanDeatilVc *nextVc = [[ZHClanDeatilVc alloc] initWithTitle:item.cName];
+    [self.navigationController pushViewController:nextVc animated:YES];
 }
 @end

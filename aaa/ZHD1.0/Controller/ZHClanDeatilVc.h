@@ -10,4 +10,6 @@
 
 @interface ZHClanDeatilVc : UIViewController
 
+- (id)initWithTitle:(NSString *)titleStr;
+
 @end

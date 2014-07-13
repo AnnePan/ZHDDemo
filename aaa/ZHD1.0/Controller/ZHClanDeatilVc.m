@@ -7,43 +7,79 @@
 //
 
 #import "ZHClanDeatilVc.h"
+#import "PJSegmentControl.h"
+#import "ZHGoldFireView.h"
 
 @interface ZHClanDeatilVc ()
+{
+    NSString *_titleStr;
+    UIScrollView *_sourceScrollV;
+    
+    NSArray *_sourceArr;
+}
 
 @end
 
 @implementation ZHClanDeatilVc
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithTitle:(NSString *)titleStr
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    _titleStr = titleStr;
+    if (self = [super init]) {
+        _sourceArr = [[NSArray alloc] init];
     }
     return self;
+}
+
+- (id)init
+{
+    return [self initWithTitle:@"部落详情"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    [self useiOS7BeforeStyle];
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.navigationController.navigationBarHidden = NO;
+    self.title = _titleStr;
+    NSArray *arr1 = @[@{@"key":@"会话",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]},
+                     @{@"key":@"活动",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]},
+                     @{@"key":@"文档",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]},
+                     @{@"key":@"成员",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]}];
+    NSMutableArray *keys = [[NSMutableArray alloc] init];
+    for (NSDictionary *dic in arr1) {
+        [keys addObject:dic[@"key"]];
+    }
+    PJSegmentControl *scView = [[PJSegmentControl alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 35)];
+    scView.sectionTitles = keys;
+    [scView setSelectionIndicatorHeight:3.0f];
+    [scView setFont:[UIFont fontWithName:@"STHeitiSC-Light" size:15]];
+    [scView setTextColor:[UIColor greenColor]];
+    [scView setSelectionIndicatorColor:[UIColor greenColor]];
+    [scView setSelectionIndicatorMode:HMSelectionIndicatorResizesToStringWidthBottom];
+    [scView setIndexChangeBlock:^(NSUInteger index) {
+        [self changeContentWithIndex:(int)index];
+        NSLog(@"index == %d",(int)index);
+    }];
+    scView.selectedIndex = 0;
+    [self.view addSubview:scView];
+    
+    _sourceScrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 35, self.view.width, self.view.height - 150)];
+    _sourceScrollV.contentSize = CGSizeMake(self.view.width * keys.count, self.view.height - 200);
+    _sourceScrollV.pagingEnabled = YES;
+    [self.view addSubview:_sourceScrollV];
+    
+    for (int i = 0; i < keys.count; i++) {
+        ZHGoldFireView *detailTable = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(i * _sourceScrollV.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
+        [detailTable setSourceArray:_sourceArr fireType:[(arr1[i][@"value"]) intValue]];
+        
+        [_sourceScrollV addSubview:detailTable];
+    }
 
-- (void)didReceiveMemoryWarning
+}
+- (void) changeContentWithIndex:(int)index
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [_sourceScrollV setContentOffset:CGPointMake(_sourceScrollV.width * index, 0)];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
