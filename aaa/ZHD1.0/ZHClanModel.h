@@ -19,7 +19,7 @@
 
 @property (nonatomic, copy) NSString *cIntroduce;   //部落介绍
 
-@property (nonatomic, assign) int cMemberCount;    //部落总人数
+@property (nonatomic, assign) int cMemberCount;     //部落总人数
 
 @property (nonatomic, copy) NSString *cLastWord;    //最后一句发言
 

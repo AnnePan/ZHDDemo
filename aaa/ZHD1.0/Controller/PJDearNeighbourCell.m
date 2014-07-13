@@ -11,10 +11,10 @@
 
 @interface PJDearNeighbourCell ()
 {
-    UIImageView *_imgView;      //头像
-    UILabel *_clanNameLab;      //部落名字
-    UILabel *_memberNumLab;     //部落成员
-    UILabel *_lastWordLab;      //最后一句发言
+    UIImageView *_imgView;  //头像
+    UILabel *_nameLab;      //头像
+    UILabel *_numLab;       //推荐人数
+    UILabel *_companyLab;   //公司及职务
 }
 
 @end
@@ -33,36 +33,36 @@
         _imgView.layer.cornerRadius = side/2;
         [self addSubview:_imgView];
         
-        _clanNameLab = [[UILabel alloc] initWithFrame:CGRectMake(_imgView.right + ZHSysSpaceLarge, ZHSysSpaceMiddle, 200, 50)];
-        _clanNameLab.textColor = [UIColor blackColor];
-        _clanNameLab.font = [UIFont systemFontOfSize:16];
-        [self addSubview:_clanNameLab];
+        _nameLab = [[UILabel alloc] initWithFrame:CGRectMake(_imgView.right + ZHSysSpaceLarge, ZHSysSpaceMiddle, 200, 50)];
+        _nameLab.textColor = [UIColor blackColor];
+        _nameLab.font = [UIFont systemFontOfSize:16];
+        [self addSubview:_nameLab];
         
-        _memberNumLab = [[UILabel alloc] initWithFrame:CGRectMake(0, ZHSysSpaceMiddle, 200, 50)];
-        [_memberNumLab setLabelStyleTextColor:[UIColor darkGrayColor] fontSize:ZHSysFontSizeMiddle];
-        [self addSubview:_memberNumLab];
+        _numLab = [[UILabel alloc] initWithFrame:CGRectMake(0, ZHSysSpaceMiddle, 200, 50)];
+        [_numLab setLabelStyleTextColor:[UIColor darkGrayColor] fontSize:ZHSysFontSizeMiddle];
+        [self addSubview:_numLab];
         
-        _lastWordLab = [[UILabel alloc] initWithFrame:CGRectMake(_clanNameLab.left, 0, self.width - (_imgView.width + (ZHSysSpaceMiddle * 2)), 20)];
-        [_lastWordLab setLabelStyleTextColor:[UIColor darkGrayColor] fontSize:ZHSysFontSizeMiddle];
-        [self addSubview:_lastWordLab];
+        _companyLab = [[UILabel alloc] initWithFrame:CGRectMake(_nameLab.left, 0, self.width - (_imgView.width + (ZHSysSpaceMiddle * 2)), 20)];
+        [_companyLab setLabelStyleTextColor:[UIColor darkGrayColor] fontSize:ZHSysFontSizeMiddle];
+        [self addSubview:_companyLab];
     }
     return self;
 }
 - (void)setItem:(PJUserModel *)user
 {
     _imgView.image = [UIImage imageNamed:user.uPicPath];
-    _clanNameLab.text = user.uName;
-    _memberNumLab.text = [NSString stringWithFormat:@"回答了%d个问题",[user.uFires count]];
-    _lastWordLab.text = user.uCompany;
+    _nameLab.text = user.uName;
+    _numLab.text = [NSString stringWithFormat:@"回答了%d个问题",[user.uFires count]];
+    _companyLab.text = user.uCompany;
     [self setLayout];
 }
 
 - (void)setLayout
 {
-    [_clanNameLab sizeToFit];
-    [_memberNumLab sizeToFit];
-    _memberNumLab.left = _clanNameLab.right + ZHSysSpaceSmall;
-    _lastWordLab.top = _clanNameLab.bottom + ZHSysSpaceSmall;
+    [_nameLab sizeToFit];
+    [_numLab sizeToFit];
+    _numLab.left = _nameLab.right + ZHSysSpaceSmall;
+    _companyLab.top = _nameLab.bottom + ZHSysSpaceSmall;
 }
 
 @end

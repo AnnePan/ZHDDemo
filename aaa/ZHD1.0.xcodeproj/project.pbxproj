@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		240218FC19692971001DBCFB /* PJSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 240218FB19692971001DBCFB /* PJSegmentControl.m */; };
 		242A77E5196AE92500FE1757 /* all_group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 242A77E4196AE92500FE1757 /* all_group@2x.png */; };
+		2436E63A19724ED200186F69 /* ZHClanDeatilVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2436E63919724ED200186F69 /* ZHClanDeatilVc.m */; };
 		246133851960CFCF00C4E122 /* zh_login_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 246133841960CFCF00C4E122 /* zh_login_phone.png */; };
 		246133871960D49400C4E122 /* zh_login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 246133861960D49400C4E122 /* zh_login_bg.png */; };
 		2461338A19619FFE00C4E122 /* ZHHomePageVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2461338919619FFE00C4E122 /* ZHHomePageVc.m */; };
@@ -779,6 +780,8 @@
 		240218FA19692971001DBCFB /* PJSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSegmentControl.h; sourceTree = "<group>"; };
 		240218FB19692971001DBCFB /* PJSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSegmentControl.m; sourceTree = "<group>"; };
 		242A77E4196AE92500FE1757 /* all_group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "all_group@2x.png"; sourceTree = "<group>"; };
+		2436E63819724ED200186F69 /* ZHClanDeatilVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHClanDeatilVc.h; sourceTree = "<group>"; };
+		2436E63919724ED200186F69 /* ZHClanDeatilVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHClanDeatilVc.m; sourceTree = "<group>"; };
 		246133841960CFCF00C4E122 /* zh_login_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zh_login_phone.png; sourceTree = "<group>"; };
 		246133861960D49400C4E122 /* zh_login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zh_login_bg.png; sourceTree = "<group>"; };
 		2461338819619FFE00C4E122 /* ZHHomePageVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHHomePageVc.h; sourceTree = "<group>"; };
@@ -1686,6 +1689,8 @@
 				24A7D98319720CDB00A0E87F /* ZHClanVc.m */,
 				24A7D9851972104000A0E87F /* ZHClanCell.h */,
 				24A7D9861972104000A0E87F /* ZHClanCell.m */,
+				2436E63819724ED200186F69 /* ZHClanDeatilVc.h */,
+				2436E63919724ED200186F69 /* ZHClanDeatilVc.m */,
 			);
 			name = "部落";
 			sourceTree = "<group>";
@@ -3510,6 +3515,7 @@
 				24F30B38195FD8970089F97E /* UIView+Additions.m in Sources */,
 				2461338A19619FFE00C4E122 /* ZHHomePageVc.m in Sources */,
 				24F30B35195FD8970089F97E /* UIColor+Additions.m in Sources */,
+				2436E63A19724ED200186F69 /* ZHClanDeatilVc.m in Sources */,
 				24A501A91970D514002AA97C /* PJQuestionModel.m in Sources */,
 				24B29FFB196978A3003287D8 /* PJCardUpdataVc.m in Sources */,
 				24F30B8519601FCE0089F97E /* ZHRefreshLoadView.m in Sources */,

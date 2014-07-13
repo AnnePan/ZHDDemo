@@ -1,5 +1,5 @@
 //
-//  ZHClanCell.h
+//  ZHClanDeatilVc.h
 //  ZHD1.0
 //
 //  Created by Anne Pan on 14-7-13.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ZHClanModel;
 
-@interface ZHClanCell : UITableViewCell
-
-- (void)setItem:(ZHClanModel *)clan;
+@interface ZHClanDeatilVc : UIViewController
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import "ZHClanVc.h"
+#import "ZHRequestAPI.h"
+#import "ZHClanCell.h"
 
 @interface ZHClanVc () <UITableViewDataSource, UITableViewDelegate>
 {
-    NSArray *_sourceArr;
+    NSMutableArray *_sourceArr;
     UITableView *_sourceTable;
 }
 
@@ -21,9 +23,17 @@
 - (id)init
 {
     if (self = [super init]) {
-        // Custom initialization
+        [self requestData];
     }
     return self;
+}
+
+- (void)requestData
+{
+    if (!_sourceArr) {
+        _sourceArr = [[NSMutableArray alloc] init];
+    }
+    [_sourceArr addObjectsFromArray:[ZHRequestAPI requestClans]];
 }
 
 - (void)viewDidLoad
@@ -39,22 +49,32 @@
     [self.view addSubview:searchBar];
     
     _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, searchBar.bottom, self.view.width, self.view.height - (searchBar.height + 60)) style:UITableViewStylePlain];
-    _sourceTable.backgroundColor = [UIColor yellowColor];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
+    [_sourceTable registerClass:[ZHClanCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
     [self.view addSubview:_sourceTable];
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //kj
     return _sourceArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+    ZHClanCell *cell  = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+    [cell setItem:_sourceArr[indexPath.row]];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"indexpath == %d",indexPath.row);
 }
 @end

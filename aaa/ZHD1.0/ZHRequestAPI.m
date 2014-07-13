@@ -103,25 +103,25 @@
 + (NSArray *)requestClans
 {
     NSMutableArray *clanArr = [[NSMutableArray alloc] init];
-    [clanArr addObject:[self setClanName:@"广场" isSysClan:YES  cPhotoPath:@"" memCount:0 introduce:@"正和岛大圈子" lastPer:nil lastWord:nil lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"广场" isSysClan:YES  cPhotoPath:@"picv3" memCount:0 introduce:@"正和岛大圈子" lastPer:nil lastWord:nil lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"电商部落（活力部落）" isSysClan:NO  cPhotoPath:@"" memCount:87 introduce:@"正和岛大圈子" lastPer:@"连惠斌" lastWord:@"太好了" lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"电商部落（活力部落）" isSysClan:NO  cPhotoPath:@"picn5" memCount:87 introduce:@"正和岛大圈子" lastPer:@"连惠斌" lastWord:@"太好了" lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"中国创意产业联盟" isSysClan:NO  cPhotoPath:@"" memCount:1 introduce:@"正和岛大圈子" lastPer:@"王玉贤" lastWord:@"吝啬的周鸿伟为何肯投资他" lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"中国创意产业联盟" isSysClan:NO  cPhotoPath:@"picn4" memCount:1 introduce:@"正和岛大圈子" lastPer:@"王玉贤" lastWord:@"吝啬的周鸿伟为何肯投资他" lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"正和岛&优兰汇" isSysClan:NO  cPhotoPath:@"" memCount:543 introduce:@"正和岛大圈子" lastPer:@"王玉贤" lastWord:@"我到处发消息阿" lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"正和岛&优兰汇" isSysClan:NO  cPhotoPath:@"picn2" memCount:543 introduce:@"正和岛大圈子" lastPer:@"王玉贤" lastWord:@"我到处发消息阿" lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"岛亲大家庭" isSysClan:NO  cPhotoPath:@"" memCount:33 introduce:@"正和岛大圈子" lastPer:@"王玉贤" lastWord:@"我对信奉宗教的真正理解" lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"岛亲大家庭" isSysClan:NO  cPhotoPath:@"picv5" memCount:33 introduce:@"正和岛大圈子" lastPer:@"王玉贤" lastWord:@"我对信奉宗教的真正理解" lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"正和岛投资并购俱乐部" isSysClan:NO cPhotoPath:@"" memCount:2 introduce:@"正和岛大圈子" lastPer:@"李霄云" lastWord:@"谢谢袁总" lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"正和岛投资并购俱乐部" isSysClan:NO cPhotoPath:@"picn1" memCount:2 introduce:@"正和岛大圈子" lastPer:@"李霄云" lastWord:@"谢谢袁总" lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"[正和岛直播间]" isSysClan:NO  cPhotoPath:@"" memCount:45 introduce:@"正和岛大圈子" lastPer:@"周国锋" lastWord:@"大家早上好，欢迎大家的到来" lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"[正和岛直播间]" isSysClan:NO  cPhotoPath:@"picn6" memCount:45 introduce:@"正和岛大圈子" lastPer:@"周国锋" lastWord:@"大家早上好，欢迎大家的到来" lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"消息提醒" isSysClan:YES  cPhotoPath:@"" memCount:0 introduce:@"管理是我们使用最为频繁的一个词" lastPer:nil lastWord:nil lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"消息提醒" isSysClan:YES  cPhotoPath:@"picn7" memCount:0 introduce:@"管理是我们使用最为频繁的一个词" lastPer:nil lastWord:nil lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"林鸣风" isSysClan:NO  cPhotoPath:@"" memCount:23 introduce:@"您好！" lastPer:nil lastWord:nil lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"林鸣风" isSysClan:NO  cPhotoPath:@"picn8" memCount:23 introduce:@"您好！" lastPer:nil lastWord:nil lastTime:@"14-7-5"]];
     
-    [clanArr addObject:[self setClanName:@"正和岛商业互助部落" isSysClan:NO  cPhotoPath:@"" memCount:6 introduce:@"正和岛大圈子" lastPer:@"晓驿" lastWord:@"7月21日第二次大会开始" lastTime:@"14-7-5"]];
+    [clanArr addObject:[self setClanName:@"正和岛商业互助部落" isSysClan:NO  cPhotoPath:@"picn9" memCount:6 introduce:@"正和岛大圈子" lastPer:@"晓驿" lastWord:@"7月21日第二次大会开始" lastTime:@"14-7-5"]];
     return clanArr;
 }
 
@@ -130,6 +130,7 @@
     ZHClanModel *clan = [[ZHClanModel alloc] init];
     clan.cName = name;
     clan.cPhotoPaht = path;
+    clan.cIsSysClan = isSys;
     clan.cMemberCount = count;
     clan.cIntroduce = introduce;
     clan.cLastWord = word;
