@@ -12,6 +12,7 @@
 #import "ZHGoldFireCell.h"
 #import "ZHQuestionCell.h"
 #import "PJDearNeighbourCell.h"
+#import "PJOldNewsCell.h"
 
 #import "NSString+Additions.h"
 
@@ -75,6 +76,13 @@
             return cell;
             break;
         }
+        case ZHCellTypeNews:
+        {
+            PJOldNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
             
         default:
             break;
@@ -102,6 +110,11 @@
             break;
         }
         case ZHCellTypeDearAnswer:
+        {
+            return 70;
+            break;
+        }
+        case ZHCellTypeNews:
         {
             return 70;
             break;
@@ -135,6 +148,11 @@
         case ZHCellTypeDearAnswer:
         {
             [_sourceTable registerClass:[PJDearNeighbourCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
+            break;
+        }
+        case ZHCellTypeNews:
+        {
+            [_sourceTable registerClass:[PJOldNewsCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
             break;
         }
             

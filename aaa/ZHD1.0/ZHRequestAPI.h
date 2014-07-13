@@ -16,4 +16,7 @@
 ///请求每日一问
 + (NSArray *)requestEveryDayq;
 
+///请求每日一问
++ (NSArray *)requestNews;
+
 @end

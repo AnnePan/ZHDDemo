@@ -41,4 +41,8 @@
 @property (nonatomic, copy)NSString *uFireDirections;   //推荐描述
 
 
+
+@property (nonatomic, assign)int uAnswerCount;          //回答问题数量
+
+
 @end

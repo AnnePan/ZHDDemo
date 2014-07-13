@@ -9,6 +9,7 @@
 #import "ZHRequestAPI.h"
 #import "PJUserModel.h"
 #import "PJQuestionModel.h"
+#import "PJNewsModle.h"
 
 @implementation ZHRequestAPI
 
@@ -68,5 +69,18 @@
     question.qAddtions = @[@{},@{}];
     question.qTimeStr = timeStr;
     return question;
+}
+
++ (NSArray *)requestNews
+{
+    NSMutableArray *newsArr = [[NSMutableArray alloc] init];
+    for (int i = 9; i > 0; i--) {
+        PJNewsModle *news = [[PJNewsModle alloc] init];
+        news.nTitle = [NSString stringWithFormat:@"张瑞鸣：本地手机报数据%d",i];
+        news.nTime = [NSString stringWithFormat:@"2014-07-0%d",i];
+        news.nUrlStr = @"http://www.qq.com";
+        [newsArr addObject:news];
+    }
+    return newsArr;
 }
 @end

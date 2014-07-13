@@ -60,7 +60,7 @@
 
 - (void)initBodyView
 {
-    _optionsNameArray = @[@{@"text":@"部落圈子",@"class":@"ZHPersonCardVc",@"title":@"健康体检",@"image":@"home_tab_rouund"},
+    _optionsNameArray = @[@{@"text":@"部落圈子",@"class":@"ZHClanVc",@"title":@"部落",@"image":@"home_tab_rouund"},
                           @{@"text":@"最新资讯",@"class":@"ZHPersonCardVc",@"title":@"全部健康通卡",@"image":@"home_tab_news"},
                           @{@"text":@"岛上活动",@"class":@"ZHPersonCardVc",@"title":@"在线购卡",@"image":@"home_tab_games"},
                           @{@"text":@"广场活动",@"class":@"ZHCentreShareVc",@"title":@"广场活动",@"image":@"home_tab_share"},

@@ -34,7 +34,8 @@
     typedef enum {
         ZHSysSpaceSmall = 5,
         ZHSysSpaceMiddle = 10,
-        ZHSysSpaceLarge = 15
+        ZHSysSpaceLarge = 15,
+        ZHSysSpaceNews = 30
     } ZHSysSpace;
 
 // 项目中字好大小

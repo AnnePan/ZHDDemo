@@ -7,14 +7,12 @@
 //
 
 #import "PJOldNewsCell.h"
+#import "PJNewsModle.h"
 
 @interface PJOldNewsCell ()
 {
-    UIView *_bgView;
-    UIImageView *_imgView; //头像
-    UILabel *_nameLab;  //名字
-    UILabel *_numLab;   //推荐人数
-    UIImageView *_makeIV;   //标志
+    UILabel *_nTitleLab;  //手机报标题
+    UILabel *_nTimeLab;   //手机报时间
 }
 
 @end
@@ -25,9 +23,30 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        self.backgroundColor = [UIColor whiteColor];
+        
+        _nTitleLab = [[UILabel alloc] initWithFrame:CGRectMake(ZHSysSpaceNews, ZHSysSpaceLarge, self.width - (ZHSysSpaceNews * 2), self.height - ZHSysSpaceLarge)];
+        [_nTitleLab setLabelStyleTextColor:[UIColor blackColor] fontSize:16];
+        [self addSubview:_nTitleLab];
+        
+        _nTimeLab = [[UILabel alloc] initWithFrame:_nTitleLab.frame];
+        [_nTimeLab setLabelStyleTextColor:[UIColor darkGrayColor] fontSize:ZHSysFontSizeMiddle];
+        [self addSubview:_nTimeLab];
     }
     return self;
+}
+- (void)setItem:(PJNewsModle *)news
+{
+    _nTitleLab.text = news.nTitle;
+    _nTimeLab.text = news.nTime;
+    [self setLayout];
+}
+
+- (void)setLayout
+{
+    [_nTitleLab sizeToFit];
+    [_nTimeLab sizeToFit];
+    _nTimeLab.top = _nTitleLab.bottom + ZHSysSpaceSmall;
 }
 
 @end

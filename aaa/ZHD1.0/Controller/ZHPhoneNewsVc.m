@@ -10,6 +10,7 @@
 #import "PJSegmentControl.h"
 #import "PJWebView.h"
 #import "ZHGoldFireView.h"
+#import "ZHRequestAPI.h"
 
 @interface ZHPhoneNewsVc ()
 {
@@ -26,8 +27,17 @@
 {
     if (self = [super init]) {
         _urlStr = @"http://www.qq.com";
+        [self requestData];
     }
     return self;
+}
+
+- (void)requestData
+{
+    if (!_dataArr) {
+        _dataArr = [[NSMutableArray alloc] init];
+    }
+    [_dataArr addObjectsFromArray:[ZHRequestAPI requestNews]];
 }
 
 - (void)viewDidLoad
@@ -65,7 +75,7 @@
     
     //往期回顾
     ZHGoldFireView *rightView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [rightView setSourceArray:_dataArr fireType:ZHCellTypeDearAnswer];
+    [rightView setSourceArray:_dataArr fireType:ZHCellTypeNews];
     [_sourceScrollV addSubview:rightView];
 }
 
