@@ -44,7 +44,7 @@
     self.navigationController.navigationBarHidden = NO;
     self.title = _titleStr;
     NSArray *arr1 = @[@{@"key":@"会话",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]},
-                     @{@"key":@"活动",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]},
+                     @{@"key":@"活动",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeActivity]},
                      @{@"key":@"文档",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]},
                      @{@"key":@"成员",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]}];
     NSMutableArray *keys = [[NSMutableArray alloc] init];

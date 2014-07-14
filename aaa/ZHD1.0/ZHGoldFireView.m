@@ -13,8 +13,10 @@
 #import "ZHQuestionCell.h"
 #import "PJDearNeighbourCell.h"
 #import "PJOldNewsCell.h"
+#import "ZHClanActivityCell.h"
 
 #import "NSString+Additions.h"
+#import "UITableViewCell+Function.h"
 
 @interface ZHGoldFireView () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -83,12 +85,45 @@
             return cell;
             break;
         }
+        case ZHCellTypeActivity:
+        {
+            ZHClanActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
+        case ZHCellTypeChat:
+        {
+            PJOldNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
+        case ZHCellTypeDocument:
+        {
+            PJOldNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
+        case ZHCellTypeMember:
+        {
+            PJOldNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
             
         default:
             break;
     }
     return nil;
 }
+
+//ZHCellTypeActivity,     //活动
+//ZHCellTypeChat,         //会话
+//ZHCellTypeDocument,     //文档
+//ZHCellTypeMember,       //成员
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -119,6 +154,11 @@
             return 70;
             break;
         }
+        case ZHCellTypeActivity:
+        {
+            return 130;
+            break;
+        }
             
         default:
             break;
@@ -129,6 +169,7 @@
 - (void)setSourceArray:(NSArray *)sourceArray fireType:(ZHCellType)cellType
 {
     _cellType = cellType;
+    NSClassFromString(@"");
     switch (_cellType) {
         case ZHCellTypeAllFire:
         {
@@ -153,6 +194,11 @@
         case ZHCellTypeNews:
         {
             [_sourceTable registerClass:[PJOldNewsCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
+            break;
+        }
+        case ZHCellTypeActivity:
+        {
+            [_sourceTable registerClass:[ZHClanActivityCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
             break;
         }
             

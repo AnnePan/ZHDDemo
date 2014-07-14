@@ -10,6 +10,8 @@
 		240218FC19692971001DBCFB /* PJSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 240218FB19692971001DBCFB /* PJSegmentControl.m */; };
 		242A77E5196AE92500FE1757 /* all_group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 242A77E4196AE92500FE1757 /* all_group@2x.png */; };
 		2436E63A19724ED200186F69 /* ZHClanDeatilVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2436E63919724ED200186F69 /* ZHClanDeatilVc.m */; };
+		244D7717197421D500573834 /* UITableViewCell+Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 244D7716197421D500573834 /* UITableViewCell+Function.m */; };
+		244D771A19748F7500573834 /* ZHClanActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 244D771919748F7500573834 /* ZHClanActivityCell.m */; };
 		246133851960CFCF00C4E122 /* zh_login_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 246133841960CFCF00C4E122 /* zh_login_phone.png */; };
 		246133871960D49400C4E122 /* zh_login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 246133861960D49400C4E122 /* zh_login_bg.png */; };
 		2461338A19619FFE00C4E122 /* ZHHomePageVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2461338919619FFE00C4E122 /* ZHHomePageVc.m */; };
@@ -782,6 +784,10 @@
 		242A77E4196AE92500FE1757 /* all_group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "all_group@2x.png"; sourceTree = "<group>"; };
 		2436E63819724ED200186F69 /* ZHClanDeatilVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHClanDeatilVc.h; sourceTree = "<group>"; };
 		2436E63919724ED200186F69 /* ZHClanDeatilVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHClanDeatilVc.m; sourceTree = "<group>"; };
+		244D7715197421D500573834 /* UITableViewCell+Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Function.h"; sourceTree = "<group>"; };
+		244D7716197421D500573834 /* UITableViewCell+Function.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Function.m"; sourceTree = "<group>"; };
+		244D771819748F7500573834 /* ZHClanActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHClanActivityCell.h; sourceTree = "<group>"; };
+		244D771919748F7500573834 /* ZHClanActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHClanActivityCell.m; sourceTree = "<group>"; };
 		246133841960CFCF00C4E122 /* zh_login_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zh_login_phone.png; sourceTree = "<group>"; };
 		246133861960D49400C4E122 /* zh_login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zh_login_bg.png; sourceTree = "<group>"; };
 		2461338819619FFE00C4E122 /* ZHHomePageVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHHomePageVc.h; sourceTree = "<group>"; };
@@ -1638,6 +1644,23 @@
 			name = "金火种";
 			sourceTree = "<group>";
 		};
+		244D770B1973EC2C00573834 /* SysClass */ = {
+			isa = PBXGroup;
+			children = (
+				24A501DD19715836002AA97C /* ZHGoldFireView.h */,
+				24A501DE19715836002AA97C /* ZHGoldFireView.m */,
+				7B126E82196E54E700B4E6E0 /* ZHRequestAPI.h */,
+				7B126E83196E54E700B4E6E0 /* ZHRequestAPI.m */,
+				24A501B919713937002AA97C /* PJWebView.h */,
+				24A501BA19713937002AA97C /* PJWebView.m */,
+				24A501BB19713937002AA97C /* PJWebViewController.h */,
+				24A501BC19713937002AA97C /* PJWebViewController.m */,
+				244D7715197421D500573834 /* UITableViewCell+Function.h */,
+				244D7716197421D500573834 /* UITableViewCell+Function.m */,
+			);
+			name = SysClass;
+			sourceTree = "<group>";
+		};
 		246133ED19646FF100C4E122 /* 访客 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1691,6 +1714,8 @@
 				24A7D9861972104000A0E87F /* ZHClanCell.m */,
 				2436E63819724ED200186F69 /* ZHClanDeatilVc.h */,
 				2436E63919724ED200186F69 /* ZHClanDeatilVc.m */,
+				244D771819748F7500573834 /* ZHClanActivityCell.h */,
+				244D771919748F7500573834 /* ZHClanActivityCell.m */,
 			);
 			name = "部落";
 			sourceTree = "<group>";
@@ -1744,6 +1769,7 @@
 		24F305FD195FD5A10089F97E /* ZHD1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				244D770B1973EC2C00573834 /* SysClass */,
 				24F30B98196022BB0089F97E /* Model */,
 				24F30B6A195FDD7C0089F97E /* Custom */,
 				24F30B3C195FD98E0089F97E /* Controller */,
@@ -2656,14 +2682,6 @@
 		24F30B98196022BB0089F97E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				24A501DD19715836002AA97C /* ZHGoldFireView.h */,
-				24A501DE19715836002AA97C /* ZHGoldFireView.m */,
-				7B126E82196E54E700B4E6E0 /* ZHRequestAPI.h */,
-				7B126E83196E54E700B4E6E0 /* ZHRequestAPI.m */,
-				24A501B919713937002AA97C /* PJWebView.h */,
-				24A501BA19713937002AA97C /* PJWebView.m */,
-				24A501BB19713937002AA97C /* PJWebViewController.h */,
-				24A501BC19713937002AA97C /* PJWebViewController.m */,
 				24A501E01971584F002AA97C /* PJUserModel.h */,
 				7B126E92196E553400B4E6E0 /* PJUserModel.m */,
 				24A501A71970D514002AA97C /* PJQuestionModel.h */,
@@ -3485,6 +3503,7 @@
 				24F30B9E196023140089F97E /* ZHPersonCardVc.m in Sources */,
 				24A501D9197139A0002AA97C /* ZHGoldFireCell.m in Sources */,
 				246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */,
+				244D7717197421D500573834 /* UITableViewCell+Function.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,
 				24F30B6D195FDD8A0089F97E /* ZHGlobal.m in Sources */,
 				7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */,
@@ -3505,6 +3524,7 @@
 				24F30B88196020DE0089F97E /* ZHAboutSelfVc.m in Sources */,
 				24A501BF19713937002AA97C /* PJWebView.m in Sources */,
 				24F30B36195FD8970089F97E /* UIImage+Additions.m in Sources */,
+				244D771A19748F7500573834 /* ZHClanActivityCell.m in Sources */,
 				24A501DF19715836002AA97C /* ZHGoldFireView.m in Sources */,
 				24F30B33195FD8970089F97E /* NSDictionary+Additions.m in Sources */,
 				24F30B39195FD8970089F97E /* UIButton+ZHDsytle.m in Sources */,
