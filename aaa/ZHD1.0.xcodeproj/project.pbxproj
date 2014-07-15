@@ -765,6 +765,8 @@
 		7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E83196E54E700B4E6E0 /* ZHRequestAPI.m */; };
 		7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E92196E553400B4E6E0 /* PJUserModel.m */; };
 		7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E95196E554E00B4E6E0 /* NSString+Additions.m */; };
+		7BE6241F197518CE0075B52D /* ZHInformationVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6241E197518CE0075B52D /* ZHInformationVc.m */; };
+		7BE62422197536C50075B52D /* PJInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE62421197536C50075B52D /* PJInformationCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1602,6 +1604,10 @@
 		7B126E92196E553400B4E6E0 /* PJUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserModel.m; sourceTree = "<group>"; };
 		7B126E94196E554E00B4E6E0 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		7B126E95196E554E00B4E6E0 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		7BE6241D197518CE0075B52D /* ZHInformationVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHInformationVc.h; sourceTree = "<group>"; };
+		7BE6241E197518CE0075B52D /* ZHInformationVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHInformationVc.m; sourceTree = "<group>"; };
+		7BE62420197536C50075B52D /* PJInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJInformationCell.h; sourceTree = "<group>"; };
+		7BE62421197536C50075B52D /* PJInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJInformationCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2644,6 +2650,7 @@
 				2461338919619FFE00C4E122 /* ZHHomePageVc.m */,
 				24A377DF196B4F150000F905 /* PACycleScrollView.h */,
 				24A377E0196B4F150000F905 /* PACycleScrollView.m */,
+				7BE6241C197518970075B52D /* 最新资讯 */,
 				24A7D98119720CAA00A0E87F /* 部落 */,
 				24A501A31970D058002AA97C /* 广场分享 */,
 				24A501A21970D044002AA97C /* 每日一问 */,
@@ -2705,6 +2712,17 @@
 				24F30BA0196024850089F97E /* ZHLoginVc.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		7BE6241C197518970075B52D /* 最新资讯 */ = {
+			isa = PBXGroup;
+			children = (
+				7BE6241D197518CE0075B52D /* ZHInformationVc.h */,
+				7BE6241E197518CE0075B52D /* ZHInformationVc.m */,
+				7BE62420197536C50075B52D /* PJInformationCell.h */,
+				7BE62421197536C50075B52D /* PJInformationCell.m */,
+			);
+			name = "最新资讯";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3491,6 +3509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BE62422197536C50075B52D /* PJInformationCell.m in Sources */,
 				24F30B37195FD8970089F97E /* UILabel+Additions.m in Sources */,
 				24F30B97196022950089F97E /* ZHBaseVc.m in Sources */,
 				24B29FFE19699765003287D8 /* PJDetailSetVc.m in Sources */,
@@ -3504,6 +3523,7 @@
 				24F30B8219601FB00089F97E /* ZHSysStyle.m in Sources */,
 				24A7D9871972104000A0E87F /* ZHClanCell.m in Sources */,
 				7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */,
+				7BE6241F197518CE0075B52D /* ZHInformationVc.m in Sources */,
 				24F30B8E196021680089F97E /* ZHReuseView.m in Sources */,
 				24A501C91971396D002AA97C /* ZHQuestionCell.m in Sources */,
 				24A501DC1971534D002AA97C /* PJNewsModle.m in Sources */,
