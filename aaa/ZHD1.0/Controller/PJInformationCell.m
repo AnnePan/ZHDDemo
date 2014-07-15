@@ -6,9 +6,18 @@
 //  Copyright (c) 2014年 com.pjj. All rights reserved.
 //
 
-#import "PJInformationLatestCell.h"
+#import "PJInformationCell.h"
 
-@implementation PJInformationLatestCell
+@interface PJInformationCell ()
+{
+    UIView *_bgView;
+    UIImageView *_imgV;
+    
+}
+
+@end
+
+@implementation PJInformationCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

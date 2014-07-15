@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PJInformationLatestCell : UITableViewCell
+@interface PJInformationCell : UITableViewCell
 
 @end

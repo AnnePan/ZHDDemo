@@ -44,10 +44,10 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.navigationController.navigationBarHidden = NO;
     self.title = _titleStr;
-    NSArray *arr1 = @[@{@"key":@"会话",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]},
-                     @{@"key":@"活动",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeActivity]},
-                     @{@"key":@"文档",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]},
-                     @{@"key":@"成员",@"value":[[NSNumber alloc] initWithInt:ZHCellTypeQuestion]}];
+    NSArray *arr1 = @[@{@"key":@"会话",@"value":@(ZHCellTypeActivity)},
+                     @{@"key":@"活动",@"value":@(ZHCellTypeActivity)},
+                     @{@"key":@"文档",@"value":@(ZHCellTypeActivity)},
+                     @{@"key":@"成员",@"value":@(ZHCellTypeActivity)}];
     NSMutableArray *keys = [[NSMutableArray alloc] init];
     for (NSDictionary *dic in arr1) {
         [keys addObject:dic[@"key"]];
@@ -73,8 +73,7 @@
     
     for (int i = 0; i < keys.count; i++) {
         ZHGoldFireView *detailTable = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(i * _sourceScrollV.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-        
-        [detailTable setSourceArray:_sourceArr fireType:ZHCellTypeActivity];
+        [detailTable setSourceArray:_sourceArr fireType:[arr1[i][@"value"] intValue]];
         
         [_sourceScrollV addSubview:detailTable];
     }
