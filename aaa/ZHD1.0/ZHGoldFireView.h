@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, ZHCellType) {
 //    ZHCellTypeChat,         //会话
 //    ZHCellTypeDocument,     //文档
 //    ZHCellTypeMember,       //成员
+    ZHCellTypeInformation,    //资讯
     
     ZHFireTypeMax
 };

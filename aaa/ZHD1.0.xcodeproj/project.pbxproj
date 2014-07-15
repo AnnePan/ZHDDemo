@@ -71,6 +71,7 @@
 		24A7D98419720CDB00A0E87F /* ZHClanVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A7D98319720CDB00A0E87F /* ZHClanVc.m */; };
 		24A7D9871972104000A0E87F /* ZHClanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A7D9861972104000A0E87F /* ZHClanCell.m */; };
 		24A7D98A19721A7200A0E87F /* ZHClanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A7D98919721A7200A0E87F /* ZHClanModel.m */; };
+		24ADE8681975E47800D29BD8 /* ZHReadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ADE8671975E47800D29BD8 /* ZHReadingCell.m */; };
 		24B29FFB196978A3003287D8 /* PJCardUpdataVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B29FFA196978A3003287D8 /* PJCardUpdataVc.m */; };
 		24B29FFE19699765003287D8 /* PJDetailSetVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B29FFD19699765003287D8 /* PJDetailSetVc.m */; };
 		24B2A00119699CD8003287D8 /* PJDetailUpdataVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2A00019699CD8003287D8 /* PJDetailUpdataVc.m */; };
@@ -871,6 +872,8 @@
 		24A7D9861972104000A0E87F /* ZHClanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHClanCell.m; sourceTree = "<group>"; };
 		24A7D98819721A7200A0E87F /* ZHClanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHClanModel.h; sourceTree = "<group>"; };
 		24A7D98919721A7200A0E87F /* ZHClanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHClanModel.m; sourceTree = "<group>"; };
+		24ADE8661975E47800D29BD8 /* ZHReadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHReadingCell.h; sourceTree = "<group>"; };
+		24ADE8671975E47800D29BD8 /* ZHReadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHReadingCell.m; sourceTree = "<group>"; };
 		24B29FF9196978A3003287D8 /* PJCardUpdataVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJCardUpdataVc.h; sourceTree = "<group>"; };
 		24B29FFA196978A3003287D8 /* PJCardUpdataVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJCardUpdataVc.m; sourceTree = "<group>"; };
 		24B29FFC19699765003287D8 /* PJDetailSetVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJDetailSetVc.h; sourceTree = "<group>"; };
@@ -2721,6 +2724,8 @@
 				7BE6241E197518CE0075B52D /* ZHInformationVc.m */,
 				7BE62420197536C50075B52D /* PJInformationCell.h */,
 				7BE62421197536C50075B52D /* PJInformationCell.m */,
+				24ADE8661975E47800D29BD8 /* ZHReadingCell.h */,
+				24ADE8671975E47800D29BD8 /* ZHReadingCell.m */,
 			);
 			name = "最新资讯";
 			sourceTree = "<group>";
@@ -3517,6 +3522,7 @@
 				24F30B9E196023140089F97E /* ZHPersonCardVc.m in Sources */,
 				24A501D9197139A0002AA97C /* ZHGoldFireCell.m in Sources */,
 				246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */,
+				24ADE8681975E47800D29BD8 /* ZHReadingCell.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,
 				24F30B6D195FDD8A0089F97E /* ZHGlobal.m in Sources */,
 				7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */,

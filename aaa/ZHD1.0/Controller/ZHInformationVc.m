@@ -26,12 +26,21 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _arr1 = @[@{@"key":@"最新",@"value":@(ZHCellTypeActivity)},
-                  @{@"key":@"独家",@"value":@(ZHCellTypeActivity)},
-                  @{@"key":@"头条",@"value":@(ZHCellTypeActivity)},
-                  @{@"key":@"岛邻正在读",@"value":@(ZHCellTypeActivity)}];
+        [self requestData];
     }
     return self;
+}
+
+- (void)requestData
+{
+    _arr1 = @[@{@"key":@"最新",@"value":@(ZHCellTypeInformation)},
+           @{@"key":@"独家",@"value":@(ZHCellTypeInformation)},
+           @{@"key":@"头条",@"value":@(ZHCellTypeInformation)},
+           @{@"key":@"岛邻正在读",@"value":@(ZHCellTypeInformation)}];
+    if (!_sourceArr) {
+        _sourceArr = [[NSMutableArray alloc] init];
+    }
+    _sourceArr = @[@{},@{},@{}];
 }
 
 - (void)viewDidLoad

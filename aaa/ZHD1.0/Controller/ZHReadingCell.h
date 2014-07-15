@@ -1,14 +1,14 @@
 //
-//  PJInformationLatestCell.h
+//  ZHReadingCell.h
 //  ZHD1.0
 //
-//  Created by hamigua on 14-7-15.
+//  Created by Anne Pan on 14-7-16.
 //  Copyright (c) 2014年 com.pjj. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface PJInformationCell : UITableViewCell
+@interface ZHReadingCell : UITableViewCell
 
 - (void)setItem:(NSDictionary *)item;
 

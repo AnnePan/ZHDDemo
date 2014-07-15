@@ -14,6 +14,7 @@
 #import "PJDearNeighbourCell.h"
 #import "PJOldNewsCell.h"
 #import "ZHClanActivityCell.h"
+#import "PJInformationCell.h"
 
 #import "NSString+Additions.h"
 
@@ -91,6 +92,13 @@
             return cell;
             break;
         }
+        case ZHCellTypeInformation:
+        {
+            PJInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
+            [cell setItem:_sourceArr[indexPath.row]];
+            return cell;
+            break;
+        }
             
         default:
             break;
@@ -137,6 +145,11 @@
             return 220;
             break;
         }
+        case ZHCellTypeInformation:
+        {
+            return 90;
+            break;
+        }
             
         default:
             break;
@@ -177,6 +190,11 @@
         case ZHCellTypeActivity:
         {
             [_sourceTable registerClass:[ZHClanActivityCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
+            break;
+        }
+        case ZHCellTypeInformation:
+        {
+            [_sourceTable registerClass:[PJInformationCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
             break;
         }
             
