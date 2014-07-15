@@ -16,7 +16,6 @@
 #import "ZHClanActivityCell.h"
 
 #import "NSString+Additions.h"
-#import "UITableViewCell+Function.h"
 
 @interface ZHGoldFireView () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -92,27 +91,6 @@
             return cell;
             break;
         }
-        case ZHCellTypeChat:
-        {
-            PJOldNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
-            [cell setItem:_sourceArr[indexPath.row]];
-            return cell;
-            break;
-        }
-        case ZHCellTypeDocument:
-        {
-            PJOldNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
-            [cell setItem:_sourceArr[indexPath.row]];
-            return cell;
-            break;
-        }
-        case ZHCellTypeMember:
-        {
-            PJOldNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
-            [cell setItem:_sourceArr[indexPath.row]];
-            return cell;
-            break;
-        }
             
         default:
             break;
@@ -156,7 +134,7 @@
         }
         case ZHCellTypeActivity:
         {
-            return 130;
+            return 220;
             break;
         }
             

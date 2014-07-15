@@ -10,6 +10,8 @@
 
 @interface ZHClanActivityCell ()
 {
+    UIView *_bgView;
+    
     UIView *_titleView;
     UILabel *_titleLab;      //标题
     
@@ -38,22 +40,30 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        _bgView  = [[UIView alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, ZHSysSpaceLarge, self.width - (ZHSysSpaceMiddle * 2), 220 - ZHSysSpaceLarge)];
+        _bgView.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:_bgView];
+        
+        _titleView = [[UIView alloc] initWithFrame:_bgView.bounds];
+        _titleView.height = 35;
+        _titleView.backgroundColor = [UIColor redColor];
+        [_bgView addSubview:_titleView];
+        
+        _bottomView = [[UIView alloc] initWithFrame:_titleView.bounds];
+        _bottomView.bottom = _bgView.height;
+        _bottomView.backgroundColor = [UIColor blueColor];
+        [_bgView addSubview:_bottomView];
+        
+        _middleView = [[UIView alloc] initWithFrame:CGRectMake(0, _titleView.bottom, _titleView.width, _bgView.height - (_titleView.height + _bottomView.height))];
+        _middleView.backgroundColor = [UIColor yellowColor];
+        [_bgView addSubview:_middleView];
     }
     return self;
 }
 
-- (void)awakeFromNib
+- (void)setItem:(NSDictionary *)item
 {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
+    NSLog(@"1234pjkdjg;f");
+};
 
 @end

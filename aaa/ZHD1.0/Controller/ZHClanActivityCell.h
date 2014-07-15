@@ -10,4 +10,6 @@
 
 @interface ZHClanActivityCell : UITableViewCell
 
+- (void)setItem:(NSDictionary *)item;
+
 @end

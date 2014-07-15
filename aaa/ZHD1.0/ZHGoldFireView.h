@@ -15,9 +15,9 @@ typedef NS_ENUM(NSInteger, ZHCellType) {
     ZHCellTypeDearAnswer,   //热心岛邻
     ZHCellTypeNews,         //手机报
     ZHCellTypeActivity,     //活动
-    ZHCellTypeChat,         //会话
-    ZHCellTypeDocument,     //文档
-    ZHCellTypeMember,       //成员
+//    ZHCellTypeChat,         //会话
+//    ZHCellTypeDocument,     //文档
+//    ZHCellTypeMember,       //成员
     
     ZHFireTypeMax
 };

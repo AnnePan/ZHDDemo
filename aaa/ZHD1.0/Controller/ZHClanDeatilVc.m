@@ -27,6 +27,7 @@
     _titleStr = titleStr;
     if (self = [super init]) {
         _sourceArr = [[NSArray alloc] init];
+        _sourceArr = @[@{},@{},@{}];
     }
     return self;
 }
@@ -72,7 +73,8 @@
     
     for (int i = 0; i < keys.count; i++) {
         ZHGoldFireView *detailTable = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(i * _sourceScrollV.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-        [detailTable setSourceArray:_sourceArr fireType:[(arr1[i][@"value"]) intValue]];
+        
+        [detailTable setSourceArray:_sourceArr fireType:ZHCellTypeActivity];
         
         [_sourceScrollV addSubview:detailTable];
     }
