@@ -45,10 +45,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"设置";
+    [self useiOS7BeforeStyle];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     self.navigationController.navigationBarHidden = YES;
     
-    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+    
+    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, self.view.height - 68) style:UITableViewStylePlain];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     _sourceTable.tableFooterView = [UIView new];
@@ -85,7 +87,7 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-//    return _sourceArr[section][@"head"];
+    //    return _sourceArr[section][@"head"];
     if (section == 0) {
         return nil;
     }

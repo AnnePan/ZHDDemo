@@ -20,24 +20,48 @@
 
 - (id)init
 {
+    return [self initWithSetType:ZHSettingTypePrivacy];
+}
+
+- (id)initWithSetType:(ZHSettingType)type
+{
     if (self = [super init]) {
-        
+        _sourceArr = [self sourceArrayByType:type];
     }
     return self;
+}
+
+- (NSArray *)sourceArrayByType:(ZHSettingType)type
+{
+    switch (type) {
+        case ZHSettingTypeMessage:
+        {
+            self.title = @"消息设置";
+            return @[@{@"head": @"",
+                       @"item": @[@{@"title":@"黑名单",@"class":@""},@{@"title":@"加我为好友时需要验证",@"switch":@""}]}];
+            break;
+        }
+        case ZHSettingTypePrivacy:
+        {
+            self.title = @"隐私";
+            return @[@{@"head": @"",
+                       @"item": @[@{@"title":@"黑名单",@"class":@""},@{@"title":@"加我为好友时需要验证",@"switch":@""}]}];
+            break;
+        }
+            
+            
+        default:
+            break;
+    }
+    return nil;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self useiOS7BeforeStyle];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     self.navigationController.navigationBarHidden = NO;
-    
-    if (self.settingType == ZHSettingTypePrivacy) {
-        self.title = @"隐私";
-        _sourceArr = @[@{@"head": @"",
-                         @"item": @[@{@"title":@"黑名单",@"class":@""},@{@"title":@"加我为好友时需要验证",@"switch":@""}]}];
-    } else {
-        self.title = @"消息设置";
-    }
     
     _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
     _sourceTable.dataSource = self;
@@ -94,5 +118,6 @@
         [self.navigationController pushViewController:nextVc animated:YES];
     }
 }
+
 
 @end

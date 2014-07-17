@@ -53,8 +53,10 @@
 		246133E919646CD700C4E122 /* ZHPersonSettingVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 246133E819646CD700C4E122 /* ZHPersonSettingVc.m */; };
 		246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 246133EB19646FE200C4E122 /* ZHMyVisitorVc.m */; };
 		246133F01964718200C4E122 /* ZHMyVisitorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 246133EF1964718200C4E122 /* ZHMyVisitorCell.m */; };
+		24A02CFA19788DEB00D28920 /* ZHActivityVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A02CF919788DEB00D28920 /* ZHActivityVc.m */; };
+		24A02CFC19788E7300D28920 /* ZHCentreShareVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A02CFB19788E7300D28920 /* ZHCentreShareVc.m */; };
+		24A02CFE1978B4B600D28920 /* activityDefi.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A02CFD1978B4B600D28920 /* activityDefi.png */; };
 		24A377E1196B4F150000F905 /* PACycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A377E0196B4F150000F905 /* PACycleScrollView.m */; };
-		24A501A61970D0D9002AA97C /* ZHCentreShareVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501A51970D0D9002AA97C /* ZHCentreShareVc.m */; };
 		24A501A91970D514002AA97C /* PJQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501A81970D514002AA97C /* PJQuestionModel.m */; };
 		24A501BF19713937002AA97C /* PJWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BA19713937002AA97C /* PJWebView.m */; };
 		24A501C019713937002AA97C /* PJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BC19713937002AA97C /* PJWebViewController.m */; };
@@ -837,10 +839,13 @@
 		246133EB19646FE200C4E122 /* ZHMyVisitorVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHMyVisitorVc.m; sourceTree = "<group>"; };
 		246133EE1964718200C4E122 /* ZHMyVisitorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHMyVisitorCell.h; sourceTree = "<group>"; };
 		246133EF1964718200C4E122 /* ZHMyVisitorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHMyVisitorCell.m; sourceTree = "<group>"; };
+		24A02CF819788DEB00D28920 /* ZHActivityVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHActivityVc.h; sourceTree = "<group>"; };
+		24A02CF919788DEB00D28920 /* ZHActivityVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHActivityVc.m; sourceTree = "<group>"; };
+		24A02CFB19788E7300D28920 /* ZHCentreShareVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCentreShareVc.m; sourceTree = "<group>"; };
+		24A02CFD1978B4B600D28920 /* activityDefi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activityDefi.png; sourceTree = "<group>"; };
 		24A377DF196B4F150000F905 /* PACycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PACycleScrollView.h; sourceTree = "<group>"; };
 		24A377E0196B4F150000F905 /* PACycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PACycleScrollView.m; sourceTree = "<group>"; };
 		24A501A41970D0D9002AA97C /* ZHCentreShareVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCentreShareVc.h; sourceTree = "<group>"; };
-		24A501A51970D0D9002AA97C /* ZHCentreShareVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCentreShareVc.m; sourceTree = "<group>"; };
 		24A501A71970D514002AA97C /* PJQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJQuestionModel.h; sourceTree = "<group>"; };
 		24A501A81970D514002AA97C /* PJQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJQuestionModel.m; sourceTree = "<group>"; };
 		24A501B919713937002AA97C /* PJWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJWebView.h; sourceTree = "<group>"; };
@@ -1682,6 +1687,15 @@
 			name = "访客";
 			sourceTree = "<group>";
 		};
+		24A02CF719788DD900D28920 /* 岛上活动 */ = {
+			isa = PBXGroup;
+			children = (
+				24A02CF819788DEB00D28920 /* ZHActivityVc.h */,
+				24A02CF919788DEB00D28920 /* ZHActivityVc.m */,
+			);
+			name = "岛上活动";
+			sourceTree = "<group>";
+		};
 		24A5019B1970CDE9002AA97C /* 手机报 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1709,8 +1723,8 @@
 		24A501A31970D058002AA97C /* 广场分享 */ = {
 			isa = PBXGroup;
 			children = (
+				24A02CFB19788E7300D28920 /* ZHCentreShareVc.m */,
 				24A501A41970D0D9002AA97C /* ZHCentreShareVc.h */,
-				24A501A51970D0D9002AA97C /* ZHCentreShareVc.m */,
 			);
 			name = "广场分享";
 			sourceTree = "<group>";
@@ -1831,6 +1845,7 @@
 		24F30629195FD7270089F97E /* NetResources */ = {
 			isa = PBXGroup;
 			children = (
+				24A02CFD1978B4B600D28920 /* activityDefi.png */,
 				7B126E66196E54BF00B4E6E0 /* picn9.png */,
 				7B126E67196E54BF00B4E6E0 /* picn7.png */,
 				7B126E68196E54BF00B4E6E0 /* picv5.png */,
@@ -2657,6 +2672,7 @@
 		24F30B40195FD9FC0089F97E /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				24A02CF719788DD900D28920 /* 岛上活动 */,
 				2461338819619FFE00C4E122 /* ZHHomePageVc.h */,
 				2461338919619FFE00C4E122 /* ZHHomePageVc.m */,
 				24A377DF196B4F150000F905 /* PACycleScrollView.h */,
@@ -3011,6 +3027,7 @@
 				24F30A48195FD8150089F97E /* profile_tag_line@2x.png in Resources */,
 				24F30A8E195FD8150089F97E /* sina_delete_disable@2x.png in Resources */,
 				24F30A19195FD8150089F97E /* multi_news_itembg_mid_pressed@2x.png in Resources */,
+				24A02CFE1978B4B600D28920 /* activityDefi.png in Resources */,
 				24F30A69195FD8150089F97E /* round_btn_bg@2x.png in Resources */,
 				24F308D4195FD8150089F97E /* bg_activity_end.9.png in Resources */,
 				246133CF1961A3C300C4E122 /* i_visitor_focus@2x.png in Resources */,
@@ -3542,6 +3559,7 @@
 				246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */,
 				24ADE8681975E47800D29BD8 /* ZHReadingCell.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,
+				24A02CFC19788E7300D28920 /* ZHCentreShareVc.m in Sources */,
 				24F30B6D195FDD8A0089F97E /* ZHGlobal.m in Sources */,
 				7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */,
 				24F30B8219601FB00089F97E /* ZHSysStyle.m in Sources */,
@@ -3557,10 +3575,10 @@
 				246133D31961BBBC00C4E122 /* NSTimer+Addition.m in Sources */,
 				24F30BAB19602F790089F97E /* PJUser1Cell.m in Sources */,
 				7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */,
-				24A501A61970D0D9002AA97C /* ZHCentreShareVc.m in Sources */,
 				24A501CF1971398B002AA97C /* ZHPhoneNewsVc.m in Sources */,
 				24F30BA819602EF80089F97E /* ZHContactsVc.m in Sources */,
 				24F30B88196020DE0089F97E /* ZHAboutSelfVc.m in Sources */,
+				24A02CFA19788DEB00D28920 /* ZHActivityVc.m in Sources */,
 				24A501BF19713937002AA97C /* PJWebView.m in Sources */,
 				24F30B36195FD8970089F97E /* UIImage+Additions.m in Sources */,
 				244D771A19748F7500573834 /* ZHClanActivityCell.m in Sources */,

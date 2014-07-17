@@ -10,12 +10,12 @@
 
 typedef NS_ENUM(NSInteger, ZHSettingType) {
     ZHSettingTypePrivacy, //隐私设置
-    ZHSettingTypeMessage,
+    ZHSettingTypeMessage, //消息设置
     
     ZHSettingTypeMax
 };
 @interface PJDetailSetVc : UIViewController
 
-@property (nonatomic, assign) ZHSettingType settingType;
+- (id)initWithSetType:(ZHSettingType)type;
 
 @end

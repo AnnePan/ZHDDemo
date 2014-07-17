@@ -1,16 +1,16 @@
 //
-//  ZHCentreShareVc.m
+//  ZHActivityVc.m
 //  ZHD1.0
 //
-//  Created by Anne Pan on 14-7-12.
+//  Created by Anne Pan on 14-7-16.
 //  Copyright (c) 2014年 com.pjj. All rights reserved.
 //
 
-#import "ZHCentreShareVc.h"
+#import "ZHActivityVc.h"
 #import "PJSegmentControl.h"
 #import "ZHGoldFireView.h"
 
-@interface ZHCentreShareVc ()
+@interface ZHActivityVc ()
 {
     NSMutableArray *_sourceArr;
     UIScrollView *_sourceScrollV;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation ZHCentreShareVc
+@implementation ZHActivityVc
 
 - (id)init
 {
@@ -42,10 +42,10 @@
     [self useiOS7BeforeStyle];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.navigationController.navigationBarHidden = NO;
-    self.title = @"广场";
+    self.title = @"活动";
     
-    NSArray *arr1 = @[@{@"key":@"最新分享",@"value":@(ZHCellTypeActivity)},
-                      @{@"key":@"最热分享",@"value":@(ZHCellTypeActivity)}];
+    NSArray *arr1 = @[@{@"key":@"近期活动",@"value":@(ZHCellTypeActivity)},
+                      @{@"key":@"活动回顾",@"value":@(ZHCellTypeActivity)}];
     NSMutableArray *keys = [[NSMutableArray alloc] init];
     for (NSDictionary *dic in arr1) {
         [keys addObject:dic[@"key"]];
