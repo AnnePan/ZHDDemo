@@ -34,6 +34,7 @@
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]){
         self.frame = CGRectMake(0, 0, self.width, kHEIGHT);
+        
         CGFloat margin = 0;
         if ([reuseIdentifier isEqualToString:@"ZHContactsVc"]) {
             margin = 10;
@@ -59,11 +60,11 @@
     return self;
 }
 
-- (void)setUser1Name:(NSString *)uName info:(NSString *)uInfo uPicPath:(NSString *)uPicPath
+- (void)setItem:(PJUserModel *)item
 {
-    _uHeadIV.image = [UIImage imageNamed:uPicPath];
-    _uNameLab.text = uName;
-    _uPositionLab.text = uInfo;
+    _uHeadIV.image = [UIImage imageNamed:item.uPicPath];
+    _uNameLab.text = item.uName;
+    _uPositionLab.text = item.uCompany;
     
     [_uNameLab sizeToFit];
     [_uPositionLab sizeToFit];

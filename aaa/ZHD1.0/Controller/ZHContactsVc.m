@@ -116,7 +116,7 @@
 {
     PJUserModel *user = _getUserDataList[indexPath.section][@"arr"][indexPath.row];
     PJUser1Cell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath];
-    [cell setUser1Name:user.uName info:user.uCompany uPicPath:user.uPicPath];
+    [cell setItem:user];
     return cell;
 }
 

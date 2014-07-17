@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PJUserModel.h"
 
 @interface PJUser1Cell : UITableViewCell
 
 ///样式1
-- (void)setUser1Name:(NSString *)uName info:(NSString *)uInfo uPicPath:(NSString *)uPicPath;
+- (void)setItem:(PJUserModel *)item;
 
 //选择器，title，search，tableview
 

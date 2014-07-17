@@ -768,6 +768,8 @@
 		7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E95196E554E00B4E6E0 /* NSString+Additions.m */; };
 		7BE6241F197518CE0075B52D /* ZHInformationVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6241E197518CE0075B52D /* ZHInformationVc.m */; };
 		7BE62422197536C50075B52D /* PJInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE62421197536C50075B52D /* PJInformationCell.m */; };
+		7BE8D2F31977580E008E305C /* ZHFindVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8D2F21977580E008E305C /* ZHFindVc.m */; };
+		7BE8D2F61977C980008E305C /* ZHFindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8D2F51977C980008E305C /* ZHFindCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1584,8 +1586,8 @@
 		24F30BA3196028250089F97E /* myselfIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myselfIcon.png; sourceTree = "<group>"; };
 		24F30BA619602EF80089F97E /* ZHContactsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHContactsVc.h; sourceTree = "<group>"; };
 		24F30BA719602EF80089F97E /* ZHContactsVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHContactsVc.m; sourceTree = "<group>"; };
-		24F30BA919602F790089F97E /* PJUser1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUser1Cell.h; sourceTree = "<group>"; };
-		24F30BAA19602F790089F97E /* PJUser1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUser1Cell.m; sourceTree = "<group>"; };
+		24F30BA919602F790089F97E /* PJUser1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PJUser1Cell.h; path = ../Custom/PJUser1Cell.h; sourceTree = "<group>"; };
+		24F30BAA19602F790089F97E /* PJUser1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PJUser1Cell.m; path = ../Custom/PJUser1Cell.m; sourceTree = "<group>"; };
 		24F30BAC196046930089F97E /* homePage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homePage.png; sourceTree = "<group>"; };
 		24F30BAD196046930089F97E /* homePageHighLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homePageHighLight.png; sourceTree = "<group>"; };
 		7B126E66196E54BF00B4E6E0 /* picn9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picn9.png; sourceTree = "<group>"; };
@@ -1611,6 +1613,10 @@
 		7BE6241E197518CE0075B52D /* ZHInformationVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHInformationVc.m; sourceTree = "<group>"; };
 		7BE62420197536C50075B52D /* PJInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJInformationCell.h; sourceTree = "<group>"; };
 		7BE62421197536C50075B52D /* PJInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJInformationCell.m; sourceTree = "<group>"; };
+		7BE8D2F11977580E008E305C /* ZHFindVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFindVc.h; sourceTree = "<group>"; };
+		7BE8D2F21977580E008E305C /* ZHFindVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFindVc.m; sourceTree = "<group>"; };
+		7BE8D2F41977C980008E305C /* ZHFindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFindCell.h; sourceTree = "<group>"; };
+		7BE8D2F51977C980008E305C /* ZHFindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFindCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2640,6 +2646,8 @@
 		24F30B3F195FD9F10089F97E /* 通讯录 */ = {
 			isa = PBXGroup;
 			children = (
+				24F30BA919602F790089F97E /* PJUser1Cell.h */,
+				24F30BAA19602F790089F97E /* PJUser1Cell.m */,
 				24F30BA619602EF80089F97E /* ZHContactsVc.h */,
 				24F30BA719602EF80089F97E /* ZHContactsVc.m */,
 			);
@@ -2653,6 +2661,7 @@
 				2461338919619FFE00C4E122 /* ZHHomePageVc.m */,
 				24A377DF196B4F150000F905 /* PACycleScrollView.h */,
 				24A377E0196B4F150000F905 /* PACycleScrollView.m */,
+				7BE8D2F0197757D4008E305C /* 岛上找人 */,
 				7BE6241C197518970075B52D /* 最新资讯 */,
 				24A7D98119720CAA00A0E87F /* 部落 */,
 				24A501A31970D058002AA97C /* 广场分享 */,
@@ -2668,8 +2677,6 @@
 			children = (
 				240218FA19692971001DBCFB /* PJSegmentControl.h */,
 				240218FB19692971001DBCFB /* PJSegmentControl.m */,
-				24F30BA919602F790089F97E /* PJUser1Cell.h */,
-				24F30BAA19602F790089F97E /* PJUser1Cell.m */,
 				24F30B95196022950089F97E /* ZHBaseVc.h */,
 				24F30B96196022950089F97E /* ZHBaseVc.m */,
 				24F30B8C196021680089F97E /* ZHReuseView.h */,
@@ -2728,6 +2735,17 @@
 				24ADE8671975E47800D29BD8 /* ZHReadingCell.m */,
 			);
 			name = "最新资讯";
+			sourceTree = "<group>";
+		};
+		7BE8D2F0197757D4008E305C /* 岛上找人 */ = {
+			isa = PBXGroup;
+			children = (
+				7BE8D2F11977580E008E305C /* ZHFindVc.h */,
+				7BE8D2F21977580E008E305C /* ZHFindVc.m */,
+				7BE8D2F41977C980008E305C /* ZHFindCell.h */,
+				7BE8D2F51977C980008E305C /* ZHFindCell.m */,
+			);
+			name = "岛上找人";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3528,6 +3546,7 @@
 				7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */,
 				24F30B8219601FB00089F97E /* ZHSysStyle.m in Sources */,
 				24A7D9871972104000A0E87F /* ZHClanCell.m in Sources */,
+				7BE8D2F61977C980008E305C /* ZHFindCell.m in Sources */,
 				7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */,
 				7BE6241F197518CE0075B52D /* ZHInformationVc.m in Sources */,
 				24F30B8E196021680089F97E /* ZHReuseView.m in Sources */,
@@ -3560,6 +3579,7 @@
 				24B29FFB196978A3003287D8 /* PJCardUpdataVc.m in Sources */,
 				24F30B8519601FCE0089F97E /* ZHRefreshLoadView.m in Sources */,
 				24F30B7E195FDE0F0089F97E /* PJAppDelegate.m in Sources */,
+				7BE8D2F31977580E008E305C /* ZHFindVc.m in Sources */,
 				24A501CA1971396D002AA97C /* PJDearNeighbourCell.m in Sources */,
 				24A377E1196B4F150000F905 /* PACycleScrollView.m in Sources */,
 				246133F01964718200C4E122 /* ZHMyVisitorCell.m in Sources */,

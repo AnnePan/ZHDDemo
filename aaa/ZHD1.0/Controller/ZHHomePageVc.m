@@ -67,7 +67,7 @@
                           @{@"text":@"每日一问",@"class":@"ZHEveryDayqVc",@"title":@"每日一问",@"image":@"home_tab_ask"},
                           @{@"text":@"手机报",@"class":@"ZHPhoneNewsVc",@"title":@"手机报",@"image":@"home_mobile_news"},
                           @{@"text":@"金火种",@"class":@"ZHGoldFireVc",@"title":@"金火种",@"image":@"home_tab_fire"},
-                          @{@"text":@"岛上找人",@"class":@"ZHPersonCardVc",@"title":@"岛上找人",@"image":@"home_tab_search"}];
+                          @{@"text":@"岛上找人",@"class":@"ZHFindVc",@"title":@"岛上找人",@"image":@"home_tab_search"}];
     CGFloat subViewW = 107.;
     CGFloat subViewH = 95.;
     _backView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
