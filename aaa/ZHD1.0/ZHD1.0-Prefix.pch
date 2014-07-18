@@ -42,6 +42,7 @@
     typedef enum {
         ZHSysFontSizeSmall = 10,
         ZHSysFontSizeMiddle = 12,
-        ZHSysFontSizeLarge = 14
+        ZHSysFontSizeLarge = 14,
+        ZHSysFontSizeDefault = 17
     } ZHSysFontSize;
 #endif

@@ -13,6 +13,7 @@
 #define INTRODUCELABLE_WIGHT 30.     //说明lable 的高度
 #define INTRODUCELABLE_Y 15.         //说明lable 距离下边距的 Y
 #define INTRODUCELABLEFONT_SIZE 14.  //lable 的字体大小
+#define kSCROLLVIEW_HEIGHT 225.  //lable 的字体大小
 
 @interface ZHHomePageVc () <CycleScrollViewDataSource,CycleScrollViewDelegate>
 {
@@ -31,7 +32,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        _topScorllImageArr = @[@"tempBg",@"tempBg",@"tempBg",@"tempBg"];
+        _topScorllImageArr = @[@"tempBg",@"homePage01",@"homePage02",@"homePage03"];
     }
     return self;
 }
@@ -49,12 +50,12 @@
 {
     _number = 0;
     
-    _topScorllView = [[PACycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 230)];
+    _topScorllView = [[PACycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kSCROLLVIEW_HEIGHT)];
     _topScorllView.delegate = self;
     _topScorllView.dataSource = self;
     _topScorllView.animationDuration = 2;
     _topScorllView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_topScorllView];
+    [_backView addSubview:_topScorllView];
     [_topScorllView reloadData];
 }
 
@@ -63,25 +64,23 @@
     _optionsNameArray = @[@{@"text":@"部落圈子",@"class":@"ZHClanVc",@"title":@"部落",@"image":@"home_tab_rouund"},
                           @{@"text":@"最新资讯",@"class":@"ZHInformationVc",@"title":@"最新资讯111",@"image":@"home_tab_news"},
                           @{@"text":@"岛上活动",@"class":@"ZHPersonCardVc",@"title":@"在线购卡",@"image":@"home_tab_games"},
-                          @{@"text":@"广场活动",@"class":@"ZHCentreShareVc",@"title":@"广场活动",@"image":@"home_tab_share"},
+                          @{@"text":@"广场分享",@"class":@"ZHCentreShareVc",@"title":@"广场活动",@"image":@"home_tab_share"},
                           @{@"text":@"每日一问",@"class":@"ZHEveryDayqVc",@"title":@"每日一问",@"image":@"home_tab_ask"},
                           @{@"text":@"手机报",@"class":@"ZHPhoneNewsVc",@"title":@"手机报",@"image":@"home_mobile_news"},
                           @{@"text":@"金火种",@"class":@"ZHGoldFireVc",@"title":@"金火种",@"image":@"home_tab_fire"},
                           @{@"text":@"岛上找人",@"class":@"ZHFindVc",@"title":@"岛上找人",@"image":@"home_tab_search"}];
     CGFloat subViewW = 107.;
     CGFloat subViewH = 95.;
-    _backView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
-    _backView.backgroundColor = [UIColor lightGrayColor];
-    [_backView setHeight:self.view.height - INTRODUCELABLE_WIGHT * 2];
-    _backView.contentSize=CGSizeMake(self.view.width, self.view.height - INTRODUCELABLE_WIGHT * 2 + 1);
+    _backView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 18, self.view.width, self.view.height - (18 + 50))];
+    _backView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_backView];
     
     // 列表布局
     for(int i = 0;i < _optionsNameArray.count; i ++)
     {
-        UIView *subView = [[UIView alloc]initWithFrame:CGRectMake(i % 3 * subViewW + 1, i / 3 * subViewH + 1, subViewW - 1 - ( i % 3 ? 1 : 0), subViewH - 1)];
+        UIView *subView = [[UIView alloc]initWithFrame:CGRectMake(i % 3 * subViewW + 1, (kSCROLLVIEW_HEIGHT + (i / 3 * subViewH + 1)), subViewW - 1 - ( i % 3 ? 1 : 0), subViewH - 1)];
         (i % 3 == 2) ? [subView setLeft:subView.left - 1] : 1;
-        subView.backgroundColor = [UIColor whiteColor];
+        subView.backgroundColor = [UIColor lightGrayColor];
         
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:subView.bounds];
         imageView.image = [UIImage imageNamed:[[_optionsNameArray objectAtIndex:i] objectForKey:@"image"]];
@@ -100,8 +99,7 @@
         [subView addSubview:tapButton];
         [_backView addSubview:subView];
     }
-    _backView.height = 110 * 3;
-    _backView.bottom = self.view.bottom;
+    _backView.contentSize=CGSizeMake(self.view.width, kSCROLLVIEW_HEIGHT + 330);
 }
 
 - (void)setLableProperty:(UILabel *)lable

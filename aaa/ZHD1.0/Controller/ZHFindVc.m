@@ -9,7 +9,6 @@
 #import "ZHFindVc.h"
 #import "ZHFindCell.h"
 #import "ZHRequestAPI.h"
-#import "PJUserModel.h"
 
 @interface ZHFindVc () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -33,33 +32,9 @@
     if (!_sourceArr) {
         _sourceArr = [[NSMutableArray alloc] init];
     }
-    _sourceArr = [self sortList:[NSArray arrayWithArray:[ZHRequestAPI requestContacts]]];
+    _sourceArr = [ZHRequestAPI requestIndustry];
 }
-- (NSArray *)sortList:(NSArray *)arr
-{
-    NSMutableArray *sortedfArr = [NSMutableArray array];
-    NSMutableSet *orderedSet=[[NSMutableSet alloc]init];
-    for (PJUserModel *user in arr){
-        [orderedSet addObject:user.uFirstWord];
-    }
-    
-    for (NSString *firstWord in orderedSet){
-        NSMutableArray *arrc=[[NSMutableArray alloc] init];
-        for (PJUserModel *data in arr){
-            if([[data.uFirstWord substringWithRange:NSMakeRange(0, 1)] isEqualToString:firstWord]){
-                [arrc addObject:data];
-            }
-        }
-        NSMutableDictionary *keyAndArray=[[NSMutableDictionary alloc] init];
-        [keyAndArray setObject:firstWord forKey:@"firstWord"];
-        [keyAndArray setObject:arrc forKey:@"arr"];
-        [sortedfArr addObject:keyAndArray];
-    }
-    [sortedfArr sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return  [[obj1 objectForKey:@"firstWord"] compare:[obj2 objectForKey:@"firstWord"]];
-    }];
-    return sortedfArr;
-}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -72,7 +47,7 @@
     searchBar.placeholder = @"输入关键字搜索";
     [self.view addSubview:searchBar];
     
-    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, searchBar.bottom, self.view.width, self.view.height - (searchBar.height + 60))];
+    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, searchBar.bottom, self.view.width, self.view.height - (searchBar.height + 63 + 50))];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     [_sourceTable registerClass:[ZHFindCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
@@ -83,20 +58,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_sourceArr[section][@"arr"] count];
+    return [_sourceArr[section][@"rowText"] count];
 }
 
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return _sourceArr[section][@"firstWord"];
+    return _sourceArr[section][@"sectionText"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PJUserModel *user = _sourceArr[indexPath.section][@"arr"][indexPath.row];
+    NSDictionary *item = _sourceArr[indexPath.section][@"rowText"][indexPath.row];
     ZHFindCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
-    [cell setItem:user];
+    [cell setItem:item];
     return cell;
 }
 

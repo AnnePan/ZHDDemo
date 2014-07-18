@@ -22,4 +22,7 @@
 ///请求所有部落
 + (NSArray *)requestClans;
 
+///请求所有部落
++ (NSArray *)requestIndustry;
+
 @end

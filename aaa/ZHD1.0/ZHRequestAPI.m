@@ -138,4 +138,54 @@
     clan.cLastWordTime = time;
     return clan;
 }
+
++ (NSArray *)requestIndustry
+{
+    NSMutableArray *industryArr = [[NSMutableArray alloc] init];
+    [industryArr addObject:@{@"sectionText":@"推荐",
+                             @"rowText":@[@{@"key":@"人脉小助手",@"image":@"find05",@"value":@[@"官方人脉对接服务系统"]},
+                                          @{@"key":@"个人擅长或经验",@"image":@"find06",@"value":@[@"按个人特征标签找人"]}]}];
+    [industryArr addObject:@{@"sectionText":@"按行业查找",
+                             @"rowText":@[@{@"key":@"金融/投融资",@"image":@"find01",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"建筑地产",@"image":@"find02",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"IT互联网",@"image":@"find03",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"运营/制造",@"image":@"find04",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"专业服务",@"image":@"find01",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"医药/健康",@"image":@"find02",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"农林牧渔",@"image":@"find03",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"消费服务类",@"image":@"find04",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"交通运输/物流仓储",@"image":@"find04",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"能源/化工",@"image":@"find01",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"航空/汽车",@"image":@"find02",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},
+                                          @{@"key":@"文化/创意/体育/媒体",@"image":@"find03",@"value":@[@"私募股权投资",@"典当/拍卖/担保",@"小额贷款",@"银行/保险",@"证券期货",@"融资租赁",@"其他金融/投融资",]},]}];
+    return industryArr;
+}
+
+/*
+- (NSArray *)sortList:(NSArray *)arr
+{
+    NSMutableArray *sortedfArr = [NSMutableArray array];
+    NSMutableSet *orderedSet=[[NSMutableSet alloc]init];
+    for (PJUserModel *user in arr){
+        [orderedSet addObject:user.uFirstWord];
+    }
+    
+    for (NSString *firstWord in orderedSet){
+        NSMutableArray *arrc=[[NSMutableArray alloc] init];
+        for (PJUserModel *data in arr){
+            if([[data.uFirstWord substringWithRange:NSMakeRange(0, 1)] isEqualToString:firstWord]){
+                [arrc addObject:data];
+            }
+        }
+        NSMutableDictionary *keyAndArray=[[NSMutableDictionary alloc] init];
+        [keyAndArray setObject:firstWord forKey:@"firstWord"];
+        [keyAndArray setObject:arrc forKey:@"arr"];
+        [sortedfArr addObject:keyAndArray];
+    }
+    [sortedfArr sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return  [[obj1 objectForKey:@"firstWord"] compare:[obj2 objectForKey:@"firstWord"]];
+    }];
+    return sortedfArr;
+}
+*/
 @end

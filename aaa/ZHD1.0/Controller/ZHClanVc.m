@@ -50,7 +50,7 @@
     searchBar.placeholder = @"输入关键字搜索";
     [self.view addSubview:searchBar];
     
-    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, searchBar.bottom, self.view.width, self.view.height - (searchBar.height + 60)) style:UITableViewStylePlain];
+    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, searchBar.bottom, self.view.width, self.view.height - (searchBar.height + 63 + 50)) style:UITableViewStylePlain];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     [_sourceTable registerClass:[ZHClanCell class] forCellReuseIdentifier:NSStringFromClass(self.class)];

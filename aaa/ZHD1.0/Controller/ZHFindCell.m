@@ -7,7 +7,6 @@
 //
 
 #import "ZHFindCell.h"
-#import "PJUserModel.h"
 
 @interface ZHFindCell ()
 {
@@ -24,26 +23,43 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        CGSize imgSize = CGSizeMake(40, 40);
-        _uHeadIV = [[UIImageView alloc] initWithFrame:CGRectMake(ZHSysSpaceLarge, ZHSysSpaceLarge, imgSize.width, imgSize.height)];
+        CGSize imgSize = CGSizeMake(50, 50);
+        _uHeadIV = [[UIImageView alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, ZHSysSpaceMiddle, imgSize.width, imgSize.height)];
+        _uHeadIV.layer.masksToBounds = YES;
+        _uHeadIV.layer.cornerRadius = _uHeadIV.width / 2;
         [self addSubview:_uHeadIV];
         
         _uNameLab = [[UILabel alloc] initWithFrame:CGRectMake(imgSize.width + (ZHSysSpaceLarge * 2), ZHSysSpaceLarge, 200, self.height)];
-        _uNameLab.backgroundColor = [UIColor redColor];
+        [_uNameLab setLabelStyleTextColor:[UIColor blackColor] fontSize:ZHSysFontSizeDefault];
         [self addSubview:_uNameLab];
         
         _uPositionLab = [[UILabel alloc] initWithFrame:_uNameLab.frame];
-        _uPositionLab.backgroundColor = [UIColor yellowColor];
+        [_uPositionLab setLabelStyleTextColor:[UIColor grayColor] fontSize:ZHSysFontSizeLarge];
         [self addSubview:_uPositionLab];
     }
     return self;
 }
 
-- (void)setItem:(PJUserModel *)item
+- (void)setItem:(NSDictionary *)item
 {
-    _uHeadIV.image = [UIImage imageNamed:item.uPicPath];
-    _uNameLab.text = @"张三";
-    _uPositionLab.text = @"结果看风景广泛的功夫都快关键时刻的结果";
+    _uHeadIV.image = [UIImage imageNamed:item[@"image"]];
+    _uNameLab.text = item[@"key"];
+    
+    NSMutableString *mutableStr = [[NSMutableString alloc] init];
+    if ([item[@"value"] isKindOfClass:NSArray.class]) {
+        NSArray *arr = item[@"value"];
+        if (arr.count > 3){
+            for (int i = 0; i < 3; i++) {
+                [mutableStr appendString:[NSString stringWithFormat:@"%@",arr[i]]];
+            }
+        } else if (arr.count < 3 && arr.count > 0) {
+            for (NSString *str in arr) {
+                [mutableStr appendString:[NSString stringWithFormat:@"%@",str]];
+            }
+        }
+        
+    }
+    _uPositionLab.text = mutableStr;
     [self setLayout];
 }
 
@@ -51,6 +67,7 @@
 {
     [_uNameLab sizeToFit];
     [_uPositionLab sizeToFit];
+    _uPositionLab.width = 200;
     _uPositionLab.top = _uNameLab.bottom + ZHSysSpaceSmall;
 }
 
