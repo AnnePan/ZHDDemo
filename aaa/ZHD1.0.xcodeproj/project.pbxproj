@@ -58,6 +58,9 @@
 		24A02CFE1978B4B600D28920 /* activityDefi.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A02CFD1978B4B600D28920 /* activityDefi.png */; };
 		24A377E1196B4F150000F905 /* PACycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A377E0196B4F150000F905 /* PACycleScrollView.m */; };
 		24A4401E197A194500F2066D /* ZHShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A4401D197A194500F2066D /* ZHShareCell.m */; };
+		24A44022197BA44500F2066D /* PAMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A44021197BA44500F2066D /* PAMBProgressHUD.m */; };
+		24A44024197BA5ED00F2066D /* PASuccessWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A44023197BA5ED00F2066D /* PASuccessWhite@2x.png */; };
+		24A44026197BA60A00F2066D /* PAErrorWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A44025197BA60A00F2066D /* PAErrorWhite@2x.png */; };
 		24A501A91970D514002AA97C /* PJQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501A81970D514002AA97C /* PJQuestionModel.m */; };
 		24A501BF19713937002AA97C /* PJWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BA19713937002AA97C /* PJWebView.m */; };
 		24A501C019713937002AA97C /* PJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BC19713937002AA97C /* PJWebViewController.m */; };
@@ -857,6 +860,10 @@
 		24A377E0196B4F150000F905 /* PACycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PACycleScrollView.m; sourceTree = "<group>"; };
 		24A4401C197A194500F2066D /* ZHShareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHShareCell.h; sourceTree = "<group>"; };
 		24A4401D197A194500F2066D /* ZHShareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHShareCell.m; sourceTree = "<group>"; };
+		24A44020197BA44500F2066D /* PAMBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAMBProgressHUD.h; sourceTree = "<group>"; };
+		24A44021197BA44500F2066D /* PAMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAMBProgressHUD.m; sourceTree = "<group>"; };
+		24A44023197BA5ED00F2066D /* PASuccessWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PASuccessWhite@2x.png"; sourceTree = "<group>"; };
+		24A44025197BA60A00F2066D /* PAErrorWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PAErrorWhite@2x.png"; sourceTree = "<group>"; };
 		24A501A41970D0D9002AA97C /* ZHCentreShareVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCentreShareVc.h; sourceTree = "<group>"; };
 		24A501A71970D514002AA97C /* PJQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJQuestionModel.h; sourceTree = "<group>"; };
 		24A501A81970D514002AA97C /* PJQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJQuestionModel.m; sourceTree = "<group>"; };
@@ -1715,6 +1722,17 @@
 				24A02CF919788DEB00D28920 /* ZHActivityVc.m */,
 			);
 			name = "岛上活动";
+			sourceTree = "<group>";
+		};
+		24A4401F197BA43A00F2066D /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				24A44023197BA5ED00F2066D /* PASuccessWhite@2x.png */,
+				24A44025197BA60A00F2066D /* PAErrorWhite@2x.png */,
+				24A44020197BA44500F2066D /* PAMBProgressHUD.h */,
+				24A44021197BA44500F2066D /* PAMBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		24A5019B1970CDE9002AA97C /* 手机报 */ = {
@@ -2583,6 +2601,7 @@
 		24F30AFE195FD83F0089F97E /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				24A4401F197BA43A00F2066D /* MBProgressHUD */,
 				24F30B00195FD85B0089F97E /* Refresh */,
 			);
 			path = 3rd;
@@ -3077,6 +3096,7 @@
 				24F308D9195FD8150089F97E /* bg_chat_layer_left@2x.png in Resources */,
 				24F309D8195FD8150089F97E /* info_pre@2x.png in Resources */,
 				24F309DE195FD8150089F97E /* info_tag_default@2x.png in Resources */,
+				24A44026197BA60A00F2066D /* PAErrorWhite@2x.png in Resources */,
 				24F309AC195FD8150089F97E /* home2_daily_ask@2x.png in Resources */,
 				24F30A26195FD8150089F97E /* person_list_divider@2x.png in Resources */,
 				24F30AEA195FD8150089F97E /* wvback_disable@2x.png in Resources */,
@@ -3110,6 +3130,7 @@
 				24F3093F195FD8150089F97E /* editor_bg_focused@2x.png in Resources */,
 				24F30AAA195FD8150089F97E /* tag4_f@2x.png in Resources */,
 				24F30A5E195FD8150089F97E /* related_group@2x.png in Resources */,
+				24A44024197BA5ED00F2066D /* PASuccessWhite@2x.png in Resources */,
 				24F30A0D195FD8150089F97E /* modify_focus@2x.png in Resources */,
 				24F3094C195FD8150089F97E /* feed_detail_favorate_focus@2x.png in Resources */,
 				24F30A75195FD8150089F97E /* save@2x.png in Resources */,
@@ -3601,6 +3622,7 @@
 				246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */,
 				24ADE8681975E47800D29BD8 /* ZHReadingCell.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,
+				24A44022197BA44500F2066D /* PAMBProgressHUD.m in Sources */,
 				24A02CFC19788E7300D28920 /* ZHCentreShareVc.m in Sources */,
 				24F30B6D195FDD8A0089F97E /* ZHGlobal.m in Sources */,
 				7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */,

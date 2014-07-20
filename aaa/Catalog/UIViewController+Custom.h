@@ -24,4 +24,11 @@
 - (BOOL)popToViewController:(Class)objectClass;
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 
+//显示PAMBProgressHUD
+- (void)show:(NSString *)text;
+- (void)show:(NSString *)labelText afterDelay:(NSTimeInterval)afterDelay;
+- (void)showSuccess:(NSString *)text;
+- (void)showError:(NSString *)text;
+- (void)dismiss;
+
 @end

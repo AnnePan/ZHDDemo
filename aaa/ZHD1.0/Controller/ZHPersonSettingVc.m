@@ -26,8 +26,8 @@
                          @"item":@[@{@"title":@"消息设置",@"class":@"PJDetailSetVc",@"type":@(ZHSettingTypeMessage)},
                                    @{@"title":@"隐私",@"class":@"PJDetailSetVc",@"type":@(ZHSettingTypePrivacy)}]},
                        @{@"head":@"",
-                         @"item":@[@{@"title":@"检查新版本",@"action":@"downLoad"},
-                                   @{@"title":@"客服热线:400-100-9737"},
+                         @"item":@[@{@"title":@"检查新版本",@"action":@"正在检查新版本..."},
+                                   @{@"title":@"客服热线:400-100-9737",@"action":@"拨号中"},
                                    @{@"title":@"关于",@"class":@""}]},
                        @{@"head": @"",
                          @"item": @[@{@"title":@"接收手机报彩信",@"switch":@""}]},
@@ -109,7 +109,7 @@
 {
     NSDictionary *item = _sourceArr[indexPath.section][@"item"][indexPath.row];
     if (item[@"action"]) {
-        NSLog(item[@"action"]);
+        [self show:item[@"action"] afterDelay:2];
     }
     if (item[@"type"]) {
         PJDetailSetVc *nextVc = [[PJDetailSetVc alloc] initWithSetType:[item[@"type"] intValue]];

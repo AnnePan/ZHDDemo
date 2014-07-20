@@ -83,5 +83,71 @@ const void *HUDObject = "HUDObject";
     [self.navigationController pushViewController:viewController animated:animated];
 }
 
+#pragma mark - PAMBProgressHUD
+- (PAMBProgressHUD *)MBProgressHUD {
+    PAMBProgressHUD *HUD = objc_getAssociatedObject(self, &HUDObject);
+    if (!HUD) {
+        HUD = [[PAMBProgressHUD alloc] initWithView:self.view];
+        HUD.minSize = CGSizeMake(112, 112);
+        HUD.mode = MBProgressHUDModeIndeterminate;
+        objc_setAssociatedObject(self, &HUDObject, HUD, OBJC_ASSOCIATION_RETAIN);
+        [self.view addSubview:HUD];
+        
+        UIView *fullBackground = [[UIView alloc] initWithFrame:self.view.frame];
+        fullBackground.origin = CGPointZero;
+        fullBackground.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        [HUD insertSubview:fullBackground atIndex:0];
+    }
+    return HUD;
+}
+
+- (void)show:(NSString *)text {
+    PAMBProgressHUD *HUD = [self MBProgressHUD];
+    HUD.mode = MBProgressHUDModeIndeterminate;
+    if (text != nil) {
+        HUD.labelText = text;
+    }
+    [HUD show:YES];
+}
+
+- (void)showSuccess:(NSString *)text {
+    [self showWithText:text resultType:YES];
+}
+
+- (void)showError:(NSString *)text {
+    [self showWithText:text resultType:NO];
+}
+
+- (void)dismiss {
+    PAMBProgressHUD *HUD = [self MBProgressHUD];
+    [HUD hide:YES];
+}
+
+- (void)showWithText:(NSString *)text resultType:(BOOL) resultType {
+    PAMBProgressHUD *HUD = [self MBProgressHUD];
+    UIImage *customerImage = [UIImage imageNamed:resultType?@"PASuccessWhite":@"PAErrorWhite"];
+    HUD.customView = [[UIImageView alloc] initWithImage:customerImage];
+    HUD.mode = MBProgressHUDModeCustomView;
+    [self show:text ProgressHUD:HUD afterDelay:resultType ? 2 : 1];
+}
+
+- (void)show:(NSString *)labelText afterDelay:(NSTimeInterval)afterDelay {
+    if (labelText != nil) {
+        PAMBProgressHUD *HUD = [self MBProgressHUD];
+        HUD.mode = MBProgressHUDModeIndeterminate;
+        HUD.labelText = labelText;
+        [HUD show:YES];
+        [HUD hide:YES afterDelay:afterDelay];
+    }
+}
+
+- (void)show:(NSString *)labelText ProgressHUD:(PAMBProgressHUD *)HUD afterDelay:(NSTimeInterval)afterDelay {
+    if (labelText != nil) {
+        HUD.labelText = labelText;
+    }
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:afterDelay];
+}
+
 
 @end
