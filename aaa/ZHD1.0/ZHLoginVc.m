@@ -8,6 +8,7 @@
 
 #import "ZHLoginVc.h"
 #import "ZHDRootViewController.h"
+#import "ZHRootVc.h"
 
 @interface ZHLoginVc ()
 {
@@ -134,8 +135,9 @@
         return;
     }
     
-    ZHDRootViewController *rootVC = [[ZHDRootViewController alloc]init];
-    [self presentViewController:rootVC animated:YES completion:nil];
+//    ZHDRootViewController *rootVc = [[ZHDRootViewController alloc]init];
+    ZHRootVc *rootVc = [[ZHRootVc alloc] init];
+    [self presentViewController:rootVc animated:YES completion:nil];
     NSLog(@"tiaozhuang");
 }
 
