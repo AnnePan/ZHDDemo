@@ -34,7 +34,7 @@
         [self addSubview:_bgView];
         
         _bottonView = [[UIView alloc] initWithFrame:_bgView.bounds];
-        _bottonView.backgroundColor = [UIColor redColor];
+        _bottonView.backgroundColor = [UIColor whiteColor];
         [_bgView addSubview:_bottonView];
         
         CGSize imgSize = CGSizeMake(80, 60);
@@ -46,12 +46,12 @@
         
         _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, ZHSysSpaceMiddle, _bottonView.width - (_imgV.width + (3 * ZHSysSpaceMiddle)), 50)];
         [_titleLab setLabelStyleTextColor:[UIColor blackColor] fontSize:17];
-        _titleLab.backgroundColor = [UIColor yellowColor];
+        _titleLab.backgroundColor = [UIColor whiteColor];
         _titleLab.numberOfLines = 2;
         _titleLab.lineBreakMode = NSLineBreakByWordWrapping;
         [_bottonView addSubview:_titleLab];
         
-        _infoTypeImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 17)];
+        _infoTypeImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 36, 15)];
         _infoTypeImg.backgroundColor = [UIColor yellowColor];
         [_bottonView addSubview:_infoTypeImg];
         
@@ -65,7 +65,9 @@
 - (void)setItem:(NSDictionary *)item
 {
     NSLog(@"124dgfhgff");
+    _imgV.image = [UIImage imageNamed:@"find03"];
     _titleLab.text = @"孤独九剑保你不被互联网颠覆";
+    _infoTypeImg.image = [UIImage imageNamed:@"info_exclusive_icon"];
     _timeLab.text = @"16 小时前";
     [self setLayout];
 }

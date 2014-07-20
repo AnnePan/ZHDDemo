@@ -57,6 +57,7 @@
 		24A02CFC19788E7300D28920 /* ZHCentreShareVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A02CFB19788E7300D28920 /* ZHCentreShareVc.m */; };
 		24A02CFE1978B4B600D28920 /* activityDefi.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A02CFD1978B4B600D28920 /* activityDefi.png */; };
 		24A377E1196B4F150000F905 /* PACycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A377E0196B4F150000F905 /* PACycleScrollView.m */; };
+		24A4401E197A194500F2066D /* ZHShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A4401D197A194500F2066D /* ZHShareCell.m */; };
 		24A501A91970D514002AA97C /* PJQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501A81970D514002AA97C /* PJQuestionModel.m */; };
 		24A501BF19713937002AA97C /* PJWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BA19713937002AA97C /* PJWebView.m */; };
 		24A501C019713937002AA97C /* PJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BC19713937002AA97C /* PJWebViewController.m */; };
@@ -854,6 +855,8 @@
 		24A02CFD1978B4B600D28920 /* activityDefi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activityDefi.png; sourceTree = "<group>"; };
 		24A377DF196B4F150000F905 /* PACycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PACycleScrollView.h; sourceTree = "<group>"; };
 		24A377E0196B4F150000F905 /* PACycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PACycleScrollView.m; sourceTree = "<group>"; };
+		24A4401C197A194500F2066D /* ZHShareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHShareCell.h; sourceTree = "<group>"; };
+		24A4401D197A194500F2066D /* ZHShareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHShareCell.m; sourceTree = "<group>"; };
 		24A501A41970D0D9002AA97C /* ZHCentreShareVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCentreShareVc.h; sourceTree = "<group>"; };
 		24A501A71970D514002AA97C /* PJQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJQuestionModel.h; sourceTree = "<group>"; };
 		24A501A81970D514002AA97C /* PJQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJQuestionModel.m; sourceTree = "<group>"; };
@@ -1741,8 +1744,10 @@
 		24A501A31970D058002AA97C /* 广场分享 */ = {
 			isa = PBXGroup;
 			children = (
-				24A02CFB19788E7300D28920 /* ZHCentreShareVc.m */,
 				24A501A41970D0D9002AA97C /* ZHCentreShareVc.h */,
+				24A02CFB19788E7300D28920 /* ZHCentreShareVc.m */,
+				24A4401C197A194500F2066D /* ZHShareCell.h */,
+				24A4401D197A194500F2066D /* ZHShareCell.m */,
 			);
 			name = "广场分享";
 			sourceTree = "<group>";
@@ -2688,10 +2693,10 @@
 		24F30B3F195FD9F10089F97E /* 通讯录 */ = {
 			isa = PBXGroup;
 			children = (
-				24F30BA919602F790089F97E /* PJUser1Cell.h */,
-				24F30BAA19602F790089F97E /* PJUser1Cell.m */,
 				24F30BA619602EF80089F97E /* ZHContactsVc.h */,
 				24F30BA719602EF80089F97E /* ZHContactsVc.m */,
+				24F30BA919602F790089F97E /* PJUser1Cell.h */,
+				24F30BAA19602F790089F97E /* PJUser1Cell.m */,
 			);
 			name = "通讯录";
 			sourceTree = "<group>";
@@ -3592,6 +3597,7 @@
 				246133E919646CD700C4E122 /* ZHPersonSettingVc.m in Sources */,
 				24F30B9E196023140089F97E /* ZHPersonCardVc.m in Sources */,
 				24A501D9197139A0002AA97C /* ZHGoldFireCell.m in Sources */,
+				24A4401E197A194500F2066D /* ZHShareCell.m in Sources */,
 				246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */,
 				24ADE8681975E47800D29BD8 /* ZHReadingCell.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,

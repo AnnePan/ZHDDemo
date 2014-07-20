@@ -9,12 +9,13 @@
 #import "ZHContactsVc.h"
 #import "PJUserModel.h"
 #import "PJUser1Cell.h"
+#import "ZHRequestAPI.h"
 
 @interface ZHContactsVc() <UITableViewDataSource, UITableViewDelegate>
 {
     
-    NSMutableArray *_sourceArr;
-    NSMutableArray *_getUserDataList,*_getFirstCharList;
+    NSArray *_sourceArray;
+    NSMutableArray *_firstWordArray;
     UITableView    *_sourceTable;
     UISearchBar    *_searchBar;
     
@@ -25,53 +26,45 @@
 @implementation ZHContactsVc
 
 #pragma mark - request data
-- (void)requestData{
-    _sourceArr = [[NSMutableArray alloc] init];
-    _getUserDataList = [[NSMutableArray alloc] init];
-    _getFirstCharList = [[NSMutableArray alloc] init];
-    NSArray *sections = @[@"A",@"B",@"C",@"D"];
-    for (int i = 0; i < sections.count; i++) {
-        for (int j = 0; j < 3; j++) {
-            PJUserModel *user = [[PJUserModel alloc] init];
-            user.uName = [NSString stringWithFormat:@"%@张三%d",sections[i],j];
-            user.uFirstWord = sections[i];
-            user.uPicPath = @"all_group";
-            user.uCompany = @"中华医学会砖家";
-            [_sourceArr addObject:user];
-        }
+- (void)requestData
+{
+    if (!_sourceArray) {
+        _sourceArray = [[NSMutableArray alloc] init];
     }
-    [self sortList];
+    _sourceArray = [self sortList:[ZHRequestAPI requestContacts]];
 }
 
-- (void)sortList
+- (NSArray *)sortList:(NSArray *)userArr
 {
+    NSMutableArray *userArray = [[NSMutableArray alloc] init];
+    NSMutableArray *firstWordArr = [[NSMutableArray alloc] init];
     NSMutableSet *orderedSet=[[NSMutableSet alloc]init];
-    for (PJUserModel *user in _sourceArr){
+    for (PJUserModel *user in userArr){
         [orderedSet addObject:[user.uFirstWord substringWithRange:NSMakeRange(0, 1)]];
     }
     
     for (NSString *firstWord in orderedSet){
-        [_getFirstCharList addObject:firstWord];
+        [firstWordArr addObject:firstWord];
+    }
+    
+    [firstWordArr sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return  [obj1 compare:obj2];
+    }];
+    _firstWordArray = firstWordArr;
+    
+    for (NSString *firstWord in firstWordArr){
         NSMutableArray *arrc=[[NSMutableArray alloc] init];
-        for (PJUserModel *data in _sourceArr){
-            if([[data.uFirstWord substringWithRange:NSMakeRange(0, 1)] isEqualToString:firstWord]){
-                [arrc addObject:data];
+        for (PJUserModel *user in userArr){
+            if([[user.uFirstWord substringWithRange:NSMakeRange(0, 1)] isEqualToString:firstWord]){
+                [arrc addObject:user];
             }
         }
         NSMutableDictionary *keyAndArray=[[NSMutableDictionary alloc] init];
         [keyAndArray setObject:arrc forKey:@"arr"];
         [keyAndArray setObject:firstWord forKey:@"firstWord"];
-        [_getUserDataList addObject:keyAndArray];
+        [userArray addObject:keyAndArray];
     }
-    
-    [_getFirstCharList sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [obj1 compare:obj2];
-    }];
-    [_getUserDataList sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return  [[obj1 objectForKey:@"firstWord"] compare:[obj2 objectForKey:@"firstWord"]];
-    }];
-    NSLog(@"_getUserDataList == %@",_getUserDataList);
-    
+    return userArray;
 }
 
 - (id)init
@@ -89,12 +82,12 @@
     [self useiOS7BeforeStyle];
     
     // 搜索框
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 18, self.view.width, 44)];
     _searchBar.placeholder = @"快速筛选";
     [self.view addSubview:_searchBar];
     
     // 通讯录
-    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, _searchBar.bottom, self.view.width, self.view.height - _searchBar.height)];
+    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, _searchBar.bottom, self.view.width, self.view.height - (_searchBar.height + 63))];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     [_sourceTable registerClass:[PJUser1Cell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
@@ -104,17 +97,17 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_getUserDataList[section][@"arr"] count];
+    return [_sourceArray[section][@"arr"] count];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    return _getFirstCharList;
+    return _firstWordArray;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PJUserModel *user = _getUserDataList[indexPath.section][@"arr"][indexPath.row];
+    PJUserModel *user = _sourceArray[indexPath.section][@"arr"][indexPath.row];
     PJUser1Cell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath];
     [cell setItem:user];
     return cell;
@@ -127,11 +120,12 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [_getFirstCharList objectAtIndex:section];;
+    return _sourceArray[section][@"firstWord"];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [_getUserDataList count];
+    return [_sourceArray count];
 }
+
 @end

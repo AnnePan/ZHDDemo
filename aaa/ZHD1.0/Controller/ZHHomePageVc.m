@@ -63,7 +63,7 @@
 {
     _optionsNameArray = @[@{@"text":@"部落圈子",@"class":@"ZHClanVc",@"title":@"部落",@"image":@"home_tab_rouund"},
                           @{@"text":@"最新资讯",@"class":@"ZHInformationVc",@"title":@"最新资讯111",@"image":@"home_tab_news"},
-                          @{@"text":@"岛上活动",@"class":@"ZHPersonCardVc",@"title":@"在线购卡",@"image":@"home_tab_games"},
+                          @{@"text":@"岛上活动",@"class":@"ZHActivityVc",@"title":@"在线购卡",@"image":@"home_tab_games"},
                           @{@"text":@"广场分享",@"class":@"ZHCentreShareVc",@"title":@"广场活动",@"image":@"home_tab_share"},
                           @{@"text":@"每日一问",@"class":@"ZHEveryDayqVc",@"title":@"每日一问",@"image":@"home_tab_ask"},
                           @{@"text":@"手机报",@"class":@"ZHPhoneNewsVc",@"title":@"手机报",@"image":@"home_mobile_news"},

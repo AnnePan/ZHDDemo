@@ -44,8 +44,8 @@
     self.navigationController.navigationBarHidden = NO;
     self.title = @"广场";
     
-    NSArray *arr1 = @[@{@"key":@"最新分享",@"value":@(ZHCellTypeActivity)},
-                      @{@"key":@"最热分享",@"value":@(ZHCellTypeActivity)}];
+    NSArray *arr1 = @[@{@"key":@"最新分享",@"value":@(ZHCellTypeShare)},
+                      @{@"key":@"最热分享",@"value":@(ZHCellTypeShare)}];
     NSMutableArray *keys = [[NSMutableArray alloc] init];
     for (NSDictionary *dic in arr1) {
         [keys addObject:dic[@"key"]];

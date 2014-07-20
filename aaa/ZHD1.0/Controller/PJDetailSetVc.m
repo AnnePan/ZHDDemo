@@ -7,6 +7,7 @@
 //
 
 #import "PJDetailSetVc.h"
+#import "NSString+Additions.h"
 
 @interface PJDetailSetVc () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -37,15 +38,18 @@
         case ZHSettingTypeMessage:
         {
             self.title = @"消息设置";
-            return @[@{@"head": @"",
-                       @"item": @[@{@"title":@"黑名单",@"class":@""},@{@"title":@"加我为好友时需要验证",@"switch":@""}]}];
+            return @[@{@"item": @[@{@"title":@"接收新消息通知",@"detail":@"已关闭"}],
+                       @"foot":@"如果您要关闭或开启一之岛的新消息通知，请再iPhone“设置”－“通知”功能中，找到“一之岛”进行更改。"},
+                     @{@"item": @[@{@"title":@"声音",@"switch":@""},@{@"title":@"震动",@"switch":@""}],
+                       @"foot":@"当正和岛在运行时，你可以设置是否需要声音或者震动"},
+                     @{@"item": @[@{@"title":@"消息免打扰",@"class":@""}],
+                       @"foot":@"设置系统功能消息提示声音和震动的时段"}];
             break;
         }
         case ZHSettingTypePrivacy:
         {
             self.title = @"隐私";
-            return @[@{@"head": @"",
-                       @"item": @[@{@"title":@"黑名单",@"class":@""},@{@"title":@"加我为好友时需要验证",@"switch":@""}]}];
+            return @[@{@"item": @[@{@"title":@"黑名单",@"class":@""},@{@"title":@"加我为好友时需要验证",@"switch":@""}]}];
             break;
         }
             
@@ -98,11 +102,41 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    //    return _sourceArr[section][@"head"];
-    if (section == 0) {
+    if (_sourceArr[section][@"head"]) {
+        return @" ";
+    } else {
         return nil;
     }
-    return @" ";
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (_sourceArr[section][@"foot"]) {
+        UILabel *footLab = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 270, 30)];
+        [footLab setLabelStyleTextColor:[UIColor grayColor] fontSize:ZHSysFontSizeLarge];
+        footLab.textAlignment = NSTextAlignmentCenter;
+        footLab.numberOfLines = 0;
+        footLab.lineBreakMode = NSLineBreakByWordWrapping;
+        NSString *footStr = _sourceArr[section][@"foot"];
+        CGSize strSize = [footStr sizeWithMaxWidth:footLab.width font:footLab.font];
+        footLab.height = strSize.height + 30;
+        footLab.text = footStr;
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, footLab.height)];
+        [view addSubview:footLab];
+        view.backgroundColor = [UIColor lightGrayColor];
+        return view;
+    }
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (_sourceArr[section][@"foot"]) {
+        NSString *footStr = _sourceArr[section][@"foot"];
+        CGSize strSize = [footStr sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:ZHSysFontSizeLarge]];
+        return strSize.height + 30;
+    }
+    return 0;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

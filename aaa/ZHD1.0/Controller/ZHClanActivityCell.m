@@ -40,14 +40,15 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.backgroundColor = self.backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.05];
         _bgView  = [[UIView alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, ZHSysSpaceLarge, self.width - (ZHSysSpaceMiddle * 2), 220 - ZHSysSpaceLarge)];
-        _bgView.backgroundColor = [UIColor lightGrayColor];
+//        _bgView.backgroundColor = [UIColor lightGrayColor];
         [self addSubview:_bgView];
         
         //标题部分
         _titleView = [[UIView alloc] initWithFrame:_bgView.bounds];
         _titleView.height = 35;
-        _titleView.backgroundColor = [UIColor redColor];
+        _titleView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
         [_bgView addSubview:_titleView];
         
         _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, ZHSysSpaceMiddle, _titleView.width - (2 * ZHSysSpaceMiddle), _titleView.height - (2 * ZHSysSpaceMiddle))];
@@ -59,7 +60,7 @@
         //底部
         _bottomView = [[UIView alloc] initWithFrame:_titleView.bounds];
         _bottomView.bottom = _bgView.height;
-        _bottomView.backgroundColor = [UIColor blueColor];
+        _bottomView.backgroundColor = [UIColor whiteColor];
         [_bgView addSubview:_bottomView];
         
         _signUpLab = [[UILabel alloc] initWithFrame:_titleLab.frame];
@@ -68,7 +69,7 @@
         
         //中间部分
         _middleView = [[UIView alloc] initWithFrame:CGRectMake(0, _titleView.bottom, _titleView.width, _bgView.height - (_titleView.height + _bottomView.height))];
-        _middleView.backgroundColor = [UIColor yellowColor];
+        _middleView.backgroundColor = [UIColor whiteColor];
         [_bgView addSubview:_middleView];
         
         CGSize imgSize = CGSizeMake(70, 80);

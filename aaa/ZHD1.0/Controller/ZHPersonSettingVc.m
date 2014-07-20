@@ -7,6 +7,7 @@
 //
 
 #import "ZHPersonSettingVc.h"
+#import "PJDetailSetVc.h"
 
 @interface ZHPersonSettingVc () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -22,11 +23,11 @@
 {
     if (self = [super init]) {
         _sourceArr = @[@{@"head":@"",
-                         @"item":@[@{@"title":@"消息设置",@"class":@""},
-                                   @{@"title":@"隐私",@"class":@"PJDetailSetVc"}]},
+                         @"item":@[@{@"title":@"消息设置",@"class":@"PJDetailSetVc",@"type":@(ZHSettingTypeMessage)},
+                                   @{@"title":@"隐私",@"class":@"PJDetailSetVc",@"type":@(ZHSettingTypePrivacy)}]},
                        @{@"head":@"",
-                         @"item":@[@{@"title":@"检查新版本"},
-                                   @{@"title":@"客服热线:"},
+                         @"item":@[@{@"title":@"检查新版本",@"action":@"downLoad"},
+                                   @{@"title":@"客服热线:400-100-9737"},
                                    @{@"title":@"关于",@"class":@""}]},
                        @{@"head": @"",
                          @"item": @[@{@"title":@"接收手机报彩信",@"switch":@""}]},
@@ -57,6 +58,11 @@
     [self.view addSubview:_sourceTable];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:nil];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 #pragma mark - UITableViewDataSource
@@ -102,8 +108,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *item = _sourceArr[indexPath.section][@"item"][indexPath.row];
-    if (item[@"class"]) {
-        UIViewController *nextVc = [[NSClassFromString(item[@"class"]) alloc] init];
+    if (item[@"action"]) {
+        NSLog(item[@"action"]);
+    }
+    if (item[@"type"]) {
+        PJDetailSetVc *nextVc = [[PJDetailSetVc alloc] initWithSetType:[item[@"type"] intValue]];
         [self.navigationController pushViewController:nextVc animated:YES];
     }
 }

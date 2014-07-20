@@ -40,7 +40,7 @@
     if (!_sourceArr) {
         _sourceArr = [[NSMutableArray alloc] init];
     }
-    _sourceArr = @[@{},@{},@{}];
+    _sourceArr = @[@{},@{},@{},@{},@{},@{}];
 }
 
 - (void)viewDidLoad
