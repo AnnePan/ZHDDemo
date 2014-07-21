@@ -34,11 +34,10 @@
                        @{@"head": @"",
                          @"item": @[@{@"title":@"服务条款",@"class":@""}]},
                        @{@"head": @"",
-                         @"item": @[@{@"title":@"网络检测",@"class":@""}]},
+                         @"item": @[@{@"title":@"网络检测",@"class":@"PJDetailSetVc",@"type":@(ZHSettingTypeNetTest)}]},
                        @{@"head": @"",
-                         @"item": @[@{@"title":@"清除缓存"},@{@"title":@"清除搜索历史"},@{@"title":@"清空所有聊天记录"}]},
-                       @{@"head": @"",
-                         @"item": @[@{@"title":@"退出当前账号"}]}];
+                         @"item": @[@{@"title":@"清除缓存",@"action":@"正在清除缓存..."},@{@"title":@"清除搜索历史",@"action":@"正在清除搜索历史..."},@{@"title":@"清空所有聊天记录",@"alert":@"此操作将删除所有聊天记录，是否继续？"}]},
+                       @{@"head": @""}];
     }
     return self;
 }
@@ -56,6 +55,13 @@
     _sourceTable.delegate = self;
     _sourceTable.tableFooterView = [UIView new];
     [self.view addSubview:_sourceTable];
+    
+    UIButton *footBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 45)];
+    footBtn.backgroundColor = [UIColor whiteColor];
+    [footBtn setTitle:@"退出当前账号" forState:UIControlStateNormal];
+    [footBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [footBtn addTarget:self action:@selector(exitAppBtn:) forControlEvents:UIControlEventTouchUpInside];
+    _sourceTable.tableFooterView = footBtn;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:nil];
 }
@@ -111,10 +117,22 @@
     if (item[@"action"]) {
         [self show:item[@"action"] afterDelay:2];
     }
+    if (item[@"alert"]) {
+        [UIAlertView alertViewWithTitle:nil message:item[@"alert"] cancelButtonTitle:@"取消" otherButtonTitles:@[@"确定"] onDismiss:^(int buttonIndex) {
+            [self showSuccess:@"删除所有聊天记录成功"];
+        } onCancel:nil];
+    }
     if (item[@"type"]) {
         PJDetailSetVc *nextVc = [[PJDetailSetVc alloc] initWithSetType:[item[@"type"] intValue]];
         [self.navigationController pushViewController:nextVc animated:YES];
     }
+}
+
+- (void)exitAppBtn:(UIButton *)btn
+{
+    [UIAlertView alertViewWithTitle:@"注销用户" message:@"确认注销用户吗？" cancelButtonTitle:@"取消" otherButtonTitles:@[@"确定"] onDismiss:^(int buttonIndex) {
+        [self showSuccess:@"注销用户成功"];
+    } onCancel:nil];
 }
 
 @end

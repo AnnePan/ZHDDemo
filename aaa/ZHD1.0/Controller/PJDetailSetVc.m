@@ -52,6 +52,12 @@
             return @[@{@"item": @[@{@"title":@"黑名单",@"class":@""},@{@"title":@"加我为好友时需要验证",@"switch":@""}]}];
             break;
         }
+        case ZHSettingTypeNetTest:
+        {
+            self.title = @"网络检测";
+            return @[@{@"item": @[@{@"title":@"网络链接",@"class":@""},@{@"title":@"百度IP解析",@"switch":@""},@{@"title":@"百度",@"switch":@""}]}];
+            break;
+        }
             
             
         default:

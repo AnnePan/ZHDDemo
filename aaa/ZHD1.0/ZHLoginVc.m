@@ -7,7 +7,7 @@
 //
 
 #import "ZHLoginVc.h"
-#import "ZHDRootViewController.h"
+#import "ZHRootTabBarCont.h"
 #import "ZHRootVc.h"
 
 @interface ZHLoginVc ()
@@ -135,8 +135,8 @@
         return;
     }
     
-//    ZHDRootViewController *rootVc = [[ZHDRootViewController alloc]init];
-    ZHRootVc *rootVc = [[ZHRootVc alloc] init];
+//    ZHRootVc *rootVc = [[ZHRootVc alloc] init];
+    ZHRootTabBarCont *rootVc = [[ZHRootTabBarCont alloc] init];
     [self presentViewController:rootVc animated:YES completion:nil];
     NSLog(@"tiaozhuang");
 }

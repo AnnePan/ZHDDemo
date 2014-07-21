@@ -11,6 +11,7 @@
 typedef NS_ENUM(NSInteger, ZHSettingType) {
     ZHSettingTypePrivacy, //隐私设置
     ZHSettingTypeMessage, //消息设置
+    ZHSettingTypeNetTest, //网络检测
     
     ZHSettingTypeMax
 };

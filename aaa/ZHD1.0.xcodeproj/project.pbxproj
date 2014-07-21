@@ -70,6 +70,10 @@
 		24A44075197C5ED300F2066D /* home_item_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A4406D197C5ED300F2066D /* home_item_home@2x.png */; };
 		24A44076197C5ED300F2066D /* home_item_profile_focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A4406E197C5ED300F2066D /* home_item_profile_focus@2x.png */; };
 		24A44077197C5ED300F2066D /* home_item_profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A4406F197C5ED300F2066D /* home_item_profile@2x.png */; };
+		24A4407A197D5CCA00F2066D /* ZHRootTabBarCont.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A44079197D5CCA00F2066D /* ZHRootTabBarCont.m */; };
+		24A4407D197D612100F2066D /* ZHBaseNavigationCont.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A4407C197D612100F2066D /* ZHBaseNavigationCont.m */; };
+		24A44080197D65C400F2066D /* ZHBaseViewCont.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A4407F197D65C400F2066D /* ZHBaseViewCont.m */; };
+		24A44083197D729700F2066D /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A44082197D729700F2066D /* UIAlertView+Block.m */; };
 		24A501A91970D514002AA97C /* PJQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501A81970D514002AA97C /* PJQuestionModel.m */; };
 		24A501BF19713937002AA97C /* PJWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BA19713937002AA97C /* PJWebView.m */; };
 		24A501C019713937002AA97C /* PJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A501BC19713937002AA97C /* PJWebViewController.m */; };
@@ -750,7 +754,6 @@
 		24F30B5A195FDA5B0089F97E /* timelineIconHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F30B4D195FDA5B0089F97E /* timelineIconHighlighted.png */; };
 		24F30B6D195FDD8A0089F97E /* ZHGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F30B6C195FDD8A0089F97E /* ZHGlobal.m */; };
 		24F30B7E195FDE0F0089F97E /* PJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F30B77195FDE0F0089F97E /* PJAppDelegate.m */; };
-		24F30B7F195FDE0F0089F97E /* ZHDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F30B79195FDE0F0089F97E /* ZHDRootViewController.m */; };
 		24F30B8219601FB00089F97E /* ZHSysStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F30B8119601FB00089F97E /* ZHSysStyle.m */; };
 		24F30B8519601FCE0089F97E /* ZHRefreshLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F30B8419601FCE0089F97E /* ZHRefreshLoadView.m */; };
 		24F30B88196020DE0089F97E /* ZHAboutSelfVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F30B87196020DE0089F97E /* ZHAboutSelfVc.m */; };
@@ -883,6 +886,14 @@
 		24A4406D197C5ED300F2066D /* home_item_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_item_home@2x.png"; sourceTree = "<group>"; };
 		24A4406E197C5ED300F2066D /* home_item_profile_focus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_item_profile_focus@2x.png"; sourceTree = "<group>"; };
 		24A4406F197C5ED300F2066D /* home_item_profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_item_profile@2x.png"; sourceTree = "<group>"; };
+		24A44078197D5CCA00F2066D /* ZHRootTabBarCont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHRootTabBarCont.h; sourceTree = "<group>"; };
+		24A44079197D5CCA00F2066D /* ZHRootTabBarCont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHRootTabBarCont.m; sourceTree = "<group>"; };
+		24A4407B197D612100F2066D /* ZHBaseNavigationCont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBaseNavigationCont.h; sourceTree = "<group>"; };
+		24A4407C197D612100F2066D /* ZHBaseNavigationCont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBaseNavigationCont.m; sourceTree = "<group>"; };
+		24A4407E197D65C400F2066D /* ZHBaseViewCont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBaseViewCont.h; sourceTree = "<group>"; };
+		24A4407F197D65C400F2066D /* ZHBaseViewCont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBaseViewCont.m; sourceTree = "<group>"; };
+		24A44081197D729700F2066D /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
+		24A44082197D729700F2066D /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		24A501A41970D0D9002AA97C /* ZHCentreShareVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCentreShareVc.h; sourceTree = "<group>"; };
 		24A501A71970D514002AA97C /* PJQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJQuestionModel.h; sourceTree = "<group>"; };
 		24A501A81970D514002AA97C /* PJQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJQuestionModel.m; sourceTree = "<group>"; };
@@ -1609,8 +1620,6 @@
 		24F30B6C195FDD8A0089F97E /* ZHGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHGlobal.m; sourceTree = "<group>"; };
 		24F30B76195FDE0F0089F97E /* PJAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PJAppDelegate.h; path = Controller/PJAppDelegate.h; sourceTree = "<group>"; };
 		24F30B77195FDE0F0089F97E /* PJAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PJAppDelegate.m; path = Controller/PJAppDelegate.m; sourceTree = "<group>"; };
-		24F30B78195FDE0F0089F97E /* ZHDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHDRootViewController.h; path = Controller/ZHDRootViewController.h; sourceTree = "<group>"; };
-		24F30B79195FDE0F0089F97E /* ZHDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHDRootViewController.m; path = Controller/ZHDRootViewController.m; sourceTree = "<group>"; };
 		24F30B8019601FB00089F97E /* ZHSysStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHSysStyle.h; sourceTree = "<group>"; };
 		24F30B8119601FB00089F97E /* ZHSysStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHSysStyle.m; sourceTree = "<group>"; };
 		24F30B8319601FCE0089F97E /* ZHRefreshLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHRefreshLoadView.h; sourceTree = "<group>"; };
@@ -1719,6 +1728,10 @@
 				24A501BA19713937002AA97C /* PJWebView.m */,
 				24A501BB19713937002AA97C /* PJWebViewController.h */,
 				24A501BC19713937002AA97C /* PJWebViewController.m */,
+				24A4407B197D612100F2066D /* ZHBaseNavigationCont.h */,
+				24A4407C197D612100F2066D /* ZHBaseNavigationCont.m */,
+				24A4407E197D65C400F2066D /* ZHBaseViewCont.h */,
+				24A4407F197D65C400F2066D /* ZHBaseViewCont.m */,
 			);
 			name = SysClass;
 			sourceTree = "<group>";
@@ -2637,6 +2650,8 @@
 		24F30AFF195FD83F0089F97E /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				24A44081197D729700F2066D /* UIAlertView+Block.h */,
+				24A44082197D729700F2066D /* UIAlertView+Block.m */,
 				7B126E94196E554E00B4E6E0 /* NSString+Additions.h */,
 				7B126E95196E554E00B4E6E0 /* NSString+Additions.m */,
 				246133D11961BBBC00C4E122 /* NSTimer+Addition.h */,
@@ -2803,10 +2818,10 @@
 		24F30C00196057450089F97E /* tabBar */ = {
 			isa = PBXGroup;
 			children = (
-				24F30B78195FDE0F0089F97E /* ZHDRootViewController.h */,
-				24F30B79195FDE0F0089F97E /* ZHDRootViewController.m */,
 				24A44027197C494800F2066D /* ZHRootVc.h */,
 				24A44028197C494800F2066D /* ZHRootVc.m */,
+				24A44078197D5CCA00F2066D /* ZHRootTabBarCont.h */,
+				24A44079197D5CCA00F2066D /* ZHRootTabBarCont.m */,
 			);
 			name = tabBar;
 			sourceTree = "<group>";
@@ -3659,12 +3674,14 @@
 				246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */,
 				24ADE8681975E47800D29BD8 /* ZHReadingCell.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,
+				24A44080197D65C400F2066D /* ZHBaseViewCont.m in Sources */,
 				24A44022197BA44500F2066D /* PAMBProgressHUD.m in Sources */,
 				24A44029197C494800F2066D /* ZHRootVc.m in Sources */,
 				24A02CFC19788E7300D28920 /* ZHCentreShareVc.m in Sources */,
 				24F30B6D195FDD8A0089F97E /* ZHGlobal.m in Sources */,
 				7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */,
 				24F30B8219601FB00089F97E /* ZHSysStyle.m in Sources */,
+				24A4407A197D5CCA00F2066D /* ZHRootTabBarCont.m in Sources */,
 				24A7D9871972104000A0E87F /* ZHClanCell.m in Sources */,
 				7BE8D2F61977C980008E305C /* ZHFindCell.m in Sources */,
 				7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */,
@@ -3703,6 +3720,7 @@
 				24A501CA1971396D002AA97C /* PJDearNeighbourCell.m in Sources */,
 				24A377E1196B4F150000F905 /* PACycleScrollView.m in Sources */,
 				246133F01964718200C4E122 /* ZHMyVisitorCell.m in Sources */,
+				24A44083197D729700F2066D /* UIAlertView+Block.m in Sources */,
 				24F30B16195FD8860089F97E /* UIScrollView+Extension.m in Sources */,
 				24A501C019713937002AA97C /* PJWebViewController.m in Sources */,
 				24B2A00119699CD8003287D8 /* PJDetailUpdataVc.m in Sources */,
@@ -3710,13 +3728,13 @@
 				24A501D01971398B002AA97C /* PJOldNewsCell.m in Sources */,
 				24F30B13195FD8860089F97E /* MJRefreshConst.m in Sources */,
 				24A7D98419720CDB00A0E87F /* ZHClanVc.m in Sources */,
+				24A4407D197D612100F2066D /* ZHBaseNavigationCont.m in Sources */,
 				24F30B12195FD8860089F97E /* MJRefreshBaseView.m in Sources */,
 				24F30B17195FD8860089F97E /* UIScrollView+MJRefresh.m in Sources */,
 				24F30B2F195FD8970089F97E /* UIColor+Custom.m in Sources */,
 				24F30B31195FD8970089F97E /* NSAttributedString+Additions.m in Sources */,
 				240218FC19692971001DBCFB /* PJSegmentControl.m in Sources */,
 				24F30B14195FD8860089F97E /* MJRefreshFooterView.m in Sources */,
-				24F30B7F195FDE0F0089F97E /* ZHDRootViewController.m in Sources */,
 				24F30B30195FD8970089F97E /* UIViewController+Custom.m in Sources */,
 				24F30604195FD5A10089F97E /* main.m in Sources */,
 				24A501D7197139A0002AA97C /* ZHGoldFireVc.m in Sources */,

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHAboutSelfVc : UIViewController
+@interface ZHAboutSelfVc : ZHBaseViewCont
 
 @end

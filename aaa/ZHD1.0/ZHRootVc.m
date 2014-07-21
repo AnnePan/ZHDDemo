@@ -13,16 +13,19 @@
 #import "ZHPersonSettingVc.h"
 
 @interface ZHRootVc ()
+{
+    UIButton *oldBtn;
+    NSArray *bgImageArr, *hlImageArr;
+}
 
 @end
 
 @implementation ZHRootVc
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self = [super init]) {
+        
     }
     return self;
 }
@@ -59,17 +62,36 @@
     [self.view addSubview:_tabBarView];
     _tabBarView.backgroundColor = [UIColor blackColor];
     
-    NSArray *bgImageArr = @[@"home_item_home",@"home_item_contact",@"home_item_profile",@"home_item_action"];
-    NSArray *hlImageArr = @[@"home_item_home_focus",@"home_item_contact_focus",@"home_item_profile_focus",@"home_item_action_focus"];
+    bgImageArr = @[@"home_item_home",@"home_item_contact",@"home_item_profile",@"home_item_action"];
+    hlImageArr = @[@"home_item_home_focus",@"home_item_contact_focus",@"home_item_profile_focus",@"home_item_action_focus"];
     
     for (int i = 0; i < bgImageArr.count; i++) {
         UIButton *itemBg = [[UIButton alloc] initWithFrame:CGRectMake(i * (SCREEN_WIDTH / 4.0), 0, SCREEN_WIDTH / 4.0, _tabBarView.height)];
-        
         UIButton *itemImg = [[UIButton alloc] initWithFrame:CGRectMake((itemBg.width - itemBg.height)/2, 0, itemBg.height, itemBg.height)];
+        itemImg.tag = i;
         [itemImg setBackgroundImage:[UIImage imageNamed:bgImageArr[i]] forState:UIControlStateNormal];
         [itemImg setBackgroundImage:[UIImage imageNamed:hlImageArr[i]] forState:UIControlStateHighlighted];
+        [itemImg addTarget:self action:@selector(tabBarItemChange:) forControlEvents:UIControlEventTouchUpInside];
         [itemBg addSubview:itemImg];
         [_tabBarView addSubview:itemBg];
+        
+        if (i == 0) {
+            [itemImg setBackgroundImage:[UIImage imageNamed:hlImageArr[i]] forState:UIControlStateNormal];
+            oldBtn = itemImg;
+        }
     }
 }
+
+- (void)tabBarItemChange:(UIButton *)btn
+{
+    
+
+    if (oldBtn.tag != btn.tag) {
+        [oldBtn setBackgroundImage:[UIImage imageNamed:bgImageArr[oldBtn.tag]] forState:UIControlStateNormal];
+    }
+    [btn setBackgroundImage:[UIImage imageNamed:hlImageArr[btn.tag]] forState:UIControlStateNormal];
+    oldBtn = btn;
+    self.selectedIndex = btn.tag;
+}
+
 @end
