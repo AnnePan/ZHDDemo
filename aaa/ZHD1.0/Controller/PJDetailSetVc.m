@@ -58,7 +58,12 @@
             return @[@{@"item": @[@{@"title":@"网络链接",@"class":@""},@{@"title":@"百度IP解析",@"switch":@""},@{@"title":@"百度",@"switch":@""}]}];
             break;
         }
-            
+        case ZHSettingTypeAbout:
+        {
+            self.title = @"关于";
+            return @[@{@"item": @[@{@"image":@"Default"}]}];
+            break;
+        }
             
         default:
             break;
@@ -95,7 +100,13 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell setAccessoryView:nil];
     cell.accessoryType= UITableViewCellAccessoryNone;
-    cell.textLabel.text = _sourceArr[indexPath.section][@"item"][indexPath.row][@"title"];
+    if (_sourceArr[indexPath.section][@"item"][indexPath.row][@"image"]) {
+        UIImageView *iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:_sourceArr[indexPath.section][@"item"][indexPath.row][@"image"]]];
+        [cell addSubview:iv];
+    }
+    if (_sourceArr[indexPath.section][@"item"][indexPath.row][@"title"]) {
+        cell.textLabel.text = _sourceArr[indexPath.section][@"item"][indexPath.row][@"title"];
+    }
     if (_sourceArr[indexPath.section][@"item"][indexPath.row][@"class"]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -159,5 +170,13 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_sourceArr[indexPath.section][@"item"][indexPath.row][@"image"]) {
+        UIImage *iv = [UIImage imageNamed:_sourceArr[indexPath.section][@"item"][indexPath.row][@"image"]];
+        return iv.size.height;
+    }
+    return 50;
+}
 
 @end

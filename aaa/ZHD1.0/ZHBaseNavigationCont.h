@@ -10,6 +10,5 @@
 
 @interface ZHBaseNavigationCont : UINavigationController
 
-- (void)useiOS7BeforeStyleNavi;
 
 @end

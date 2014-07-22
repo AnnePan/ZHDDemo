@@ -784,6 +784,9 @@
 		7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E83196E54E700B4E6E0 /* ZHRequestAPI.m */; };
 		7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E92196E553400B4E6E0 /* PJUserModel.m */; };
 		7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E95196E554E00B4E6E0 /* NSString+Additions.m */; };
+		7BAAE37D197E016E0097B8F5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAAE37B197E016E0097B8F5 /* Default@2x.png */; };
+		7BAAE37E197E016E0097B8F5 /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAAE37C197E016E0097B8F5 /* Default-568@2x.png */; };
+		7BAAE385197E77AE0097B8F5 /* ZHMoreVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAAE384197E77AE0097B8F5 /* ZHMoreVc.m */; };
 		7BE4431B1979107900E8B966 /* homePage02.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE443181979107900E8B966 /* homePage02.png */; };
 		7BE4431C1979107900E8B966 /* homePage01.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE443191979107900E8B966 /* homePage01.png */; };
 		7BE4431D1979107900E8B966 /* homePage03.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE4431A1979107900E8B966 /* homePage03.png */; };
@@ -1661,6 +1664,10 @@
 		7B126E92196E553400B4E6E0 /* PJUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserModel.m; sourceTree = "<group>"; };
 		7B126E94196E554E00B4E6E0 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		7B126E95196E554E00B4E6E0 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		7BAAE37B197E016E0097B8F5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7BAAE37C197E016E0097B8F5 /* Default-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568@2x.png"; sourceTree = "<group>"; };
+		7BAAE383197E77AE0097B8F5 /* ZHMoreVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHMoreVc.h; sourceTree = "<group>"; };
+		7BAAE384197E77AE0097B8F5 /* ZHMoreVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHMoreVc.m; sourceTree = "<group>"; };
 		7BE443181979107900E8B966 /* homePage02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homePage02.png; sourceTree = "<group>"; };
 		7BE443191979107900E8B966 /* homePage01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homePage01.png; sourceTree = "<group>"; };
 		7BE4431A1979107900E8B966 /* homePage03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homePage03.png; sourceTree = "<group>"; };
@@ -1878,6 +1885,8 @@
 		24F305FE195FD5A10089F97E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7BAAE37B197E016E0097B8F5 /* Default@2x.png */,
+				7BAAE37C197E016E0097B8F5 /* Default-568@2x.png */,
 				24F30609195FD5A10089F97E /* Images.xcassets */,
 				24F305FF195FD5A10089F97E /* ZHD1.0-Info.plist */,
 				24F30600195FD5A10089F97E /* InfoPlist.strings */,
@@ -2732,6 +2741,7 @@
 		24F30B3D195FD9DC0089F97E /* 我 */ = {
 			isa = PBXGroup;
 			children = (
+				7BAAE382197E757D0097B8F5 /* 更多 */,
 				24B29FF819697812003287D8 /* 个人名片 */,
 				246133ED19646FF100C4E122 /* 访客 */,
 				24F30B86196020DE0089F97E /* ZHAboutSelfVc.h */,
@@ -2833,6 +2843,15 @@
 				24F30BA0196024850089F97E /* ZHLoginVc.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		7BAAE382197E757D0097B8F5 /* 更多 */ = {
+			isa = PBXGroup;
+			children = (
+				7BAAE383197E77AE0097B8F5 /* ZHMoreVc.h */,
+				7BAAE384197E77AE0097B8F5 /* ZHMoreVc.m */,
+			);
+			name = "更多";
 			sourceTree = "<group>";
 		};
 		7BE6241C197518970075B52D /* 最新资讯 */ = {
@@ -3179,6 +3198,7 @@
 				24A44024197BA5ED00F2066D /* PASuccessWhite@2x.png in Resources */,
 				24F30A0D195FD8150089F97E /* modify_focus@2x.png in Resources */,
 				24F3094C195FD8150089F97E /* feed_detail_favorate_focus@2x.png in Resources */,
+				7BAAE37E197E016E0097B8F5 /* Default-568@2x.png in Resources */,
 				24F30A75195FD8150089F97E /* save@2x.png in Resources */,
 				24F30AF8195FD8150089F97E /* tabIcon0_0@2x.png in Resources */,
 				24F3090A195FD8150089F97E /* chat_agree_focus.9.png in Resources */,
@@ -3578,6 +3598,7 @@
 				24F30A24195FD8150089F97E /* person_click@2x.png in Resources */,
 				24F30AFC195FD8150089F97E /* tabIcon2_0@2x.png in Resources */,
 				24F30AD4195FD8150089F97E /* user_profile_more_focus@2x.png in Resources */,
+				7BAAE37D197E016E0097B8F5 /* Default@2x.png in Resources */,
 				24F308D0195FD8150089F97E /* auth_icon_tong.png in Resources */,
 				24F308F2195FD8150089F97E /* blue_send_btn_bg_hl.png in Resources */,
 				24F308DF195FD8150089F97E /* bg_chat_right.9.png in Resources */,
@@ -3738,6 +3759,7 @@
 				24F30B30195FD8970089F97E /* UIViewController+Custom.m in Sources */,
 				24F30604195FD5A10089F97E /* main.m in Sources */,
 				24A501D7197139A0002AA97C /* ZHGoldFireVc.m in Sources */,
+				7BAAE385197E77AE0097B8F5 /* ZHMoreVc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3852,13 +3874,12 @@
 		24F30621195FD5A10089F97E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHD1.0/ZHD1.0-Prefix.pch";
 				INFOPLIST_FILE = "ZHD1.0/ZHD1.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -3868,13 +3889,12 @@
 		24F30622195FD5A10089F97E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHD1.0/ZHD1.0-Prefix.pch";
 				INFOPLIST_FILE = "ZHD1.0/ZHD1.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

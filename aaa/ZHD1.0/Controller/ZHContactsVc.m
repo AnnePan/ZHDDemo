@@ -78,11 +78,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self useDefaultColor];
-    [self useiOS7BeforeStyle];
     
     // 搜索框
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 18, self.view.width, 44)];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
     _searchBar.placeholder = @"快速筛选";
     [self.view addSubview:_searchBar];
     

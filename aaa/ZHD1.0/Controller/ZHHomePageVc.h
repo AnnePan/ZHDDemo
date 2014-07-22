@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHHomePageVc : UIViewController
+@interface ZHHomePageVc : ZHBaseViewCont
 
 @end

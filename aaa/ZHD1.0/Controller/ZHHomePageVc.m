@@ -40,23 +40,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self useiOS7BeforeStyle];
-    self.navigationController.navigationBarHidden = YES;
     
     [self initBodyView];
     [self initScorlleView];
-}
-- (void)initScorlleView
-{
-    _number = 0;
-    
-    _topScorllView = [[PACycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kSCROLLVIEW_HEIGHT)];
-    _topScorllView.delegate = self;
-    _topScorllView.dataSource = self;
-    _topScorllView.animationDuration = 2;
-    _topScorllView.backgroundColor = [UIColor clearColor];
-    [_backView addSubview:_topScorllView];
-    [_topScorllView reloadData];
 }
 
 - (void)initBodyView
@@ -71,7 +57,7 @@
                           @{@"text":@"岛上找人",@"class":@"ZHFindVc",@"title":@"岛上找人",@"image":@"home_tab_search"}];
     CGFloat subViewW = 107.;
     CGFloat subViewH = 95.;
-    _backView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 18, self.view.width, self.view.height - (18 + 50))];
+    _backView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     _backView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_backView];
     
@@ -100,6 +86,19 @@
         [_backView addSubview:subView];
     }
     _backView.contentSize=CGSizeMake(self.view.width, kSCROLLVIEW_HEIGHT + 330);
+}
+
+- (void)initScorlleView
+{
+    _number = 0;
+    
+    _topScorllView = [[PACycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kSCROLLVIEW_HEIGHT)];
+    _topScorllView.delegate = self;
+    _topScorllView.dataSource = self;
+    _topScorllView.animationDuration = 2;
+    _topScorllView.backgroundColor = [UIColor clearColor];
+    [_backView addSubview:_topScorllView];
+    [_topScorllView reloadData];
 }
 
 - (void)setLableProperty:(UILabel *)lable

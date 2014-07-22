@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self useiOS7BeforeStyle];
+    self.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,12 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)useiOS7BeforeStyleNavi {
-    if (iOSVersion >= 7.0) {
-        self.view.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
-        self.view.bounds = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
-    }
-}
+
 
 /*
 #pragma mark - Navigation

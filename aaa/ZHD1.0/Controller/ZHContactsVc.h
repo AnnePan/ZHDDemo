@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHContactsVc : UIViewController
+@interface ZHContactsVc : ZHBaseViewCont
 
 @end

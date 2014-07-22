@@ -36,7 +36,7 @@
                        @{@"image":@"i_my_activity",@"title":@"参加过的活动"},
                        @{@"image":@"i_activity",@"title":@"我发起的活动"},
                        @{@"image":@"i_visitor",@"title":@"我的访客",@"class":@"ZHMyVisitorVc"},
-                       @{@"image":@"i_more_bg",@"title":@"更多"}];
+                       @{@"image":@"i_more_bg",@"title":@"更多",@"class":@"ZHMoreVc"}];
     }
     return self;
 }
@@ -45,26 +45,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self useiOS7BeforeStyle];
-    self.navigationController.navigationBarHidden = YES;
-    
-    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 168)];
-    view.image = [UIImage imageNamed:@"tempBg"];
-    [self.view addSubview:view];
-    
-//    ZHReuseView *headerV = [[ZHReuseView alloc] initUser2WithFrame:CGRectMake(0, 0, self.view.width, 100) user:_user];
-//    headerV.left = 10;
-//    headerV.bottom = view.bottom - 20;
-//    [view addSubview:headerV];
-    
-    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, view.bottom, self.view.width, self.view.height - view.height) style:UITableViewStylePlain];
+
+    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     _sourceTable.layer.cornerRadius = 0;
     _sourceTable.tableFooterView = [UIView new];
     _sourceTable.backgroundColor = [UIColor whiteColor];
-    
     [self.view addSubview:_sourceTable];
+    
+    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 168)];
+    view.image = [UIImage imageNamed:@"tempBg"];
+    _sourceTable.tableHeaderView = view;
 }
 
 - (void)viewWillAppear:(BOOL)animated

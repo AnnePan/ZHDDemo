@@ -9,6 +9,8 @@
 #import "ZHPersonSettingVc.h"
 #import "PJDetailSetVc.h"
 
+#define PHONE_NUMBER @"4000080080"
+
 @interface ZHPersonSettingVc () <UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *_sourceArr;
@@ -27,8 +29,8 @@
                                    @{@"title":@"隐私",@"class":@"PJDetailSetVc",@"type":@(ZHSettingTypePrivacy)}]},
                        @{@"head":@"",
                          @"item":@[@{@"title":@"检查新版本",@"action":@"正在检查新版本..."},
-                                   @{@"title":@"客服热线:400-100-9737",@"action":@"拨号中"},
-                                   @{@"title":@"关于",@"class":@""}]},
+                                   @{@"title":[NSString stringWithFormat:@"客服热线：%@",PHONE_NUMBER],@"telphone":[NSString stringWithFormat:@"tel:%@",PHONE_NUMBER]},
+                                   @{@"title":@"关于",@"class":@"PJDetailSetVc",@"type":@(ZHSettingTypeAbout)}]},
                        @{@"head": @"",
                          @"item": @[@{@"title":@"接收手机报彩信",@"switch":@""}]},
                        @{@"head": @"",
@@ -45,12 +47,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self useiOS7BeforeStyle];
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    self.navigationController.navigationBarHidden = YES;
     
-    
-    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.width, self.view.height - 68) style:UITableViewStylePlain];
+    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     _sourceTable.tableFooterView = [UIView new];
@@ -114,7 +112,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *item = _sourceArr[indexPath.section][@"item"][indexPath.row];
-    if (item[@"action"]) {
+    if (item[@"telphone"]) {
+        NSString *str = item[@"telphone"];
+        UIWebView *callWebview = [[UIWebView alloc] init];
+        [callWebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str]]];
+        [self.view addSubview:callWebview];
+    } else if (item[@"action"]) {
         [self show:item[@"action"] afterDelay:2];
     }
     if (item[@"alert"]) {

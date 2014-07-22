@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHPersonSettingVc : UIViewController
+@interface ZHPersonSettingVc : ZHBaseViewCont
 
 @end
