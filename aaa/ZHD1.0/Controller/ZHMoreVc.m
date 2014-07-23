@@ -22,12 +22,12 @@
 {
     if (self = [super init]) {
         _sourceArr = @[@{@"head":@"",
-                         @"item":@[@{@"title":@"广场分享",@"class":@""}]},
+                         @"item":@[@{@"title":@"广场分享",@"class":@"ZHCentreShareVc"}]},
                        @{@"head":@"",
-                         @"item":@[@{@"title":@"金火种",@"class":@""}]},
+                         @"item":@[@{@"title":@"金火种",@"class":@"ZHGoldFireVc"}]},
                        @{@"head":@"",
-                         @"item":@[@{@"title":@"每日一问",@"class":@""},
-                                   @{@"title":@"手机报",@"class":@""},
+                         @"item":@[@{@"title":@"每日一问",@"class":@"ZHEveryDayqVc"},
+                                   @{@"title":@"手机报",@"class":@"ZHPhoneNewsVc"},
                                    @{@"title":@"微访谈",@"class":@""},
                                    @{@"title":@"微讲坛",@"class":@""}]},
                        @{@"head":@"",

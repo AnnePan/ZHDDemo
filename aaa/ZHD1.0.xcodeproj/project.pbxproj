@@ -800,6 +800,8 @@
 		7BE62422197536C50075B52D /* PJInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE62421197536C50075B52D /* PJInformationCell.m */; };
 		7BE8D2F31977580E008E305C /* ZHFindVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8D2F21977580E008E305C /* ZHFindVc.m */; };
 		7BE8D2F61977C980008E305C /* ZHFindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8D2F51977C980008E305C /* ZHFindCell.m */; };
+		7BEC7A02197F840300ED4AED /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC79FF197F840300ED4AED /* ChineseToPinyin.m */; };
+		7BEC7A03197F840300ED4AED /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC7A00197F840300ED4AED /* pinyin.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1685,6 +1687,10 @@
 		7BE8D2F21977580E008E305C /* ZHFindVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFindVc.m; sourceTree = "<group>"; };
 		7BE8D2F41977C980008E305C /* ZHFindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFindCell.h; sourceTree = "<group>"; };
 		7BE8D2F51977C980008E305C /* ZHFindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFindCell.m; sourceTree = "<group>"; };
+		7BEC79FE197F840300ED4AED /* ChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyin.h; sourceTree = "<group>"; };
+		7BEC79FF197F840300ED4AED /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
+		7BEC7A00197F840300ED4AED /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		7BEC7A01197F840300ED4AED /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2650,6 +2656,7 @@
 		24F30AFE195FD83F0089F97E /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				7BEC79FD197F840300ED4AED /* chinese */,
 				24A4401F197BA43A00F2066D /* MBProgressHUD */,
 				24F30B00195FD85B0089F97E /* Refresh */,
 			);
@@ -2876,6 +2883,17 @@
 				7BE8D2F51977C980008E305C /* ZHFindCell.m */,
 			);
 			name = "岛上找人";
+			sourceTree = "<group>";
+		};
+		7BEC79FD197F840300ED4AED /* chinese */ = {
+			isa = PBXGroup;
+			children = (
+				7BEC79FE197F840300ED4AED /* ChineseToPinyin.h */,
+				7BEC79FF197F840300ED4AED /* ChineseToPinyin.m */,
+				7BEC7A00197F840300ED4AED /* pinyin.c */,
+				7BEC7A01197F840300ED4AED /* pinyin.h */,
+			);
+			path = chinese;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3708,6 +3726,7 @@
 				7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */,
 				7BE6241F197518CE0075B52D /* ZHInformationVc.m in Sources */,
 				24F30B8E196021680089F97E /* ZHReuseView.m in Sources */,
+				7BEC7A03197F840300ED4AED /* pinyin.c in Sources */,
 				24A501C91971396D002AA97C /* ZHQuestionCell.m in Sources */,
 				24A501DC1971534D002AA97C /* PJNewsModle.m in Sources */,
 				24F30B18195FD8860089F97E /* UIView+Extension.m in Sources */,
@@ -3722,6 +3741,7 @@
 				24A501BF19713937002AA97C /* PJWebView.m in Sources */,
 				24F30B36195FD8970089F97E /* UIImage+Additions.m in Sources */,
 				244D771A19748F7500573834 /* ZHClanActivityCell.m in Sources */,
+				7BEC7A02197F840300ED4AED /* ChineseToPinyin.m in Sources */,
 				24A501DF19715836002AA97C /* ZHGoldFireView.m in Sources */,
 				24F30B33195FD8970089F97E /* NSDictionary+Additions.m in Sources */,
 				24F30B39195FD8970089F97E /* UIButton+ZHDsytle.m in Sources */,

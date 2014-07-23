@@ -9,16 +9,18 @@
 #import "ZHContactsVc.h"
 #import "PJUserModel.h"
 #import "PJUser1Cell.h"
+#import "ZHFindCell.h"
 #import "ZHRequestAPI.h"
 
 @interface ZHContactsVc() <UITableViewDataSource, UITableViewDelegate>
 {
     
-    NSArray *_sourceArray;
+    NSArray *_sourceArr;
+    NSMutableArray *_searchArr;//搜索后数据
     NSMutableArray *_firstWordArray;
     UITableView    *_sourceTable;
     UISearchBar    *_searchBar;
-    
+    UISearchDisplayController *_searchController;
 }
 
 @end
@@ -28,10 +30,13 @@
 #pragma mark - request data
 - (void)requestData
 {
-    if (!_sourceArray) {
-        _sourceArray = [[NSMutableArray alloc] init];
+    if (!_sourceArr) {
+        _sourceArr = [[NSArray alloc] init];
     }
-    _sourceArray = [self sortList:[ZHRequestAPI requestContacts]];
+    if (!_searchArr) {
+        _searchArr = [[NSMutableArray alloc] init];
+    }
+    _sourceArr = [self sortList:[ZHRequestAPI requestContacts]];
 }
 
 - (NSArray *)sortList:(NSArray *)userArr
@@ -42,11 +47,11 @@
     for (PJUserModel *user in userArr){
         [orderedSet addObject:[user.uFirstWord substringWithRange:NSMakeRange(0, 1)]];
     }
-    
+    //得到头字母
     for (NSString *firstWord in orderedSet){
         [firstWordArr addObject:firstWord];
     }
-    
+    //为头字母排序
     [firstWordArr sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return  [obj1 compare:obj2];
     }];
@@ -65,7 +70,7 @@
         [userArray addObject:keyAndArray];
     }
     return userArray;
-}
+}//排序
 
 - (id)init
 {
@@ -75,27 +80,55 @@
     return self;
 }
 
+#warning 高度需注意
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
     
     // 搜索框
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
     _searchBar.placeholder = @"快速筛选";
+    _searchController = [[UISearchDisplayController alloc]initWithSearchBar:_searchBar contentsController:self];
+    _searchController.searchResultsDataSource = self;
+    _searchController.searchResultsDelegate = self;
     [self.view addSubview:_searchBar];
     
     // 通讯录
     _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, _searchBar.bottom, self.view.width, self.view.height - (_searchBar.height + 63))];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
-    [_sourceTable registerClass:[PJUser1Cell class] forCellReuseIdentifier:NSStringFromClass(self.class)];
     [self.view addSubview:_sourceTable];
 }
 
 #pragma mark - UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    //表示当前tableView视图
+    if(tableView == _sourceTable) {
+        return [_sourceArr count];
+    } else {
+        return 1;
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_sourceArray[section][@"arr"] count];
+    //表示当前tableView视图
+    if(tableView == _sourceTable) {
+        return [_sourceArr[section][@"arr"] count];
+    } else {
+        [_searchArr removeAllObjects];
+        for(PJUserModel *itm in _sourceArr[section][@"arr"]) {
+            NSString *content = [itm.uName lowercaseString];
+            NSString *searchBarText = [_searchBar.text lowercaseString];
+            NSRange range = [content rangeOfString:searchBarText];
+            if(range.location != NSNotFound) {
+                [_searchArr addObject:itm];
+            }
+        }
+        return [_searchArr count];
+    }
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -105,10 +138,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PJUserModel *user = _sourceArray[indexPath.section][@"arr"][indexPath.row];
-    PJUser1Cell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath];
-    [cell setItem:user];
+    ZHFindCell *cell = [_sourceTable dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
+    if (!cell) {
+        cell = [[ZHFindCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:NSStringFromClass(self.class)];
+    }
+    PJUserModel *item;
+    if(tableView == _sourceTable) {
+        item = _sourceArr[indexPath.section][@"arr"][indexPath.row];
+    } else {
+        item = _searchArr[indexPath.row];
+    }
+    [cell setUserItem:item];
     return cell;
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -118,12 +160,12 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return _sourceArray[section][@"firstWord"];
+    if(tableView == _sourceTable) {
+        return _sourceArr[section][@"firstWord"];
+    }
+    return nil;
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [_sourceArray count];
-}
+
 
 @end

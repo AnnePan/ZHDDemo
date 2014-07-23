@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PJUserModel;
 
 @interface ZHFindCell : UITableViewCell
 
 - (void)setItem:(NSDictionary *)item;
+
+- (void)setUserItem:(PJUserModel *)item;
 
 @end

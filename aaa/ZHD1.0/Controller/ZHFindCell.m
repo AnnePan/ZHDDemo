@@ -7,6 +7,7 @@
 //
 
 #import "ZHFindCell.h"
+#import "PJUserModel.h"
 
 @interface ZHFindCell ()
 {
@@ -63,6 +64,15 @@
     [self setLayout];
 }
 
+- (void)setUserItem:(PJUserModel *)item
+{
+    _uHeadIV.image = [UIImage imageNamed:item.uPicPath];
+    _uNameLab.text = item.uName;
+    _uPositionLab.text = item.uCompany;
+    
+    [self setLayout];
+}
+
 - (void)setLayout
 {
     [_uNameLab sizeToFit];
@@ -70,5 +80,7 @@
     _uPositionLab.width = 200;
     _uPositionLab.top = _uNameLab.bottom + ZHSysSpaceSmall;
 }
+
+
 
 @end
