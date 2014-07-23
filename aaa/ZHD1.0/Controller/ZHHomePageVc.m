@@ -7,7 +7,6 @@
 //
 
 #import "ZHHomePageVc.h"
-#import "ZHPersonCardVc.h"
 #import "PACycleScrollView.h"
 
 #define INTRODUCELABLE_WIGHT 30.     //说明lable 的高度
@@ -45,6 +44,18 @@
     [self initScorlleView];
 }
 
+#pragma mark - 进入页面开始滚动  退出页面停止滚动
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+    [_topScorllView autoScrollStart];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [_topScorllView autoScrollStop];
+}
 - (void)initBodyView
 {
     _optionsNameArray = @[@{@"text":@"部落圈子",@"class":@"ZHClanVc",@"title":@"部落",@"image":@"home_tab_rouund"},
@@ -85,7 +96,7 @@
         [subView addSubview:tapButton];
         [_backView addSubview:subView];
     }
-    _backView.contentSize=CGSizeMake(self.view.width, kSCROLLVIEW_HEIGHT + 330);
+    _backView.contentSize=CGSizeMake(self.view.width, kSCROLLVIEW_HEIGHT + (95 * 3));
 }
 
 - (void)initScorlleView
@@ -158,17 +169,6 @@
     NSLog(@"点击第几个视图 : %d",index);
 }
 
-#pragma mark - 进入页面开始滚动  退出页面停止滚动
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-    [_topScorllView autoScrollStart];
-}
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    
-    [_topScorllView autoScrollStop];
-}
 
 @end

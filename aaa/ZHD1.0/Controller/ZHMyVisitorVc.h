@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHMyVisitorVc : UIViewController
+@interface ZHMyVisitorVc : ZHBaseViewCont
 
 @end

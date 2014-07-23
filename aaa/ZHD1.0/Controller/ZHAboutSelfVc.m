@@ -9,7 +9,6 @@
 #import "ZHAboutSelfVc.h"
 #import "ZHReuseView.h"
 #import "PJUserModel.h"
-#import "ZHPersonCardVc.h"
 #import "ZHLoginVc.h"
 
 @interface ZHAboutSelfVc() <UITableViewDataSource, UITableViewDelegate>
@@ -81,6 +80,7 @@
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.textLabel.textColor = [UIColor grayColor];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.imageView.image = [UIImage imageNamed:_sourceArr[indexPath.row][@"image"]];
     cell.textLabel.text = _sourceArr[indexPath.row][@"title"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;

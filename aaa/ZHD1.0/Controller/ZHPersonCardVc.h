@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHPersonCardVc : UIViewController
+@interface ZHPersonCardVc : ZHBaseViewCont
 
 //需要用户ID
 - (id)initWithUserId:(NSString *)userId;

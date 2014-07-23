@@ -7,6 +7,7 @@
 //
 
 #import "ZHFindVc.h"
+#import "ZHFindDetailVc.h"
 #import "ZHFindCell.h"
 #import "ZHRequestAPI.h"
 
@@ -44,12 +45,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self useiOS7BeforeStyle];
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    self.navigationController.navigationBarHidden = NO;
     self.title = @"岛上找人";
     
-    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - (_searchBar.height + 63 + 50))];
+    _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     [self.view addSubview:_sourceTable];
@@ -92,7 +90,7 @@
     }
 }
 
-
+#pragma mark - UITableViewDataSource, UITableViewDelegate
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if(tableView == _sourceTable) {
@@ -122,6 +120,12 @@
     return 70;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *item = _sourceArr[indexPath.section][@"rowText"][indexPath.row];
+    ZHFindDetailVc *nextVc = [[ZHFindDetailVc alloc] initWithDic:item];
+    [self.navigationController pushViewController:nextVc animated:YES];
+}
 
 
 @end

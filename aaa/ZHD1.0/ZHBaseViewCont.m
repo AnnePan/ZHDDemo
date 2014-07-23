@@ -28,6 +28,11 @@
     [super viewDidLoad];
     [self useDefaultColor];
     [self useiOS7BeforeStyleNavi];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
     self.navigationController.navigationBarHidden = NO;
 }
 

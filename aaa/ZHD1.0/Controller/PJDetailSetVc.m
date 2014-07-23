@@ -74,11 +74,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self useiOS7BeforeStyle];
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    self.navigationController.navigationBarHidden = NO;
     
     _sourceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+    _sourceTable.backgroundColor = [UIColor clearColor];
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     _sourceTable.tableFooterView = [UIView new];
@@ -140,7 +138,7 @@
         footLab.text = footStr;
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, footLab.height)];
         [view addSubview:footLab];
-        view.backgroundColor = [UIColor lightGrayColor];
+        view.backgroundColor = [UIColor clearColor];
         return view;
     }
     return nil;

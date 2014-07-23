@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHFindVc : UIViewController
+@interface ZHFindVc : ZHBaseViewCont
 
 @end

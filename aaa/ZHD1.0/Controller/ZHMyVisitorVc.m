@@ -10,6 +10,7 @@
 #import "PJUserModel.h"
 #import "ZHMyVisitorCell.h"
 #import "ZHPersonCardVc.h"
+#import "ZHRequestAPI.h"
 
 @interface ZHMyVisitorVc () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -34,18 +35,13 @@
     if (!_sourceArr) {
         _sourceArr = [[NSMutableArray alloc] init];
     }
-    for (int i = 0 ; i < 10; i++) {
-        PJUserModel *user = [[PJUserModel alloc] init];
-        user.uPicPath = @"all_group";
-        user.uName = [NSString stringWithFormat:@"访客%d",i];
-        user.uCompany = @"怡康生物科技有限公司总经理";
-        [_sourceArr addObject:user];
-    }
+    [_sourceArr addObjectsFromArray:[ZHRequestAPI requestContacts]];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"访客";
     
     _listTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
     _listTable.dataSource = self;
@@ -54,15 +50,17 @@
     [self.view addSubview:_listTable];
 }
 
+#pragma mark - UITableViewDataSource, UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _sourceArr.count;
+    return [_sourceArr count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZHMyVisitorCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class) forIndexPath:indexPath];
-    [cell setItem:_sourceArr[indexPath.row]];
+    PJUserModel *item = _sourceArr[indexPath.row];
+    [cell setItem:item];
     return cell;
 }
 

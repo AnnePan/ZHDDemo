@@ -7,10 +7,10 @@
 
 
 #import "ZHContactsVc.h"
-#import "PJUserModel.h"
-#import "PJUser1Cell.h"
-#import "ZHFindCell.h"
 #import "ZHRequestAPI.h"
+#import "PJUserModel.h"
+#import "ZHFindCell.h"
+#import "ZHPersonCardVc.h"
 
 @interface ZHContactsVc() <UITableViewDataSource, UITableViewDelegate>
 {
@@ -84,7 +84,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
     
     // 搜索框
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 20, self.view.width, 44)];
@@ -99,6 +98,12 @@
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
     [self.view addSubview:_sourceTable];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 #pragma mark - UITableViewDataSource
@@ -141,6 +146,7 @@
     ZHFindCell *cell = [_sourceTable dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
     if (!cell) {
         cell = [[ZHFindCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:NSStringFromClass(self.class)];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     PJUserModel *item;
     if(tableView == _sourceTable) {
@@ -166,6 +172,11 @@
     return nil;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZHPersonCardVc *personCard = [[ZHPersonCardVc alloc] initWithUserId:@"123"];
+    [self.navigationController pushViewController:personCard animated:YES];
+}
 
 
 @end

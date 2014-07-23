@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ZHSettingType) {
     
     ZHSettingTypeMax
 };
-@interface PJDetailSetVc : UIViewController
+@interface PJDetailSetVc : ZHBaseViewCont
 
 - (id)initWithSetType:(ZHSettingType)type;
 

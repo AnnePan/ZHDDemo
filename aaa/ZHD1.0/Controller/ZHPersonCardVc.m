@@ -60,11 +60,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = NO;
     self.title = @"个人名片";
     
     _contentScrV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
-    _contentScrV.backgroundColor = [UIColor redColor];
     _contentScrV.contentSize = CGSizeMake(self.view.width, self.view.height);
     [self.view addSubview:_contentScrV];
     

@@ -764,7 +764,6 @@
 		24F30BA4196028250089F97E /* myselfIconHighLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F30BA2196028250089F97E /* myselfIconHighLight.png */; };
 		24F30BA5196028250089F97E /* myselfIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F30BA3196028250089F97E /* myselfIcon.png */; };
 		24F30BA819602EF80089F97E /* ZHContactsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F30BA719602EF80089F97E /* ZHContactsVc.m */; };
-		24F30BAB19602F790089F97E /* PJUser1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F30BAA19602F790089F97E /* PJUser1Cell.m */; };
 		24F30BAE196046930089F97E /* homePage.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F30BAC196046930089F97E /* homePage.png */; };
 		24F30BAF196046930089F97E /* homePageHighLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F30BAD196046930089F97E /* homePageHighLight.png */; };
 		7B126E74196E54BF00B4E6E0 /* picn9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B126E66196E54BF00B4E6E0 /* picn9.png */; };
@@ -802,6 +801,7 @@
 		7BE8D2F61977C980008E305C /* ZHFindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8D2F51977C980008E305C /* ZHFindCell.m */; };
 		7BEC7A02197F840300ED4AED /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC79FF197F840300ED4AED /* ChineseToPinyin.m */; };
 		7BEC7A03197F840300ED4AED /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC7A00197F840300ED4AED /* pinyin.c */; };
+		7BEC7A06197FC86600ED4AED /* ZHFindDetailVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC7A05197FC86600ED4AED /* ZHFindDetailVc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1643,8 +1643,6 @@
 		24F30BA3196028250089F97E /* myselfIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myselfIcon.png; sourceTree = "<group>"; };
 		24F30BA619602EF80089F97E /* ZHContactsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHContactsVc.h; sourceTree = "<group>"; };
 		24F30BA719602EF80089F97E /* ZHContactsVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHContactsVc.m; sourceTree = "<group>"; };
-		24F30BA919602F790089F97E /* PJUser1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PJUser1Cell.h; path = ../Custom/PJUser1Cell.h; sourceTree = "<group>"; };
-		24F30BAA19602F790089F97E /* PJUser1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PJUser1Cell.m; path = ../Custom/PJUser1Cell.m; sourceTree = "<group>"; };
 		24F30BAC196046930089F97E /* homePage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homePage.png; sourceTree = "<group>"; };
 		24F30BAD196046930089F97E /* homePageHighLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homePageHighLight.png; sourceTree = "<group>"; };
 		7B126E66196E54BF00B4E6E0 /* picn9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picn9.png; sourceTree = "<group>"; };
@@ -1691,6 +1689,8 @@
 		7BEC79FF197F840300ED4AED /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
 		7BEC7A00197F840300ED4AED /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		7BEC7A01197F840300ED4AED /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		7BEC7A04197FC86600ED4AED /* ZHFindDetailVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFindDetailVc.h; sourceTree = "<group>"; };
+		7BEC7A05197FC86600ED4AED /* ZHFindDetailVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFindDetailVc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2773,8 +2773,6 @@
 			children = (
 				24F30BA619602EF80089F97E /* ZHContactsVc.h */,
 				24F30BA719602EF80089F97E /* ZHContactsVc.m */,
-				24F30BA919602F790089F97E /* PJUser1Cell.h */,
-				24F30BAA19602F790089F97E /* PJUser1Cell.m */,
 			);
 			name = "通讯录";
 			sourceTree = "<group>";
@@ -2881,6 +2879,8 @@
 				7BE8D2F21977580E008E305C /* ZHFindVc.m */,
 				7BE8D2F41977C980008E305C /* ZHFindCell.h */,
 				7BE8D2F51977C980008E305C /* ZHFindCell.m */,
+				7BEC7A04197FC86600ED4AED /* ZHFindDetailVc.h */,
+				7BEC7A05197FC86600ED4AED /* ZHFindDetailVc.m */,
 			);
 			name = "岛上找人";
 			sourceTree = "<group>";
@@ -3712,6 +3712,7 @@
 				24A4401E197A194500F2066D /* ZHShareCell.m in Sources */,
 				246133EC19646FE200C4E122 /* ZHMyVisitorVc.m in Sources */,
 				24ADE8681975E47800D29BD8 /* ZHReadingCell.m in Sources */,
+				7BEC7A06197FC86600ED4AED /* ZHFindDetailVc.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,
 				24A44080197D65C400F2066D /* ZHBaseViewCont.m in Sources */,
 				24A44022197BA44500F2066D /* PAMBProgressHUD.m in Sources */,
@@ -3732,7 +3733,6 @@
 				24F30B18195FD8860089F97E /* UIView+Extension.m in Sources */,
 				24F30B15195FD8860089F97E /* MJRefreshHeaderView.m in Sources */,
 				246133D31961BBBC00C4E122 /* NSTimer+Addition.m in Sources */,
-				24F30BAB19602F790089F97E /* PJUser1Cell.m in Sources */,
 				7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */,
 				24A501CF1971398B002AA97C /* ZHPhoneNewsVc.m in Sources */,
 				24F30BA819602EF80089F97E /* ZHContactsVc.m in Sources */,

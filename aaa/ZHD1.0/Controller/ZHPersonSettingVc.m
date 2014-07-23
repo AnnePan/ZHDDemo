@@ -64,8 +64,9 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:nil];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
     self.navigationController.navigationBarHidden = YES;
 }
 
