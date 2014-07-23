@@ -46,7 +46,7 @@
     NSMutableArray *itemNvcArr = [NSMutableArray arrayWithCapacity:4];
     
     for (int i = 0; i < itemArr.count; i++) {
-        ZHBaseNavigationCont *itemNvc = [[ZHBaseNavigationCont alloc] initWithRootViewController:itemArr[i][@"view"]];
+        UINavigationController *itemNvc = [[UINavigationController alloc] initWithRootViewController:itemArr[i][@"view"]];
         itemNvc.tabBarItem.image = [UIImage imageNamed:itemArr[i][@"image"]];
         itemNvc.tabBarItem.title = itemArr[i][@"title"];
         [itemNvcArr addObject:itemNvc];

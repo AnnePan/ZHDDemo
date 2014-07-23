@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHGoldFireVc : UIViewController
+@interface ZHGoldFireVc : ZHBaseViewCont
 
 @end

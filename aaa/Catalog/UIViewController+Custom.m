@@ -9,7 +9,6 @@
 #import "UIViewController+Custom.h"
 #import "UIColor+Custom.h"
 #import "ZHSysStyle.h"
-#import "ZHRefreshLoadView.h"
 
 const void *HUDObject = "HUDObject";
 

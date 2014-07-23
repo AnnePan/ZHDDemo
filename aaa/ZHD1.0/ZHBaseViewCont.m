@@ -27,7 +27,8 @@
 {
     [super viewDidLoad];
     [self useDefaultColor];
-    [self useiOS7BeforeStyleNavi];
+    [self useiOS7BeforeStyle];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -40,13 +41,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)useiOS7BeforeStyleNavi {
-    if (iOSVersion >= 7.0) {
-//        self.view.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
-//        self.view.bounds = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
-    }
 }
 
 @end

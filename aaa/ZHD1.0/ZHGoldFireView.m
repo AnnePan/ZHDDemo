@@ -33,7 +33,6 @@
 - (id)initWithFrame:(CGRect)frame;
 {
     if (self = [super initWithFrame:frame]) {
-        
         _sourceTable = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
         _sourceTable.delegate = self;
         _sourceTable.dataSource = self;
@@ -130,7 +129,8 @@
         case ZHCellTypeGoldFire:
         {
             PJUserModel *user = _sourceArr[indexPath.row];
-            return  90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
+            CGFloat height = 90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
+            return MIN(height, 150);
             break;
         }
         case ZHCellTypeQuestion:

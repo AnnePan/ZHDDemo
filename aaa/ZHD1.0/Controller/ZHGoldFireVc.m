@@ -43,9 +43,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self useiOS7BeforeStyle];
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    self.navigationController.navigationBarHidden = NO;
     self.title = @"金火种";
     
     PJSegmentControl *scView = [[PJSegmentControl alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 35)];
@@ -62,9 +59,11 @@
     scView.selectedIndex = 0;
     [self.view addSubview:scView];
     
-    _sourceScrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 35, self.view.width, self.view.height - 150)];
-    _sourceScrollV.contentSize = CGSizeMake(self.view.width *2, self.view.height - 200);
+    _sourceScrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scView.height, self.view.width, self.view.height - 150)];
+    _sourceScrollV.contentSize = CGSizeMake(_sourceScrollV.width *2, _sourceScrollV.height);
+    _sourceScrollV.directionalLockEnabled = YES;
     _sourceScrollV.pagingEnabled = YES;
+    _sourceScrollV.backgroundColor = [UIColor redColor];
     [self.view addSubview:_sourceScrollV];
     
     ZHGoldFireView *leftView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(0, 0, _sourceScrollV.width, _sourceScrollV.height)];

@@ -24,11 +24,11 @@
 #import "NSAttributedString+Additions.h"
 #import "NSDictionary+Additions.h"
 #import "UIColor+Additions.h"
+#import "UIColor+Custom.h"
 #import "UIImage+Additions.h"
 #import "UILabel+Additions.h"
 #import "UIAlertView+Block.h"
 
-#import "ZHBaseNavigationCont.h"
 #import "ZHBaseViewCont.h"
 
     #define iOSVersion [[[UIDevice currentDevice] systemVersion] floatValue]

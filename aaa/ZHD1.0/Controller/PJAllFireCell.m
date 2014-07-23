@@ -27,7 +27,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.height = 70;
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundView.backgroundColor = self.backgroundColor = [UIColor sysColor];
         _bgView = [[UIView alloc] initWithFrame:CGRectMake(ZHSysSpaceLarge, ZHSysSpaceMiddle, self.width - (ZHSysSpaceLarge * 2), self.height - ZHSysSpaceMiddle)];
         _bgView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_bgView];

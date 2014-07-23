@@ -8,6 +8,7 @@
 
 #import "ZHGoldFireCell.h"
 #import "PJUserModel.h"
+#import "ZHThanksWordVc.h"
 
 #import "NSString+Additions.h"
 
@@ -19,7 +20,8 @@
     UILabel *_numLab;   //推荐人数
     UIButton *_actionBt;    //观看视频Btn
     UIImageView *_makeIV;   //标志
-    UILabel *_contextLab;
+//    UILabel *_contextLab;
+    UIButton *_contextBtn;
 }
 
 @end
@@ -30,7 +32,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundView.backgroundColor = self.backgroundColor = [UIColor sysColor];
         _bgView = [[UIView alloc] initWithFrame:CGRectMake(ZHSysSpaceLarge, ZHSysSpaceMiddle, self.width - (ZHSysSpaceLarge * 2), self.height - ZHSysSpaceMiddle)];
         _bgView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_bgView];
@@ -56,26 +58,51 @@
         [_actionBt addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
         [_bgView addSubview:_actionBt];
         
-        _contextLab = [[UILabel alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, 70, 270, 0)];
-        _contextLab.textColor = [UIColor orangeColor];
-        _contextLab.textAlignment = NSTextAlignmentLeft;
-        [_contextLab setMinimumScaleFactor:14];
-        [_contextLab setNumberOfLines:3];
-        [_contextLab setFont:[UIFont systemFontOfSize:14]];
-        [_bgView addSubview:_contextLab];
+//        _contextLab = [[UILabel alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, 70, 270, 0)];
+//        _contextLab.textColor = [UIColor orangeColor];
+//        _contextLab.textAlignment = NSTextAlignmentLeft;
+//        [_contextLab setMinimumScaleFactor:14];
+//        [_contextLab setNumberOfLines:3];
+//        [_contextLab setFont:[UIFont systemFontOfSize:14]];
+//        [_bgView addSubview:_contextLab];
+        
+        _contextBtn = [[UIButton alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, 70, 270, 0)];
+        [_contextBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        _contextBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
+        _contextBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        _contextBtn.titleLabel.numberOfLines = 3;
+        _contextBtn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        [_contextBtn addTarget:self action:@selector(_contextBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_bgView addSubview:_contextBtn];
+        
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, _contextBtn.top - ZHSysSpaceMiddle, _bgView.width - (ZHSysSpaceMiddle * 2), 0.5)];
+        line.backgroundColor = [UIColor sysGrayColor];
+        [_bgView addSubview:line];
     }
     return self;
 }
+
+- (void)_contextBtnAction:(UIButton *)btn
+{
+    NSLog(@"btn.text == %@",btn.titleLabel.text);
+//    ZHThanksWordVc *nextVc = [[ZHThanksWordVc alloc] initWithWord:btn.titleLabel.text];
+}
+
 - (void)setItem:(PJUserModel *)user
 {
     _imgView.image = [UIImage imageNamed:user.uPicPath];
     _nameLab.text = user.uName;
     _numLab.text = [NSString stringWithFormat:@"－推荐了%d个岛亲",[user.uFires count]];
-    _contextLab.text = user.uFireDirections;
-    [_contextLab sizeToFitNumberOfLines];
+    [_contextBtn setTitle:user.uFireDirections forState:UIControlStateNormal];
+//    _contextLab.text = user.uFireDirections;
+//    [_contextLab sizeToFitNumberOfLines];
     
-    _bgView.height = _contextLab.height + 80;
-    self.contentView.height = 90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
+   
+    _contextBtn.height = MIN([user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height, 60);
+     _bgView.height = _contextBtn.height + 80;
+//    self.contentView.height = 90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
+//    CGFloat height = 90 + [user.uFireDirections sizeWithMaxWidth:270 font:[UIFont systemFontOfSize:14]].height;
+    self.contentView.height = _contextBtn.height + 90;
     [self setLayout];
 }
 
