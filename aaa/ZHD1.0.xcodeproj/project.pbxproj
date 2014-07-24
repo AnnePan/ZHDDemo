@@ -774,6 +774,7 @@
 		7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E83196E54E700B4E6E0 /* ZHRequestAPI.m */; };
 		7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E92196E553400B4E6E0 /* PJUserModel.m */; };
 		7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E95196E554E00B4E6E0 /* NSString+Additions.m */; };
+		7BA28F3A19811819000EDE3E /* ZHCellTableManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA28F3919811819000EDE3E /* ZHCellTableManagerView.m */; };
 		7BAAE37D197E016E0097B8F5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAAE37B197E016E0097B8F5 /* Default@2x.png */; };
 		7BAAE37E197E016E0097B8F5 /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAAE37C197E016E0097B8F5 /* Default-568@2x.png */; };
 		7BAAE385197E77AE0097B8F5 /* ZHMoreVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAAE384197E77AE0097B8F5 /* ZHMoreVc.m */; };
@@ -1638,6 +1639,8 @@
 		7B126E92196E553400B4E6E0 /* PJUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserModel.m; sourceTree = "<group>"; };
 		7B126E94196E554E00B4E6E0 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		7B126E95196E554E00B4E6E0 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		7BA28F3819811819000EDE3E /* ZHCellTableManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCellTableManagerView.h; sourceTree = "<group>"; };
+		7BA28F3919811819000EDE3E /* ZHCellTableManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCellTableManagerView.m; sourceTree = "<group>"; };
 		7BAAE37B197E016E0097B8F5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7BAAE37C197E016E0097B8F5 /* Default-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568@2x.png"; sourceTree = "<group>"; };
 		7BAAE383197E77AE0097B8F5 /* ZHMoreVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHMoreVc.h; sourceTree = "<group>"; };
@@ -1722,6 +1725,8 @@
 				24A4407B197D612100F2066D /* ZHBaseNavigationCont.h */,
 				24A4407E197D65C400F2066D /* ZHBaseViewCont.h */,
 				24A4407F197D65C400F2066D /* ZHBaseViewCont.m */,
+				7BA28F3819811819000EDE3E /* ZHCellTableManagerView.h */,
+				7BA28F3919811819000EDE3E /* ZHCellTableManagerView.m */,
 			);
 			name = SysClass;
 			sourceTree = "<group>";
@@ -3662,6 +3667,7 @@
 				7BEC7A06197FC86600ED4AED /* ZHFindDetailVc.m in Sources */,
 				24F30B34195FD8970089F97E /* NSMutableAttributedString+Attributes.m in Sources */,
 				24A44080197D65C400F2066D /* ZHBaseViewCont.m in Sources */,
+				7BA28F3A19811819000EDE3E /* ZHCellTableManagerView.m in Sources */,
 				24A44022197BA44500F2066D /* PAMBProgressHUD.m in Sources */,
 				24A44029197C494800F2066D /* ZHRootVc.m in Sources */,
 				24A02CFC19788E7300D28920 /* ZHCentreShareVc.m in Sources */,

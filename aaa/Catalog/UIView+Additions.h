@@ -32,4 +32,6 @@
 
 - (UIImage *)imageForView;
 
+- (UIViewController *)viewController;
+
 @end

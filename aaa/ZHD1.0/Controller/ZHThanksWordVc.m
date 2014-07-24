@@ -29,11 +29,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"感言详情";
     
-    _textLab = [[UILabel alloc] initWithFrame:self.view.frame];
-    [_textLab setLabelStyleTextColor:[UIColor blackColor] fontSize:ZHSysFontSizeLarge];
+    _textLab = [[UILabel alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, ZHSysSpaceMiddle, self.view.width - (ZHSysSpaceMiddle * 2), 0)];
+    [_textLab setLabelStyleTextColor:[UIColor blackColor] fontSize:ZHSysFontSizeDefault];
+    _textLab.textAlignment = NSTextAlignmentLeft;
+    _textLab.lineBreakMode = NSLineBreakByWordWrapping;
+    _textLab.numberOfLines = 0;
     _textLab.text = _text;
+    [_textLab sizeToFitNumberOfLines];
+    _textLab.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_textLab];
 }
 

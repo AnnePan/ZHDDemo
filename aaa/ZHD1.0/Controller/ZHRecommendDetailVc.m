@@ -40,6 +40,8 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor redColor];
     _sourceTable = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
 //    _sourceTable.dataSource = self;
 //    _sourceTable.delegate = self;
