@@ -8,7 +8,7 @@
 
 #import "ZHGoldFireVc.h"
 #import "PJSegmentControl.h"
-#import "ZHGoldFireView.h"
+#import "ZHCellTableManagerView.h"
 #import "PJUserModel.h"
 
 #import "ZHRequestAPI.h"
@@ -66,18 +66,20 @@
     _sourceScrollV.backgroundColor = [UIColor redColor];
     [self.view addSubview:_sourceScrollV];
     
-    ZHGoldFireView *leftView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(0, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [leftView setSourceArray:_rightArr fireType:ZHCellTypeGoldFire];
+    ZHCellTableManagerView *leftView = [[ZHCellTableManagerView alloc] initWithFrame:CGRectMake(0, 0, _sourceScrollV.width, _sourceScrollV.height)];
+    [leftView setSourceArray:_rightArr cellType:ZHCellTypeGoldFire nextClass:@"ZHRecommendDatailVc"];
     [_sourceScrollV addSubview:leftView];
     
-    ZHGoldFireView *rightView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [rightView setSourceArray:_rightArr fireType:ZHCellTypeAllFire];
+    ZHCellTableManagerView *rightView = [[ZHCellTableManagerView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
+    [rightView setSourceArray:_rightArr cellType:ZHCellTypeAllFire nextClass:@"ZHRecommendDatailVc"];
     [_sourceScrollV addSubview:rightView];
     
 }
 
 - (void) changeContentWithIndex:(int)index
 {
-    [_sourceScrollV setContentOffset:CGPointMake(_sourceScrollV.width * index, 0)];
+    [UIView animateWithDuration:0.5 animations:^{
+        [_sourceScrollV setContentOffset:CGPointMake(_sourceScrollV.width * index, 0)];
+    }];
 }
 @end

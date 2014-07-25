@@ -9,7 +9,7 @@
 #import "ZHEveryDayqVc.h"
 #import "ZHRequestAPI.h"
 #import "PJSegmentControl.h"
-#import "ZHGoldFireView.h"
+#import "ZHCellTableManagerView.h"
 
 @interface ZHEveryDayqVc ()
 {
@@ -70,18 +70,18 @@
     [self.view addSubview:_sourceScrollV];
     
     //按时间排序
-    ZHGoldFireView *leftView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(0, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [leftView setSourceArray:_questionArr fireType:ZHCellTypeQuestion];
+    ZHCellTableManagerView *leftView = [[ZHCellTableManagerView alloc] initWithFrame:CGRectMake(0, 0, _sourceScrollV.width, _sourceScrollV.height)];
+    [leftView setSourceArray:_questionArr cellType:ZHCellTypeQuestion nextClass:nil];
     [_sourceScrollV addSubview:leftView];
     
     //按热门排序
-    ZHGoldFireView *middleView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [middleView setSourceArray:_questionArr fireType:ZHCellTypeQuestion];
+    ZHCellTableManagerView *middleView = [[ZHCellTableManagerView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
+    [middleView setSourceArray:_questionArr cellType:ZHCellTypeQuestion nextClass:nil];
     [_sourceScrollV addSubview:middleView];
     
     //热心岛邻
-    ZHGoldFireView *rightView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width * 2, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [rightView setSourceArray:_dearAnswerArr fireType:ZHCellTypeDearAnswer];
+    ZHCellTableManagerView *rightView = [[ZHCellTableManagerView alloc] initWithFrame:CGRectMake(self.view.width * 2, 0, _sourceScrollV.width, _sourceScrollV.height)];
+    [rightView setSourceArray:_dearAnswerArr cellType:ZHCellTypeDearAnswer nextClass:nil];
     [_sourceScrollV addSubview:rightView];
 }
 

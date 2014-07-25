@@ -8,7 +8,7 @@
 
 #import "ZHCentreShareVc.h"
 #import "PJSegmentControl.h"
-#import "ZHGoldFireView.h"
+#import "ZHCellTableManagerView.h"
 
 @interface ZHCentreShareVc ()
 {
@@ -70,8 +70,8 @@
     [self.view addSubview:_sourceScrollV];
     
     for (int i = 0; i < keys.count; i++) {
-        ZHGoldFireView *detailTable = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(i * _sourceScrollV.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-        [detailTable setSourceArray:_sourceArr fireType:[arr1[i][@"value"] intValue]];
+        ZHCellTableManagerView *detailTable = [[ZHCellTableManagerView alloc] initWithFrame:CGRectMake(i * _sourceScrollV.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
+        [detailTable setSourceArray:_sourceArr cellType:[arr1[i][@"value"] intValue] nextClass:nil];
         
         [_sourceScrollV addSubview:detailTable];
     }

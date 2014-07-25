@@ -9,7 +9,7 @@
 #import "ZHPhoneNewsVc.h"
 #import "PJSegmentControl.h"
 #import "PJWebView.h"
-#import "ZHGoldFireView.h"
+#import "ZHCellTableManagerView.h"
 #import "ZHRequestAPI.h"
 
 @interface ZHPhoneNewsVc ()
@@ -74,8 +74,8 @@
     [_sourceScrollV addSubview:webView];
     
     //往期回顾
-    ZHGoldFireView *rightView = [[ZHGoldFireView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
-    [rightView setSourceArray:_dataArr fireType:ZHCellTypeNews];
+    ZHCellTableManagerView *rightView = [[ZHCellTableManagerView alloc] initWithFrame:CGRectMake(self.view.width, 0, _sourceScrollV.width, _sourceScrollV.height)];
+    [rightView setSourceArray:_dataArr cellType:ZHCellTypeNews nextClass:nil];
     [_sourceScrollV addSubview:rightView];
 }
 
