@@ -208,7 +208,7 @@
     switch (_cellType) {
         case ZHCellTypeGoldFire:
         {
-            ZHRecommendDetailVc *nextVc = [[ZHRecommendDetailVc alloc] init];
+            ZHRecommendDetailVc *nextVc = [[ZHRecommendDetailVc alloc] initWithUser:_sourceArr[indexPath.row]];
             [self.viewController.navigationController pushViewController:nextVc animated:YES];
             break;
         }
@@ -232,7 +232,7 @@
         }
         case ZHCellTypeAllFire:
         {
-            ZHRecommendDetailVc *nextVc = [[ZHRecommendDetailVc alloc] init];
+            ZHRecommendDetailVc *nextVc = [[ZHRecommendDetailVc alloc] initWithUser:_sourceArr[indexPath.row]];
             [self.viewController.navigationController pushViewController:nextVc animated:YES];
             break;
         }

@@ -9,6 +9,7 @@
 #import "ZHRecommendDetailVc.h"
 #import "PJUserModel.h"
 #import "ZHRequestAPI.h"
+#import "ZHFindCell.h"
 
 @interface ZHRecommendDetailVc () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -21,7 +22,7 @@
 
 @implementation ZHRecommendDetailVc
 
-- (id)initWithUser:(PJUserModel *)item;
+- (id)initWithUser:(PJUserModel *)item
 {
     if (self = [super init]) {
         _frwordUser = item;
@@ -43,8 +44,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     _sourceTable = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    _sourceTable.height = _sourceTable.height - 113;
     _sourceTable.dataSource = self;
     _sourceTable.delegate = self;
+    _sourceTable.rowHeight = 70;
     [self.view addSubview:_sourceTable];
     
     [self initHeaderView];
@@ -54,6 +57,12 @@
 {
     UIView *headerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _sourceTable.width, 130)];
     _sourceTable.tableHeaderView = headerV;
+    
+    UIImageView *headIv = [[UIImageView alloc] initWithFrame:CGRectMake(ZHSysSpaceLarge, ZHSysSpaceLarge, headerV.height - (ZHSysSpaceLarge * 2), headerV.height - (ZHSysSpaceLarge * 2))];
+    headIv.layer.masksToBounds = YES;
+    headIv.layer.contentsScale = headIv.width / 2;
+    headIv.image = [UIImage imageNamed:_frwordUser.uPicPath];
+    [headerV addSubview:headIv];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
@@ -65,11 +74,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PJUserModel *user = _sourceArr[indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
+    ZHFindCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(self.class)];
+        cell = [[ZHFindCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(self.class)];
     }
-    cell.textLabel.text = user.uName;
+    [cell setUserItem:user];
     return cell;
 }
 
