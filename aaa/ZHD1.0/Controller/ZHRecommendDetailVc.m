@@ -7,6 +7,7 @@
 //
 
 #import "ZHRecommendDetailVc.h"
+#import "ZHPersonCardVc.h"
 #import "PJUserModel.h"
 #import "ZHRequestAPI.h"
 #import "ZHFindCell.h"
@@ -49,10 +50,9 @@
     _sourceTable.delegate = self;
     _sourceTable.rowHeight = 70;
     [self.view addSubview:_sourceTable];
-    
-    [self initHeaderView];
 }
 
+/*
 - (void)initHeaderView
 {
     UIView *headerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _sourceTable.width, 130)];
@@ -64,22 +64,43 @@
     headIv.image = [UIImage imageNamed:_frwordUser.uPicPath];
     [headerV addSubview:headIv];
 }
+*///初始化tableviewHeader
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_sourceArr count];
+    return [_sourceArr count] + 1;//多加一个自己
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PJUserModel *user = _sourceArr[indexPath.row];
+    PJUserModel *user;
+    if (indexPath.row == 0) {
+        user = _frwordUser;
+    } else {
+        user = _sourceArr[indexPath.row - 1];
+    }
     ZHFindCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
     if (!cell) {
         cell = [[ZHFindCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(self.class)];
     }
     [cell setUserItem:user];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 130;
+    }
+    return 70;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PJUserModel *user = indexPath.row == 0 ? _frwordUser : _sourceArr[indexPath.row - 1];
+    ZHPersonCardVc *nextVc = [[ZHPersonCardVc alloc] initWithUserId:user.uId];
+    [self.navigationController pushViewController:nextVc animated:YES];
 }
 
 @end
