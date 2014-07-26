@@ -20,6 +20,8 @@
 
 @property (nonatomic, copy)NSString *qTitle;        //每日一问标题
 
+@property (nonatomic, copy)NSString *qText;         //每日一问文本
+
 @property (nonatomic, copy)NSArray *qTransfers;     //所有转评
 
 @property (nonatomic, copy)NSArray *qAddtions;      //所有加金

@@ -774,6 +774,7 @@
 		7B126E84196E54E700B4E6E0 /* ZHRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E83196E54E700B4E6E0 /* ZHRequestAPI.m */; };
 		7B126E93196E553400B4E6E0 /* PJUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E92196E553400B4E6E0 /* PJUserModel.m */; };
 		7B126E96196E554E00B4E6E0 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B126E95196E554E00B4E6E0 /* NSString+Additions.m */; };
+		7B62C07A1983467F000CBA0F /* ZHShareTextVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B62C0791983467F000CBA0F /* ZHShareTextVc.m */; };
 		7BAAE37D197E016E0097B8F5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAAE37B197E016E0097B8F5 /* Default@2x.png */; };
 		7BAAE37E197E016E0097B8F5 /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAAE37C197E016E0097B8F5 /* Default-568@2x.png */; };
 		7BAAE385197E77AE0097B8F5 /* ZHMoreVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAAE384197E77AE0097B8F5 /* ZHMoreVc.m */; };
@@ -1638,6 +1639,8 @@
 		7B126E92196E553400B4E6E0 /* PJUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUserModel.m; sourceTree = "<group>"; };
 		7B126E94196E554E00B4E6E0 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		7B126E95196E554E00B4E6E0 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		7B62C0781983467F000CBA0F /* ZHShareTextVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHShareTextVc.h; sourceTree = "<group>"; };
+		7B62C0791983467F000CBA0F /* ZHShareTextVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHShareTextVc.m; sourceTree = "<group>"; };
 		7BAAE37B197E016E0097B8F5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7BAAE37C197E016E0097B8F5 /* Default-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568@2x.png"; sourceTree = "<group>"; };
 		7BAAE383197E77AE0097B8F5 /* ZHMoreVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHMoreVc.h; sourceTree = "<group>"; };
@@ -1777,6 +1780,8 @@
 				24A501C51971396D002AA97C /* ZHQuestionCell.m */,
 				24A501C61971396D002AA97C /* PJDearNeighbourCell.h */,
 				24A501C71971396D002AA97C /* PJDearNeighbourCell.m */,
+				7B62C0781983467F000CBA0F /* ZHShareTextVc.h */,
+				7B62C0791983467F000CBA0F /* ZHShareTextVc.m */,
 			);
 			name = "每日一问";
 			sourceTree = "<group>";
@@ -3684,6 +3689,7 @@
 				24F30BA819602EF80089F97E /* ZHContactsVc.m in Sources */,
 				24F30B88196020DE0089F97E /* ZHAboutSelfVc.m in Sources */,
 				24A02CFA19788DEB00D28920 /* ZHActivityVc.m in Sources */,
+				7B62C07A1983467F000CBA0F /* ZHShareTextVc.m in Sources */,
 				24A501BF19713937002AA97C /* PJWebView.m in Sources */,
 				24F30B36195FD8970089F97E /* UIImage+Additions.m in Sources */,
 				244D771A19748F7500573834 /* ZHClanActivityCell.m in Sources */,

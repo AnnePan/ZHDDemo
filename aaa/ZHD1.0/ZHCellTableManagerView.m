@@ -17,7 +17,10 @@
 #import "PJInformationCell.h"
 #import "ZHShareCell.h"
 
+#import "ZHPersonCardVc.h"
 #import "ZHRecommendDetailVc.h"
+#import "ZHShareTextVc.h"
+#import "PJQuestionModel.h"
 
 #import "NSString+Additions.h"
 
@@ -224,6 +227,9 @@
             
         case ZHCellTypeDearAnswer:
         {
+            PJUserModel *user = _sourceArr[indexPath.row];
+            ZHPersonCardVc *nextVc = [[ZHPersonCardVc alloc] initWithUserId:user.uId];
+            [self.viewController.navigationController pushViewController:nextVc animated:YES];
             break;
         }
         case ZHCellTypeNews:
@@ -239,6 +245,9 @@
             
         case ZHCellTypeQuestion:
         {
+            PJQuestionModel *ques = _sourceArr[indexPath.row];
+            ZHShareTextVc *nextVc = [[ZHShareTextVc alloc] initWithQues:ques];
+            [self.viewController.navigationController pushViewController:nextVc animated:YES];
             break;
         }
         case ZHCellTypeInformation:

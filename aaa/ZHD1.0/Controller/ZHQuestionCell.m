@@ -27,7 +27,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.height = 80;
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundView.backgroundColor = self.backgroundColor = [UIColor sysColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _bgView = [[UIView alloc] initWithFrame:CGRectMake(ZHSysSpaceLarge, ZHSysSpaceMiddle, self.width - (ZHSysSpaceLarge * 2), self.height)];
         _bgView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_bgView];

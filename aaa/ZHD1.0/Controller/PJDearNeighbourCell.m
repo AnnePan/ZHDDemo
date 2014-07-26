@@ -25,7 +25,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundView.backgroundColor = self.backgroundColor = [UIColor sysColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         CGFloat side = 40;
         _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(ZHSysSpaceMiddle, ZHSysSpaceMiddle, side, side)];

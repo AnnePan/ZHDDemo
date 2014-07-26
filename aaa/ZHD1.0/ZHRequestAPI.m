@@ -70,20 +70,21 @@
     NSMutableArray *quesArr = [[NSMutableArray alloc] init];
     NSArray *arr = [self requestContacts];
     for (PJUserModel *user in arr) {
-        [quesArr addObject:[self setQestUserName:user.uName photoPagh:user.uPicPath qTitle:@"转型期引入空降兵需要注意什么？" transfers:nil addtions:nil time:@"2014-04-07 07:30"]];
+        [quesArr addObject:[self MakeQestDataForUser:user]];
     }
     return quesArr;
 }
 
-+ (PJQuestionModel *)setQestUserName:(NSString *)name photoPagh:(NSString *)path qTitle:(NSString *)title transfers:(NSArray *)transArr addtions:(NSArray *)addArr time:(NSString *)timeStr
++ (PJQuestionModel *)MakeQestDataForUser:(PJUserModel *)user
 {
     PJQuestionModel *question = [[PJQuestionModel alloc] init];
-    question.uName = name;
-    question.uPicPath = path;
-    question.qTitle = title;
+    question.uName = user.uName;
+    question.uPicPath = user.uPicPath;
+    question.qTitle = @"转型期引入空降兵需要注意什么？";
+    question.qText = @"转型期引入空降兵需要注意什么,转型期引入空降兵需要注意什么,转型期引入空降兵需要注意什么,转型期引入空降兵需要注意什么,转型期引入空降兵需要注意什么...转型期引入空降兵需要注意什么!!";
     question.qTransfers = @[@{},@{},@{}];
     question.qAddtions = @[@{},@{}];
-    question.qTimeStr = timeStr;
+    question.qTimeStr = @"2014-04-07 07:30";
     return question;
 }
 

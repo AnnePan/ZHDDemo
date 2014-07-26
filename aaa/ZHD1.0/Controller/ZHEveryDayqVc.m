@@ -87,7 +87,9 @@
 
 - (void) changeContentWithIndex:(int)index
 {
-    [_sourceScrollV setContentOffset:CGPointMake(_sourceScrollV.width * index, 0)];
+    [UIView animateWithDuration:0.5 animations:^{
+        [_sourceScrollV setContentOffset:CGPointMake(_sourceScrollV.width * index, 0)];
+    }];
 }
 
 @end
